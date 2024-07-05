@@ -1,0 +1,48 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true,
+    "node": true,
+    "jest": true
+  },
+  "ignorePatterns": ["node_modules", "coverage", ".next"],
+  "extends": [
+    "next",
+    "eslint:recommended",
+    "next/core-web-vitals"
+    // "plugin:@typescript-eslint/eslint-recommended", should install: npm i @typescript-eslint/eslint-plugin
+    // "plugin:@typescript-eslint/recommended"
+  ],
+  "plugins": ["import"],
+  "rules": {
+    "no-console": "error",
+    "semi": "error",
+    "quotes": [
+      "error",
+      "double",
+      {
+        "allowTemplateLiterals": true
+      }
+    ],
+    "import/order": [
+      "error",
+      {
+        "groups": [
+          ["builtin", "external"],
+          "internal",
+          "type",
+          ["parent", "sibling", "index", "unknown"]
+        ],
+        "warnOnUnassignedImports": true,
+        "newlines-between": "always"
+      }
+    ]
+  },
+  "overrides": [
+    {
+      // enable eslint-plugin-testing-library rules or preset only for matching testing files!
+      "files": ["**/__tests__/**/*.[jt]sx?", "**/?(*.)+(spec|test).[jt]sx?"],
+      "extends": ["plugin:testing-library/react"]
+    }
+  ]
+}
