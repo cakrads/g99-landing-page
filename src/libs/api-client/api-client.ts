@@ -37,6 +37,7 @@ apiClient.interceptors.request.use(
 apiClient.interceptors.response.use(
   (response) => response,
   async (error) => {
+    // eslint-disable-next-line no-console
     console.log({ error });
     return Promise.reject(error);
   }
