@@ -28,10 +28,10 @@ export const LaundryCarpetWhy = () => {
       <div className="bg-muted pt-24 pb-16 md:pt-28 sm:py-24 relative">
         <div className="container">
           <SectionHeader
-            title="Kenapa Memilih Laundry Kami?"
-            description="Nikmati Layanan Laundry Hemat dan Berkualitas!"
+            title="Kenapa Harus Laundry Karpet di Kami?"
+            description=""
           />
-          <div ref={refImage} className="flex flex-col lg:flex-row gap-10 py-12">
+          <div ref={refImage} className="flex flex-col lg:flex-row gap-10 py-12 items-center">
             <div className="order-2 md:order-1 min-w-[300px] flex flex-col md:flex-row lg:flex-col gap-5">
               <div
                 className={clsx(

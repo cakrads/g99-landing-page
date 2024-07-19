@@ -1,10 +1,10 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
 import clsx from "clsx";
 import React from "react";
 
+import Link from "@/components/ui/link";
 import { Sheet, SheetContent } from "@/components/ui/sheet/sheet";
 import { WEB_TITLE } from "@/constant/env";
 

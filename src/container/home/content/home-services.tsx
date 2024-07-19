@@ -1,8 +1,8 @@
 import Image from "next/image";
 import React from "react";
 import clsx from "clsx";
-import Link from "next/link";
 
+import Link from "@/components/ui/link";
 import { Card } from "@/components/ui/card";
 import { WaveTopBgShapeSM, WaveTopBgShape, WaveBottomBgShapeSM } from "@/components/ui/shapes";
 import { IMG_ALT } from "@/constant/env";

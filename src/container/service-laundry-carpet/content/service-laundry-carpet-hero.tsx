@@ -1,6 +1,6 @@
-import Link from "next/link";
 import Image from "next/image";
 
+import Link from "@/components/ui/link";
 import { WA_LINK } from "@/constant/whatsapp";
 import { IMG_ALT_LAUNDRY_KARPET } from "@/constant/env";
 

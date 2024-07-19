@@ -1,6 +1,7 @@
-import Link from "next/link";
+
 import Image from "next/image";
 
+import Link from "@/components/ui/link";
 import { HomeImageShapesBg } from "@/components/ui/shapes";
 
 export const HomeHero = () => {

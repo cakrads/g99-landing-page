@@ -1,6 +1,5 @@
-import Link from "next/link";
-
-import { SHOP_ADDRESS, SHOP_DESCRIPTION, SHOP_FB, SHOP_IG, SHOP_MOTTO, SHOP_NAME, SHOP_PHONE_SHOW, SHOP_TIKTOK } from "@/constant/env";
+import Link from "@/components/ui/link";
+import { SHOP_ADDRESS, SHOP_DESCRIPTION, SHOP_FB, SHOP_IG, SHOP_MOTTO, SHOP_NAME, SHOP_PHONE, SHOP_PHONE_2, SHOP_PHONE_SHOW, SHOP_PHONE_SHOW_2, SHOP_TIKTOK } from "@/constant/env";
 import { WA_LINK } from "@/constant/whatsapp";
 import { FacebookIcon, InstagramIcon, TiktokIcon, WhatsAppIcon } from "@/components/ui/icons/social";
 import { WaveTopBgShape, WaveTopBgShapeSM } from "@/components/ui/shapes";
@@ -37,8 +36,11 @@ export const Footer = () => {
                 <p className="text-muted-foreground mb-2">
                   {SHOP_ADDRESS}
                 </p>
-                <a href={`tel:${SHOP_PHONE_SHOW}`} className="text-muted-foreground hover:text-primary">
+                <a href={`tel:${SHOP_PHONE}`} className="text-muted-foreground hover:text-primary">
                   {SHOP_PHONE_SHOW}
+                </a><br />
+                <a href={`tel:${SHOP_PHONE_2}`} className="text-muted-foreground hover:text-primary">
+                  {SHOP_PHONE_SHOW_2}
                 </a>
               </div>
               <div>
