@@ -5,6 +5,8 @@ import { SectionHeader } from "@/components/fragments/section-header";
 import { WEB_TITLE } from "@/constant/env";
 import { useIsVisible } from "@/utils/use-in-view";
 
+import { LocationMap } from "./location-map";
+
 export const LaundryLocation = () => {
   const refInfo = useRef(null);
   const isInfoIntersecting = useIsVisible({ ref: refInfo, once: true });
@@ -35,15 +37,7 @@ export const LaundryLocation = () => {
               isMapIntersecting ? "animate-fade-right animate-once animate-ease-in-out animate-delay-500 md:animate-delay-0" : "opacity-0"
             )}
           >
-            <iframe
-              title={WEB_TITLE}
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3981.4929642183615!2d98.65544247581292!3d3.702013749503646!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3036d2aadccd6867%3A0xdaac34b9834c62a4!2sJl.%20Marelan%20Raya%20Ps.%20II%20No.145%2C%20Rengas%20Pulau%2C%20Kec.%20Medan%20Marelan%2C%20Kota%20Medan%2C%20Sumatera%20Utara%2020255!5e0!3m2!1sid!2sid!4v1720915787070!5m2!1sid!2sid"
-              width="100%"
-              height="400"
-              style={{ border: 0 }}
-              loading="lazy"
-            >
-            </iframe>
+            <LocationMap />
           </div>
           <div ref={refInfo} className="order-1 lg:order-2 flex flex-col space-y-4">
             <div className="space-y-2">
