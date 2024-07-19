@@ -12,7 +12,7 @@ export const LaundryCarpetHero = () => {
           <div className="flex flex-col lg:pt-3 xl:pt-6 space-y-4">
             <div className="space-y-2">
               <h1 className="font-bold text-3xl sm:text-5xl xl:text-6xl/none !leading-tight animate-fade-up animate-once animate-ease-in-out">
-                Laundry Karpet Terdekat di Medan, Selesai 1 Hari
+                Laundry Karpet Terdekat di Marelan, Selesai 1 Hari
               </h1>
               <p className="max-w-[600px] text-muted-foreground sm:text-xl animate-fade-up animate-once animate-ease-in-out animate-delay-100">
                 Cuci Karpet Express 1 Hari Selesai di Marelan, Medan. Layanan cuci karpet profesional dengan harga terjangkau.
