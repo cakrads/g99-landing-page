@@ -45,23 +45,13 @@ export const Footer = () => {
                 <h3 className="mb-4 text-lg font-bold">Halaman Lainnya</h3>
                 <ul className="space-y-2 text-muted-foreground">
                   <li>
-                    <Link href="#" prefetch={false}>
-                      Home
+                    <Link href="/" prefetch={false}>
+                      Beranda
                     </Link>
                   </li>
                   <li>
-                    <Link href="#" prefetch={false}>
-                      Services
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="#" prefetch={false}>
-                      About
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="#" prefetch={false}>
-                      Contact
+                    <Link href="/laundry-karpet-marelan" prefetch={false}>
+                      Laundry Karpet
                     </Link>
                   </li>
                 </ul>

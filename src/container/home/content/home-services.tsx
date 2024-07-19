@@ -106,7 +106,10 @@ const HomeServicesCard: React.FC<{
         dangerouslySetInnerHTML={{ __html: description }}
       />
       <Link
-        className="inline-flex h-10 items-center justify-center rounded-md bg-muted px-8 text-sm font-medium text-muted-foreground shadow transition-colors hover:bg-primary hover:text-primary-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
+        className={clsx(
+          "inline-flex h-10 items-center justify-center rounded-md bg-muted px-8 text-sm font-medium text-muted-foreground shadow transition-colors hover:bg-primary hover:text-primary-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50",
+          isIntersecting ? "animate-fade-up animate-once animate-ease-in-out animate-delay-[600ms]" : "opacity-0"
+        )}
         href={linkPage}
       >
         {linkText}

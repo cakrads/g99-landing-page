@@ -27,9 +27,9 @@ export const HomeHero = () => {
               </Link>
             </div>
           </div>
-          <div className="relative h-[450px] xs:h-[550px] xl:h-[600px] overflow-hidden drop-shadow-2xl">
-            <HomeImageShapesBg className="h-full w-full animate-fade-up drop-shadow-xl animate-once animate-ease-in-out animate-delay-300 md:animate-delay-75 " />
-            <div className="absolute top-0 flex justify-center w-full animate-fade-up animate-once animate-ease-in-out animate-delay-[350ms] md:animate-delay-300">
+          <div className="relative h-[450px] xs:h-[550px] xl:h-[600px] overflow-hidden drop-shadow-2xl animate-fade-up animate-once animate-ease-in-out animate-delay-300 md:animate-delay-75">
+            <HomeImageShapesBg className="h-full w-full drop-shadow-xl" />
+            <div className="absolute top-0 flex justify-center w-full">
               <Image
                 className="drop-shadow-xl"
                 src="/images/hero-image.png"

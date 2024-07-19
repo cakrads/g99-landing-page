@@ -22,7 +22,7 @@ export const LaundryLocation = () => {
   ];
 
   return (
-    <section id="our-location" className="w-full py-12 md:py-24 lg:py-32">
+    <section id="our-location" className="w-full pt-24 pb-12 md:py-24 lg:py-32">
       <div className="container">
         <SectionHeader
           title="Lokasi Kami"
@@ -49,7 +49,7 @@ export const LaundryLocation = () => {
             <div className="space-y-2">
               <h3
                 className={clsx(
-                  "text-4xl font-semibold",
+                  "text-2xl sm:text-4xl font-semibold",
                   isInfoIntersecting ? "animate-fade-left animate-once animate-ease-in-out animate-delay-100" : "opacity-0"
                 )}
               >
