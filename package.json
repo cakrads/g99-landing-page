@@ -22,6 +22,7 @@
   },
   "dependencies": {
     "@iconify-icon/react": "^2.1.0",
+    "@radix-ui/react-dialog": "^1.1.1",
     "axios": "^1.7.2",
     "class-variance-authority": "^0.7.0",
     "classnames": "^2.5.1",
@@ -51,7 +52,7 @@
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "autoprefixer": "^10.0.1",
-    "eslint": "^8",
+    "eslint": "^8.57.0",
     "eslint-config-next": "^14.2.3",
     "eslint-plugin-import": "^2.29.1",
     "eslint-plugin-storybook": "^0.6.15",
@@ -61,7 +62,9 @@
     "postcss": "^8",
     "storybook": "^7.6.10",
     "tailwindcss": "^3.3.0",
+    "tailwindcss-animated": "^1.1.2",
     "ts-node": "^10.9.2",
-    "typescript": "^5"
+    "typescript": "^5.5.3",
+    "typescript-eslint": "^7.15.0"
   }
 }

@@ -1,17 +1,24 @@
 import React from "react";
 import { Inter } from "next/font/google";
 
+import { Header } from "@/components/fragments/header";
+import { Footer } from "@/components/fragments/footer";
 import { cn } from "@/components/libs/cn";
 
 import type { Metadata } from "next";
 
-
 import "./../styles/globals.css";
 
-
-const fontSans = Inter({
+const fontHeading = Inter({
   subsets: ["latin"],
-  variable: "--font-sans",
+  display: "swap",
+  variable: "--font-heading",
+});
+
+const fontBody = Inter({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-body",
 });
 
 export const metadata: Metadata = {
@@ -28,11 +35,14 @@ export default function RootLayout({
     <html lang="en">
       <body
         className={cn(
-          "min-h-screen bg-background font-sans antialiased",
-          fontSans.variable
+          "antialiased",
+          fontHeading.variable,
+          fontBody.variable
         )}
       >
+        <Header />
         {children}
+        <Footer />
       </body>
     </html>
   );

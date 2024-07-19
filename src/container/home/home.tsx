@@ -1,0 +1,17 @@
+/**
+ * v0 by Vercel.
+ * @see https://v0.dev/t/1YfzodFjzKO
+ * Documentation: https://v0.dev/docs#integrating-generated-code-into-your-nextjs-app
+ */
+
+import { HomeHero } from "./content/home-hero";
+import { HomeBottomContent } from "./home-bottom-content";
+
+export default function HomeContainer() {
+  return (
+    <main className="flex-1">
+      <HomeHero />
+      <HomeBottomContent />
+    </main>
+  );
+}
