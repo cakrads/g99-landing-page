@@ -27,17 +27,44 @@ export const metadata: Metadata = {
   metadataBase: new URL(HOST_URL || ""),
   title: WEB_TITLE,
   description: WEB_DESCRIPTION,
-  icons: "/images/favicon.ico",
+  keywords: [
+    "laundry",
+    "laundry karpet",
+    "laundry karpet terdekat",
+    "laundry karpet marelan",
+    "laundry karpet terdekat marelan",
+  ],
+  authors: [
+    {
+      name: "cakra.ds",
+      // url: "https://www.sadmn.com",
+    },
+  ],
+  creator: "cakra.ds",
   openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: HOST_URL,
     title: WEB_TITLE,
     description: WEB_DESCRIPTION,
-    url: HOST_URL,
+    siteName: WEB_TITLE,
     images: {
       url: HOST_URL + "/images/laundry-karpet-terdekat.png",
       width: 1920,
       height: 957,
     }
-  }
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: WEB_TITLE,
+    description: WEB_DESCRIPTION,
+    // images: [`${siteConfig.url}/og.jpg`],
+    // creator: "@sadmann17",
+  },
+  icons: {
+    icon: "/favicon.ico",
+  },
+  // manifest: absoluteUrl("/site.webmanifest"),
 };
 
 export default function RootLayout({
@@ -47,6 +74,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      {/* <head>
+        <link rel="shortcut icon" href="/favicon.ico" />
+      </head> */}
       <body
         className={cn(
           "antialiased",

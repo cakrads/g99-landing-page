@@ -61,7 +61,7 @@ export const Header = () => {
           </div>
         </div>
       </nav>
-    </header >
+    </header>
   );
 };
 
@@ -94,7 +94,7 @@ const MenuItem: React.FC<{
       href={href}
       onClick={() => { onClick(); }}
       className={clsx(
-        "block py-2 pr-4 pl-3 ",
+        "block py-2 pr-4 pl-3",
         isActive
           ? "text-white rounded bg-primary md:bg-transparent md:text-primary md:p-0 dark:text-white"
           : "text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-primary md:p-0"
