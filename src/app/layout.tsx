@@ -1,14 +1,16 @@
 import React from "react";
 import { Inter } from "next/font/google";
+import Head from "next/head";
 
 import { Header } from "@/components/fragments/header";
 import { Footer } from "@/components/fragments/footer";
 import { cn } from "@/components/libs/cn";
-import { HOST_URL, WEB_DESCRIPTION, WEB_TITLE } from "@/constant/env";
+import { APPLICATION_ID_JSON, HOST_URL, WEB_DESCRIPTION, WEB_TAGS, WEB_TITLE } from "@/constant/env";
 
 import type { Metadata } from "next";
 
 import "./../styles/globals.css";
+
 
 
 const fontHeading = Inter({
@@ -27,13 +29,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(HOST_URL || ""),
   title: WEB_TITLE,
   description: WEB_DESCRIPTION,
-  keywords: [
-    "laundry",
-    "laundry karpet",
-    "laundry karpet terdekat",
-    "laundry karpet marelan",
-    "laundry karpet terdekat marelan",
-  ],
+  keywords: WEB_TAGS,
   authors: [
     {
       name: "cakra.ds",
@@ -74,9 +70,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      {/* <head>
-        <link rel="shortcut icon" href="/favicon.ico" />
-      </head> */}
+      <Head>
+        <script type="application/ld+json">
+          {JSON.stringify(APPLICATION_ID_JSON)}
+        </script>
+      </Head>
       <body
         className={cn(
           "antialiased",
