@@ -7,7 +7,7 @@
 import { HomeHero } from "./content/home-hero";
 import { HomeBottomContent } from "./home-bottom-content";
 
-export default function HomeContainer() {
+export function HomeContainer() {
   return (
     <main className="flex-1">
       <HomeHero />

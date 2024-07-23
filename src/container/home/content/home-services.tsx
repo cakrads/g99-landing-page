@@ -5,18 +5,18 @@ import clsx from "clsx";
 import Link from "@/components/ui/link";
 import { Card } from "@/components/ui/card";
 import { WaveTopBgShapeSM, WaveTopBgShape, WaveBottomBgShapeSM } from "@/components/ui/shapes";
-import { IMG_ALT } from "@/constant/env";
 import { SectionHeader } from "@/components/fragments/section-header";
 import { useIsVisible } from "@/utils/use-in-view";
+import { HOME_SERVICES_DESCRIPTION, HOME_SERVICES_TITLE, HOME_IMG_ALT } from "@/constant/seo/home-page";
 
 export const HomeServices = () => {
 
   const data = [
     {
       title: "Cuci Karpet",
-      description: "Nikmati karpet Bersih dan Higienis bebas Bakteri <b>dalam waktu 1 hari</b> dengan Mesin Pengering Modern. Rumah yang nyaman, sehat dengan harga bersahabat.",
+      description: "Dapatkan karpet Bersih dan Higienis bebas Bakteri <b>dalam waktu 1 hari</b> dengan Mesin Pengering Modern. Rumah yang nyaman, sehat dengan harga bersahabat.",
       imgSrc: "/images/rug.png",
-      imgAlt: "Cuci Karpet" + IMG_ALT,
+      imgAlt: "Cuci Karpet -" + HOME_IMG_ALT,
       linkPage: "/laundry-karpet-marelan",
       linkText: "Lihat Detail"
     },
@@ -24,7 +24,7 @@ export const HomeServices = () => {
       title: "Cuci Kering dan Lipat",
       description: "Cucian Menumpuk? Serahkan Pada Kami! Dapatkan pakaian yang Wangi, Rapi, dan Siap Pakai dengan harga bersahabat.",
       imgSrc: "/images/washing-machine.png",
-      imgAlt: "Cuci Kering dan Lipat" + IMG_ALT,
+      imgAlt: "Cuci Kering dan Lipat -" + HOME_IMG_ALT,
       linkPage: "#our-location",
       linkText: "Pesan Sekarang"
     },
@@ -32,7 +32,7 @@ export const HomeServices = () => {
       title: "Cuci Gosok",
       description: "Rasakan kenyamanan memakai pakaian yang Bersih, Wangi, dan Rapi. Tampil percaya diri dengan pakaian yang Bebas Kusut.",
       imgSrc: "/images/iron.png",
-      imgAlt: "Cuci Gosok" + IMG_ALT,
+      imgAlt: "Cuci Gosok - " + HOME_IMG_ALT,
       linkPage: "#our-location",
       linkText: "Pesan Sekarang"
     }
@@ -45,8 +45,8 @@ export const HomeServices = () => {
       <div className="bg-muted pt-24 pb-16 md:pt-28 sm:py-24 relative">
         <div className="container mx-auto px-4">
           <SectionHeader
-            title="Cuci Karpet Cepat dan Layanan Laundry Berkualitas"
-            description="Solusi cepat dan efisien untuk semua kebutuhan laundry Anda."
+            title={HOME_SERVICES_TITLE}
+            description={HOME_SERVICES_DESCRIPTION}
           />
           <div className="grid grid-cols-1 gap-8 py-12 sm:grid-cols-2 lg:grid-cols-3 px-0 xs:px-10 xs:max-w-[500px] mx-auto sm:max-w-full animate-fade-right animate-ease-in-out">
             {data.map((item, index) => (

@@ -2,7 +2,7 @@ import Image from "next/image";
 import { useRef } from "react";
 import clsx from "clsx";
 
-import { IMG_ALT_LAUNDRY_KARPET } from "@/constant/env";
+import { CARPET_WHY_DESCRIPTION, CARPET_WHY_TITLE, CARPET_IMG_ALT } from "@/constant/seo/laundry-karpet-marelan-page";
 import { SectionHeader } from "@/components/fragments/section-header";
 import { WaveBottomBgShapeSM, WaveTopBgShape, WaveTopBgShapeSM } from "@/components/ui/shapes";
 import { useIsVisible } from "@/utils/use-in-view";
@@ -28,8 +28,8 @@ export const LaundryCarpetWhy = () => {
       <div className="bg-muted pt-24 pb-16 md:pt-28 sm:py-24 relative">
         <div className="container">
           <SectionHeader
-            title="Kenapa Harus Laundry Karpet di Kami?"
-            description=""
+            title={CARPET_WHY_TITLE}
+            description={CARPET_WHY_DESCRIPTION}
           />
           <div ref={refImage} className="flex flex-col lg:flex-row gap-10 py-12 items-center">
             <div className="order-2 md:order-1 min-w-[300px] flex flex-col md:flex-row lg:flex-col gap-5">
@@ -41,7 +41,7 @@ export const LaundryCarpetWhy = () => {
               >
                 <Image
                   src="/images/laundry-karpet-terdekat-terpercaya.png"
-                  alt={IMG_ALT_LAUNDRY_KARPET}
+                  alt={CARPET_IMG_ALT}
                   fill={true}
                   className="w-full h-full top-0 left-0 object-cover rounded-3xl"
                 />
@@ -54,7 +54,7 @@ export const LaundryCarpetWhy = () => {
               >
                 <Image
                   src="/images/laundry-karpet-terdekat-jemur-karpet.png"
-                  alt={IMG_ALT_LAUNDRY_KARPET}
+                  alt={CARPET_IMG_ALT}
                   fill={true}
                   className="w-full h-full top-0 left-0 object-cover rounded-3xl"
                 />
@@ -67,7 +67,7 @@ export const LaundryCarpetWhy = () => {
               >
                 <Image
                   src="/images/laundry-karpet-terdekat-mesin-pengering-karpet.png"
-                  alt={IMG_ALT_LAUNDRY_KARPET}
+                  alt={CARPET_IMG_ALT}
                   fill={true}
                   className="w-full h-full top-0 left-0 object-cover rounded-3xl"
                 />

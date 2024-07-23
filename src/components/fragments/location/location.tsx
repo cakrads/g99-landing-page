@@ -2,8 +2,9 @@ import { useRef } from "react";
 import clsx from "clsx";
 
 import { SectionHeader } from "@/components/fragments/section-header";
-import { WEB_TITLE } from "@/constant/env";
 import { useIsVisible } from "@/utils/use-in-view";
+import { LOCATION_DESCRIPTION, LOCATION_TITLE } from "@/constant/seo/global";
+import { SHOP_ADDRESS, SHOP_NAME } from "@/constant/shop";
 
 import { LocationMap } from "./location-map";
 
@@ -27,13 +28,13 @@ export const LaundryLocation = () => {
     <section id="our-location" className="w-full pt-24 pb-12 md:py-24 lg:py-32">
       <div className="container">
         <SectionHeader
-          title="Lokasi Kami"
-          description="Ayo ke Laundry kami dan dapatkan pengalaman laundry yang menyenangkan!"
+          title={LOCATION_TITLE}
+          description={LOCATION_DESCRIPTION}
         />
         <div ref={refMap} className="mx-auto grid max-w-5xl gap-6 py-12 lg:grid-cols-2 md:gap-12">
           <div
             className={clsx(
-              "order-2 lg:order-1 flex flex-col justify-center space-y-4 border rounded-lg overflow-hidden",
+              "order-2 lg:order-1 h-[400px] flex flex-col justify-center space-y-4 border rounded-lg overflow-hidden",
               isMapIntersecting ? "animate-fade-right animate-once animate-ease-in-out animate-delay-500 md:animate-delay-0" : "opacity-0"
             )}
           >
@@ -47,7 +48,7 @@ export const LaundryLocation = () => {
                   isInfoIntersecting ? "animate-fade-left animate-once animate-ease-in-out animate-delay-100" : "opacity-0"
                 )}
               >
-                {WEB_TITLE}
+                {SHOP_NAME}
               </h3>
               <p
                 className={clsx(
@@ -55,7 +56,7 @@ export const LaundryLocation = () => {
                   isInfoIntersecting ? "animate-fade-left animate-once animate-ease-in-out animate-delay-200" : "opacity-0"
                 )}
               >
-                Jl. Marelan Raya Ps. II No.145, Rengas Pulau, Kec. Medan Marelan, Kota Medan, Sumatera Utara 20255
+                {SHOP_ADDRESS}
               </p>
               <br />
               <div

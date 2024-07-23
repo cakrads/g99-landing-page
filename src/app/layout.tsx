@@ -5,13 +5,13 @@ import Head from "next/head";
 import { Header } from "@/components/fragments/header";
 import { Footer } from "@/components/fragments/footer";
 import { cn } from "@/components/libs/cn";
-import { APPLICATION_ID_JSON, HOST_URL, WEB_DESCRIPTION, WEB_TAGS, WEB_TITLE } from "@/constant/env";
+import { APPLICATION_ID_JSON, HOME_WEB_DESCRIPTION, HOME_WEB_KEYWORDS, HOME_WEB_TITLE } from "@/constant/seo/home-page";
+import { HOST_URL } from "@/constant/env";
+import { SHOP_NAME } from "@/constant/shop";
 
 import type { Metadata } from "next";
 
 import "./../styles/globals.css";
-
-
 
 const fontHeading = Inter({
   subsets: ["latin"],
@@ -27,9 +27,9 @@ const fontBody = Inter({
 
 export const metadata: Metadata = {
   metadataBase: new URL(HOST_URL || ""),
-  title: WEB_TITLE,
-  description: WEB_DESCRIPTION,
-  keywords: WEB_TAGS,
+  title: HOME_WEB_TITLE,
+  description: HOME_WEB_DESCRIPTION,
+  keywords: HOME_WEB_KEYWORDS,
   authors: [
     {
       name: "cakra.ds",
@@ -41,9 +41,9 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: HOST_URL,
-    title: WEB_TITLE,
-    description: WEB_DESCRIPTION,
-    siteName: WEB_TITLE,
+    title: HOME_WEB_TITLE,
+    description: HOME_WEB_DESCRIPTION,
+    siteName: SHOP_NAME,
     images: {
       url: HOST_URL + "/images/laundry-karpet-terdekat.png",
       width: 1920,
@@ -52,8 +52,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: WEB_TITLE,
-    description: WEB_DESCRIPTION,
+    title: HOME_WEB_TITLE,
+    description: HOME_WEB_DESCRIPTION,
     // images: [`${siteConfig.url}/og.jpg`],
     // creator: "@sadmann17",
   },

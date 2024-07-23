@@ -2,7 +2,7 @@ import Image from "next/image";
 
 import Link from "@/components/ui/link";
 import { WA_LINK } from "@/constant/whatsapp";
-import { IMG_ALT_LAUNDRY_KARPET } from "@/constant/env";
+import { CARPET_HERO_DESCRIPTION, CARPET_HERO_TITLE, CARPET_IMG_ALT } from "@/constant/seo/laundry-karpet-marelan-page";
 
 export const LaundryCarpetHero = () => {
   return (
@@ -12,11 +12,10 @@ export const LaundryCarpetHero = () => {
           <div className="flex flex-col lg:pt-3 xl:pt-6 space-y-4">
             <div className="space-y-2">
               <h1 className="font-bold text-3xl sm:text-5xl xl:text-6xl/none !leading-tight animate-fade-up animate-once animate-ease-in-out">
-                Laundry Karpet Terdekat di Marelan, Selesai 1 Hari
+                {CARPET_HERO_TITLE}
               </h1>
               <p className="max-w-[600px] text-muted-foreground sm:text-xl animate-fade-up animate-once animate-ease-in-out animate-delay-100">
-                Cuci Karpet Express 1 Hari Selesai di Marelan, Medan. Layanan cuci karpet profesional dengan harga terjangkau.
-                {/* Jasa Laundry Karpet cepat & bersih Siap menerima layanan antar-jemput untuk daerah Bandung dan Sekitarnya */}
+                {CARPET_HERO_DESCRIPTION}
               </p>
             </div>
             <div className="flex xs:flex-row animate-fade-up animate-once animate-ease-in-out animate-delay-150">
@@ -35,7 +34,7 @@ export const LaundryCarpetHero = () => {
             <div className="relative rounded-3xl w-full h-[150px] md:h-[200px] lg:h-[150px] bg-gray-400 shadow-lg animate-fade-left animate-once animate-ease-in-out animate-delay-500 md:animate-delay-0" >
               <Image
                 src="/images/laundry-karpet-terdekat.png"
-                alt={IMG_ALT_LAUNDRY_KARPET}
+                alt={CARPET_IMG_ALT}
                 fill={true}
                 className="w-full h-full top-0 left-0 object-cover rounded-3xl"
               />
@@ -43,7 +42,7 @@ export const LaundryCarpetHero = () => {
             <div className="relative rounded-3xl w-full h-[150px] md:h-[200px] lg:h-[150px] bg-gray-400 shadow-lg animate-fade-left animate-once animate-ease-in-out animate-delay-700 md:animate-delay-150" >
               <Image
                 src="/images/laundry-karpet-terdekat-tumpukan-karpet.png"
-                alt={IMG_ALT_LAUNDRY_KARPET}
+                alt={CARPET_IMG_ALT}
                 fill={true}
                 className="w-full h-full top-0 left-0 object-cover rounded-3xl"
               />
@@ -51,7 +50,7 @@ export const LaundryCarpetHero = () => {
             <div className="relative rounded-3xl w-full h-[150px] md:h-[200px] lg:h-[150px] bg-gray-400 shadow-lg animate-fade-left animate-once animate-ease-in-out animate-delay-[900ms] md:animate-delay-300" >
               <Image
                 src="/images/laundry-karpet-terdekat-mesin-pengering-karpet.png"
-                alt={IMG_ALT_LAUNDRY_KARPET}
+                alt={CARPET_IMG_ALT}
                 fill={true}
                 className="w-full h-full top-0 left-0 object-cover rounded-3xl"
               />

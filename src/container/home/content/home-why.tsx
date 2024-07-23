@@ -7,6 +7,7 @@ import { IconDetergent } from "@/components/ui/icons/detergent";
 import { IconOneMachineOneLaundry } from "@/components/ui/icons/one-machine-one-laundry";
 import { IconPremiumAndBestPrice } from "@/components/ui/icons/premium-and-best-price";
 import { useIsVisible } from "@/utils/use-in-view";
+import { HOME_WHY_DESCRIPTION, HOME_WHY_TITLE } from "@/constant/seo/home-page";
 
 export const HomeWhy = () => {
 
@@ -51,8 +52,8 @@ export const HomeWhy = () => {
     <section className="w-full py-12 md:py-24 lg:py-32">
       <div className="container">
         <SectionHeader
-          title="Kenapa Memilih Laundry Kami?"
-          description="Nikmati Layanan Laundry Hemat dan Berkualitas!"
+          title={HOME_WHY_TITLE}
+          description={HOME_WHY_DESCRIPTION}
         />
         <div className="grid grid-cols-1 gap-8 py-12 sm:grid-cols-2 lg:grid-cols-3 px-0 xs:px-10 xs:max-w-[500px] mx-auto sm:max-w-full">
           {data.map((item, index) => (

@@ -3,10 +3,12 @@
 import Image from "next/image";
 import clsx from "clsx";
 import React from "react";
+import { usePathname } from "next/navigation";
 
 import Link from "@/components/ui/link";
 import { Sheet, SheetContent } from "@/components/ui/sheet/sheet";
-import { WEB_TITLE } from "@/constant/env";
+import { GLOBAL_IMG_ALT } from "@/constant/seo/global";
+import { ROUTES } from "@/constant/routes";
 
 export const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
@@ -21,7 +23,7 @@ export const Header = () => {
               width={36}
               height={36}
               className="mr-3 h-9"
-              alt={WEB_TITLE}
+              alt={GLOBAL_IMG_ALT}
             />
             <span className="self-center text-xl font-semibold whitespace-nowrap">Laundry G99</span>
           </a>
@@ -71,10 +73,10 @@ const MenuList: React.FC<{
 }> = ({ onLinkSelect }) => (
   <ul className="flex flex-col mt-4 font-medium md:flex-row md:space-x-8 md:mt-0">
     <li>
-      <MenuItem onClick={onLinkSelect} href="/">Beranda</MenuItem>
+      <MenuItem onClick={onLinkSelect} href={ROUTES.HOME}>Beranda</MenuItem>
     </li>
     <li>
-      <MenuItem onClick={onLinkSelect} href="/laundry-karpet-marelan">Laundry Karpet Marelan</MenuItem>
+      <MenuItem onClick={onLinkSelect} href={ROUTES.CARPET_SERVICES}>Laundry Karpet Marelan</MenuItem>
     </li>
   </ul>
 );
@@ -84,10 +86,8 @@ const MenuItem: React.FC<{
   children: React.ReactNode
   onClick: () => void
 }> = ({ href, children, onClick }) => {
-  let isActive = false;
-  if (typeof window !== "undefined") {
-    isActive = href === window.location.pathname;
-  }
+  const pathname = usePathname();
+  const isActive = pathname === href;
 
   return (
     <Link

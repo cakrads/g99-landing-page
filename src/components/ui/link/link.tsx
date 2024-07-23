@@ -1,19 +1,22 @@
+"use client";
+
 import NextLink, { LinkProps } from "next/link";
 import React from "react";
 
-import { WEB_TITLE } from "@/constant/env";
+import { GLOBAL_WEB_TITLE } from "@/constant/seo/global";
 
 const Link: React.FC<LinkProps & {
   children: React.ReactNode
   className?: string
-  target?: "_blank" | "_self" | "_parent" | "_top"
-}> = ({ children, className, target, ...props }) => {
+  target?: "_blank" | "_self" | "_parent" | "_top",
+  ariaLabel?: string
+}> = ({ children, className, target, ariaLabel, ...props }) => {
   return (
     <NextLink
       {...props}
       className={className ? className : "hover:text-primary"}
       target={target}
-      aria-label={WEB_TITLE}
+      aria-label={ariaLabel || GLOBAL_WEB_TITLE}
     >
       {children}
     </NextLink >
