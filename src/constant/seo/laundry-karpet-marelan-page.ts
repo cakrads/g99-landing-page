@@ -6,10 +6,11 @@ import { SHOP_ADDRESS, SHOP_PHONE } from "../shop";
 // laundry karpet, cuci karpet, cuci karpet Medan, laundry karpet Medan, cuci karpet Marelan, laundry karpet Marelan
 // harga laundry karpet, harga cuci karpet, cuci karpet terdekat, laundry karpet terdekat, jasa cuci karpet, jasa cuci karpet Medan, jasa cuci karpet Marelan
 
-export const CARPET_WEB_TITLE = "Laundry Karpet Marelan G99 | Cuci Karpet Terdekat, Cepat & Bersih di Medan Marelan";
+export const CARPET_WEB_TITLE = "Laundry Karpet Marelan G99 | Cuci Karpet Terdekat & Cepat di Medan Marelan";
 // GPT: Cuci Karpet Cepat & Bersih di Medan - Laundry Karpet Marelan G99
 // gemini: Cuci Karpet Marelan G99 | Laundry Karpet Cepat & Terjangkau di Medan!
-export const CARPET_WEB_DESCRIPTION = "Dapatkan karpet Bersih dan Higienis bebas Bakteri dalam 1 hari dengan Cuci Karpet Instan di Laundry Karpet Marelan G99. Layanan Premium dengan harga terjangkau. Kami melayanan sluruh wilayah Medan. Cuci Karpet Terdekat, Cepat & Bersih di Medan Marelan!";
+export const CARPET_WEB_DESCRIPTION = "Dapatkan karpet Bersih dan Higienis bebas Bakteri dalam 1 hari di Laundry Karpet Marelan G99. Cuci Karpet Terdekat, Cepat & Bersih di Medan Marelan!";
+// export const CARPET_WEB_DESCRIPTION = "Dapatkan karpet Bersih dan Higienis bebas Bakteri dalam 1 hari dengan Cuci Karpet Instan di Laundry Karpet Marelan G99. Layanan Premium dengan harga terjangkau. Kami melayanan sluruh wilayah Medan. Cuci Karpet Terdekat, Cepat & Bersih di Medan Marelan!";
 // GPT: Laundry Karpet Marelan G99 menyediakan layanan cuci karpet cepat dan berkualitas dalam satu hari dengan mesin pengering modern. Nikmati karpet bersih, bebas debu, kotoran, tungau, dan bakteri. Layanan premium dengan harga terjangkau di Medan.
 // gemini: Dapatkan karpet bersih, higienis, dan bebas tungau dalam 1 hari dengan Cuci Karpet Instan di Laundry Karpet Marelan G99 Medan! Harga bersahabat, layanan profesional. Kami melayani seluruh wilayah Medan, termasuk Marelan.
 export const CARPET_WEB_KEYWORDS_PRIMARY = [

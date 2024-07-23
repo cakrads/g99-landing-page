@@ -6,6 +6,7 @@ import { CARPET_WEB_DESCRIPTION, CARPET_WEB_KEYWORDS, CARPET_WEB_TITLE } from "@
 import { HOST_URL } from "@/constant/env";
 import { APPLICATION_ID_JSON } from "@/constant/seo/laundry-karpet-marelan-page";
 import { SHOP_NAME } from "@/constant/shop";
+import { ROUTES } from "@/constant/routes";
 
 
 export const metadata: Metadata = {
@@ -43,6 +44,7 @@ export default function Home() {
   return (
     <>
       <Head>
+        <link rel="canonical" href={HOST_URL + ROUTES.CARPET_SERVICES} />
         <script type="application/ld+json">
           {JSON.stringify(APPLICATION_ID_JSON)}
         </script>

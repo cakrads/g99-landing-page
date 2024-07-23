@@ -3,8 +3,9 @@ import { SHOP_ADDRESS, SHOP_PHONE } from "../shop";
 import { CARPET_WEB_KEYWORDS_PRIMARY } from "./laundry-karpet-marelan-page";
 
 
-export const HOME_WEB_TITLE = "Laundry Karpet Marelan G99 | Laundry Terdekat, Hemat & Berkualitas di Medan Marelan  ";
-export const HOME_WEB_DESCRIPTION = "Nikmati layanan laundry Premium dengan Harga Terjangkau, proses Cepat dan Hasil Memuaskan di LAundry Karpet Marelan G99. Kami menyediakan cuci karpet, cuci lipat, dan cuci gosok. " + HOME_WEB_TITLE;
+export const HOME_WEB_TITLE = "Laundry Karpet Marelan G99 | Laundry Terdekat & Berkualitas di Medan Marelan";
+export const HOME_WEB_DESCRIPTION = "Nikmati layanan laundry Premium dengan Harga Terjangkau, proses Cepat dan Hasil Memuaskan di Laundry Karpet Marelan G99.";
+// export const HOME_WEB_DESCRIPTION = "Nikmati layanan laundry Premium dengan Harga Terjangkau, proses Cepat dan Hasil Memuaskan di LAundry Karpet Marelan G99. Kami menyediakan cuci karpet, cuci lipat, dan cuci gosok. " + HOME_WEB_TITLE;
 // GPT: Laundry G99 menyediakan berbagai layanan laundry berkualitas di Medan. Mulai dari cuci karpet, cuci kering dan lipat, hingga cuci gosok. Dapatkan layanan cepat dan harga terjangkau dengan hasil memuaskan.
 // gemini: Dapatkan layanan laundry terbaik di Medan dengan Laundry Karpet Marelan G99! Kami menyediakan cuci pakaian, setrika uap, laundry sepatu, boneka, dan karpet. Layanan cepat, bersih, dan terjangkau. Antar jemput gratis!
 export const HOME_WEB_KEYWORDS = [

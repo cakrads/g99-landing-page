@@ -1,11 +1,10 @@
 import React from "react";
 import { Inter } from "next/font/google";
-import Head from "next/head";
 
 import { Header } from "@/components/fragments/header";
 import { Footer } from "@/components/fragments/footer";
 import { cn } from "@/components/libs/cn";
-import { APPLICATION_ID_JSON, HOME_WEB_DESCRIPTION, HOME_WEB_KEYWORDS, HOME_WEB_TITLE } from "@/constant/seo/home-page";
+import { HOME_WEB_DESCRIPTION, HOME_WEB_KEYWORDS, HOME_WEB_TITLE } from "@/constant/seo/home-page";
 import { HOST_URL } from "@/constant/env";
 import { SHOP_NAME } from "@/constant/shop";
 
@@ -70,11 +69,6 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <Head>
-        <script type="application/ld+json">
-          {JSON.stringify(APPLICATION_ID_JSON)}
-        </script>
-      </Head>
       <body
         className={cn(
           "antialiased",

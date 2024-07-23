@@ -1,9 +1,11 @@
 import { Metadata } from "next";
+import Head from "next/head";
 
 import { HomeContainer } from "@/container/home";
-import { HOME_WEB_DESCRIPTION, HOME_WEB_KEYWORDS, HOME_WEB_TITLE } from "@/constant/seo/home-page";
+import { APPLICATION_ID_JSON, HOME_WEB_DESCRIPTION, HOME_WEB_KEYWORDS, HOME_WEB_TITLE } from "@/constant/seo/home-page";
 import { HOST_URL } from "@/constant/env";
 import { SHOP_NAME } from "@/constant/shop";
+import { ROUTES } from "@/constant/routes";
 
 export const metadata: Metadata = {
   metadataBase: new URL(HOST_URL || ""),
@@ -38,6 +40,14 @@ export const metadata: Metadata = {
 
 export default function Home() {
   return (
-    <HomeContainer />
+    <>
+      <Head>
+        <link rel="canonical" href={HOST_URL + ROUTES.HOME} />
+        <script type="application/ld+json">
+          {JSON.stringify(APPLICATION_ID_JSON)}
+        </script>
+      </Head>
+      <HomeContainer />
+    </>
   );
 }
