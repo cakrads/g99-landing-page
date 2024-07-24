@@ -18,6 +18,7 @@ export const HomeBottomContent = () => {
     <>
       <HomeServices />
       <HomeWhy />
+      {/* SECTION AYO DATANG KE KAMI  */}
       <LaundryLocation />
     </>
   );

@@ -5,6 +5,7 @@ import { SectionHeader } from "@/components/fragments/section-header";
 import { useIsVisible } from "@/utils/use-in-view";
 import { LOCATION_DESCRIPTION, LOCATION_TITLE } from "@/constant/seo/global";
 import { SHOP_ADDRESS, SHOP_NAME } from "@/constant/shop";
+import { IconClock } from "@/components/ui/icons/clock";
 
 import { LocationMap } from "./location-map";
 
@@ -65,7 +66,10 @@ export const LaundryLocation = () => {
                   isInfoIntersecting ? "animate-fade-left animate-once animate-ease-in-out animate-delay-300" : "opacity-0"
                 )}
               >
-                <h4 className="font-semibold">Jam Operasional:</h4>
+                <h4 className="font-semibold flex flex-row gap-2 items-center">
+                  <IconClock />
+                  Jam Operasional:
+                </h4>
                 {days.map((entry, index) => (
                   <div key={index + entry.day} className="flex w-64 justify-between my-1">
                     <span>{entry.day}</span>
