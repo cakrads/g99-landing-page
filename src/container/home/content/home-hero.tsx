@@ -1,13 +1,15 @@
 
 import Image from "next/image";
 
-import Link from "@/components/ui/link";
 import { HomeImageShapesBg } from "@/components/ui/shapes";
 import { HOME_HERO_DESCRIPTION, HOME_HERO_TITLE, HOME_IMG_ALT } from "@/constant/seo/home-page";
+
+import { HomeHeroCtaBtn, HomeHeroTracker } from "../home-tracker";
 
 export const HomeHero = () => {
   return (
     <section className="w-full pt-16 pb-20 sm:py-20">
+      <HomeHeroTracker />
       <div className="container">
         <div className="grid gap-12 lg:grid-cols-[1fr_500px] xl:grid-cols-[1fr_500px]">
           <div className="flex flex-col justify-center items-center lg:items-start space-y-6">
@@ -20,13 +22,7 @@ export const HomeHero = () => {
               </p>
             </div>
             <div className="flex xs:flex-row animate-fade-up animate-once animate-ease-in-out animate-delay-150">
-              <Link
-                href="#our-location"
-                className="inline-flex h-10 items-center justify-center rounded-md bg-primary px-8 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
-                prefetch={false}
-              >
-                Pesan Sekarang
-              </Link>
+              <HomeHeroCtaBtn />
             </div>
           </div>
           <div className="relative h-[450px] xs:h-[550px] xl:h-[500px] overflow-hidden drop-shadow-2xl animate-fade-up animate-once animate-ease-in-out animate-delay-300 md:animate-delay-75">

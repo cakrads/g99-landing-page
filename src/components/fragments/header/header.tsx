@@ -12,9 +12,27 @@ import { ROUTES } from "@/constant/routes";
 
 export const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+  const [shadow, setShadow] = React.useState(false);
+
+  React.useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 50) {
+        setShadow(true);
+      } else {
+        setShadow(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
-    <header className="sticky top-0 lef-0 z-10 bg-white shadow-sm">
+    <header className={clsx(
+      "sticky top-0 lef-0 z-10 bg-white",
+      "transition-shadow duration-300 ease-in-out",
+      shadow ? "shadow-md" : ""
+    )}>
       <nav className="bg-white border-gray-200 py-2.5">
         <div className="flex flex-wrap justify-between items-center mx-auto container">
           <a href="/" className="flex items-center">

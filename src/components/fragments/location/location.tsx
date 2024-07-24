@@ -1,11 +1,14 @@
 import { useRef } from "react";
 import clsx from "clsx";
+import { usePathname } from "next/navigation";
 
 import { SectionHeader } from "@/components/fragments/section-header";
 import { useIsVisible } from "@/utils/use-in-view";
 import { LOCATION_DESCRIPTION, LOCATION_TITLE } from "@/constant/seo/global";
 import { SHOP_ADDRESS, SHOP_NAME } from "@/constant/shop";
 import { IconClock } from "@/components/ui/icons/clock";
+import { useTrackEnterSection } from "@/libs/analytic/use-enter-section";
+import { ROUTES } from "@/constant/routes";
 
 import { LocationMap } from "./location-map";
 
@@ -14,6 +17,14 @@ export const LaundryLocation = () => {
   const isInfoIntersecting = useIsVisible({ ref: refInfo, once: true });
   const refMap = useRef(null);
   const isMapIntersecting = useIsVisible({ ref: refMap, once: true });
+
+  const pathname = usePathname();
+  const { ref } = useTrackEnterSection({
+    envetKey: pathname === ROUTES.HOME
+      ? "enter_home_location"
+      : "enter_carpet_service_location",
+    featureKey: "Home Page",
+  });
 
   const days = [
     { day: "Senin", time: "09:00 - 21:00 WIB" },
@@ -26,7 +37,7 @@ export const LaundryLocation = () => {
   ];
 
   return (
-    <section id="our-location" className="w-full pt-24 pb-12 md:py-24 lg:py-32">
+    <section ref={ref} id="our-location" className="w-full pt-24 pb-12 md:py-24 lg:py-32">
       <div className="container">
         <SectionHeader
           title={LOCATION_TITLE}
@@ -66,8 +77,8 @@ export const LaundryLocation = () => {
                   isInfoIntersecting ? "animate-fade-left animate-once animate-ease-in-out animate-delay-300" : "opacity-0"
                 )}
               >
-                <h4 className="font-semibold flex flex-row gap-2 items-center">
-                  <IconClock />
+                <h4 className="font-semibold flex flex-row gap-1 items-center">
+                  <IconClock className="text-base" />
                   Jam Operasional:
                 </h4>
                 {days.map((entry, index) => (

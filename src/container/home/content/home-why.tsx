@@ -8,8 +8,13 @@ import { IconOneMachineOneLaundry } from "@/components/ui/icons/one-machine-one-
 import { IconPremiumAndBestPrice } from "@/components/ui/icons/premium-and-best-price";
 import { useIsVisible } from "@/utils/use-in-view";
 import { HOME_WHY_DESCRIPTION, HOME_WHY_TITLE } from "@/constant/seo/home-page";
+import { useTrackEnterSection } from "@/libs/analytic/use-enter-section";
 
 export const HomeWhy = () => {
+  const { ref } = useTrackEnterSection({
+    envetKey: "enter_home_why",
+    featureKey: "Home Page",
+  });
 
   const data = [
     {
@@ -49,7 +54,7 @@ export const HomeWhy = () => {
   ];
 
   return (
-    <section className="w-full py-12 md:py-24 lg:py-32">
+    <section ref={ref} className="w-full py-12 md:py-24 lg:py-32">
       <div className="container">
         <SectionHeader
           title={HOME_WHY_TITLE}

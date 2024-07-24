@@ -6,10 +6,12 @@
 
 import { HomeHero } from "./content/home-hero";
 import { HomeBottomContent } from "./home-bottom-content";
+import { HomePageTracker } from "./home-tracker";
 
 export function HomeContainer() {
   return (
     <main className="flex-1">
+      <HomePageTracker />
       <HomeHero />
       <HomeBottomContent />
     </main>

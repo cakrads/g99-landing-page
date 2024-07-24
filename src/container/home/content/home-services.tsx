@@ -1,5 +1,5 @@
 import Image from "next/image";
-import React from "react";
+import React, { useEffect } from "react";
 import clsx from "clsx";
 
 import Link from "@/components/ui/link";
@@ -8,8 +8,19 @@ import { WaveTopBgShapeSM, WaveTopBgShape, WaveBottomBgShapeSM } from "@/compone
 import { SectionHeader } from "@/components/fragments/section-header";
 import { useIsVisible } from "@/utils/use-in-view";
 import { HOME_SERVICES_DESCRIPTION, HOME_SERVICES_TITLE, HOME_IMG_ALT } from "@/constant/seo/home-page";
+import { useTrackEnterSection } from "@/libs/analytic/use-enter-section";
+import { useAnalytic } from "@/libs/analytic/provider";
 
 export const HomeServices = () => {
+  const { ref, isInView } = useTrackEnterSection({
+    envetKey: "enter_home_services",
+    featureKey: "Home Page",
+  });
+  const {
+    handleClickCarpet,
+    handleClickLaundryDry,
+    handleClickLaundryIron
+  } = useHomeServicesTracker({ isInView });
 
   const data = [
     {
@@ -18,7 +29,8 @@ export const HomeServices = () => {
       imgSrc: "/images/rug.png",
       imgAlt: "Cuci Karpet -" + HOME_IMG_ALT,
       linkPage: "/laundry-karpet-marelan",
-      linkText: "Lihat Detail"
+      linkText: "Lihat Detail",
+      onclick: handleClickCarpet
     },
     {
       title: "Cuci Kering dan Lipat",
@@ -26,7 +38,8 @@ export const HomeServices = () => {
       imgSrc: "/images/washing-machine.png",
       imgAlt: "Cuci Kering dan Lipat -" + HOME_IMG_ALT,
       linkPage: "#our-location",
-      linkText: "Pesan Sekarang"
+      linkText: "Pesan Sekarang",
+      onclick: handleClickLaundryDry
     },
     {
       title: "Cuci Gosok",
@@ -34,12 +47,13 @@ export const HomeServices = () => {
       imgSrc: "/images/iron.png",
       imgAlt: "Cuci Gosok - " + HOME_IMG_ALT,
       linkPage: "#our-location",
-      linkText: "Pesan Sekarang"
+      linkText: "Pesan Sekarang",
+      onclick: handleClickLaundryIron
     }
   ];
 
   return (
-    <section>
+    <section ref={ref}>
       <WaveTopBgShapeSM className="w-full block lg:hidden" />
       <WaveTopBgShape className="w-full hidden lg:block" />
       <div className="bg-muted pt-24 pb-16 md:pt-28 sm:py-24 relative">
@@ -51,6 +65,7 @@ export const HomeServices = () => {
           <div className="grid grid-cols-1 gap-8 py-12 sm:grid-cols-2 lg:grid-cols-3 px-0 xs:px-10 xs:max-w-[500px] mx-auto sm:max-w-full animate-fade-right animate-ease-in-out">
             {data.map((item, index) => (
               <HomeServicesCard
+                onClick={item.onclick}
                 key={`${index} - ${item.title}`}
                 title={item.title}
                 description={item.description}
@@ -75,7 +90,8 @@ const HomeServicesCard: React.FC<{
   imgAlt: string;
   linkPage: string;
   linkText: string;
-}> = ({ title, description, imgSrc, imgAlt, linkPage, linkText }) => {
+  onClick: () => void;
+}> = ({ title, description, imgSrc, imgAlt, linkPage, linkText, onClick }) => {
   const ref = React.useRef(null);
   const isIntersecting = useIsVisible({ ref, once: true });
 
@@ -107,13 +123,50 @@ const HomeServicesCard: React.FC<{
       />
       <Link
         className={clsx(
-          "inline-flex h-10 items-center justify-center rounded-md bg-muted px-8 text-sm font-medium text-muted-foreground shadow transition-colors hover:bg-primary hover:text-primary-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50",
+          "inline-flex h-10 items-center justify-center rounded-md px-8 text-sm font-medium text-muted-foreground shadow transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50",
+          linkPage === "/laundry-karpet-marelan"
+            ? "bg-secondary text-white hover:bg-secondary/90"
+            : "bg-muted hover:bg-primary hover:text-primary-foreground",
           isIntersecting ? "animate-fade-up animate-once animate-ease-in-out animate-delay-[600ms]" : "opacity-0"
         )}
         href={linkPage}
+        onClick={onClick}
       >
         {linkText}
       </Link>
     </Card>
   );
+};
+
+const useHomeServicesTracker = ({ isInView }: { isInView: boolean }) => {
+  const analytic = useAnalytic();
+
+  useEffect(() => {
+    if (isInView) {
+      analytic.trackStart("click_home_service_carpet");
+      analytic.trackStart("click_home_service_laundry_dry");
+      analytic.trackStart("click_home_service_laundry_iron");
+    }
+  }, [isInView, analytic]);
+
+  const handleClickCarpet = () => {
+    analytic.trackEnd("click_home_service_carpet");
+    analytic.trackEvent("click_home_service_carpet", "Home Page", { success: 1, message: "OK" });
+  };
+
+  const handleClickLaundryDry = () => {
+    analytic.trackEnd("click_home_service_laundry_dry");
+    analytic.trackEvent("click_home_service_laundry_dry", "Home Page", { success: 1, message: "OK" });
+  };
+
+  const handleClickLaundryIron = () => {
+    analytic.trackEnd("click_home_service_laundry_iron");
+    analytic.trackEvent("click_home_service_laundry_iron", "Home Page", { success: 1, message: "OK" });
+  };
+
+  return {
+    handleClickCarpet,
+    handleClickLaundryDry,
+    handleClickLaundryIron,
+  };
 };
