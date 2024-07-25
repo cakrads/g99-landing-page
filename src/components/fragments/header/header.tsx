@@ -9,6 +9,7 @@ import Link from "@/components/ui/link";
 import { Sheet, SheetContent } from "@/components/ui/sheet/sheet";
 import { GLOBAL_IMG_ALT } from "@/constant/seo/global";
 import { ROUTES } from "@/constant/routes";
+import { useAnalytic } from "@/libs/analytic/provider";
 
 export const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
@@ -27,6 +28,8 @@ export const Header = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const { handleClickNavLogo } = useHeaderTracker();
+
   return (
     <header className={clsx(
       "sticky top-0 lef-0 z-10 bg-white",
@@ -35,7 +38,7 @@ export const Header = () => {
     )}>
       <nav className="bg-white border-gray-200 py-2.5">
         <div className="flex flex-wrap justify-between items-center mx-auto container">
-          <a href="/" className="flex items-center">
+          <Link href="/" className="flex items-center" onClick={handleClickNavLogo}>
             <Image
               src="/images/washing-machine.png"
               width={36}
@@ -44,7 +47,7 @@ export const Header = () => {
               alt={GLOBAL_IMG_ALT}
             />
             <span className="self-center text-xl font-semibold whitespace-nowrap">Laundry G99</span>
-          </a>
+          </Link>
           <div className="flex items-center md:order-2 md:hidden">
             {/* <a href="#" className="text-gray-800 hover:bg-gray-50 focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2">Log in</a> */}
             {/* <a href="#" className="text-white bg-primary hover:bg-primary/90 focus:ring-4 focus:ring-primary/70 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2">Get started</a> */}
@@ -71,13 +74,13 @@ export const Header = () => {
                   </SheetDescription>
                 </SheetHeader> */}
                 <div className="justify-between items-center w-full lg:flex lg:w-auto lg:order-1">
-                  <MenuList onLinkSelect={() => { setIsMenuOpen(false); }} />
+                  <MenuList onLinkClick={() => { setIsMenuOpen(false); }} />
                 </div>
               </SheetContent>
             </Sheet>
           </div>
           <div className="hidden justify-between items-center w-full md:flex md:w-auto md:order-1">
-            <MenuList onLinkSelect={() => { setIsMenuOpen(false); }} />
+            <MenuList onLinkClick={() => { setIsMenuOpen(false); }} />
           </div>
         </div>
       </nav>
@@ -87,17 +90,37 @@ export const Header = () => {
 
 
 const MenuList: React.FC<{
-  onLinkSelect: () => void
-}> = ({ onLinkSelect }) => (
-  <ul className="flex flex-col mt-4 font-medium md:flex-row md:space-x-8 md:mt-0">
-    <li>
-      <MenuItem onClick={onLinkSelect} href={ROUTES.HOME}>Beranda</MenuItem>
-    </li>
-    <li>
-      <MenuItem onClick={onLinkSelect} href={ROUTES.CARPET_SERVICES}>Laundry Karpet Marelan</MenuItem>
-    </li>
-  </ul>
-);
+  onLinkClick: () => void
+}> = ({ onLinkClick }) => {
+  const { handleClickNavHome, handleClickNavCarpetService } = useHeaderLinkTracker();
+
+  return (
+    <ul className="flex flex-col mt-4 font-medium md:flex-row md:space-x-8 md:mt-0">
+      <li>
+        <MenuItem
+          onClick={() => {
+            onLinkClick();
+            handleClickNavHome();
+          }}
+          href={ROUTES.HOME}
+        >
+          Beranda
+        </MenuItem>
+      </li>
+      <li>
+        <MenuItem
+          onClick={() => {
+            onLinkClick();
+            handleClickNavCarpetService();
+          }}
+          href={ROUTES.CARPET_SERVICES}
+        >
+          Laundry Karpet Marelan
+        </MenuItem>
+      </li>
+    </ul>
+  );
+};
 
 const MenuItem: React.FC<{
   href: string
@@ -121,4 +144,45 @@ const MenuItem: React.FC<{
       {children}
     </Link>
   );
+};
+
+const useHeaderTracker = () => {
+  const analytic = useAnalytic();
+
+  React.useEffect(() => {
+    analytic.trackStart("click_nav_logo");
+  }, [analytic]);
+
+  const handleClickNavLogo = () => {
+    analytic.trackEnd("click_nav_logo");
+    analytic.trackEvent("click_nav_logo", "Global", { success: 1, message: "OK" });
+  };
+
+  return {
+    handleClickNavLogo,
+  };
+};
+
+const useHeaderLinkTracker = () => {
+  const analytic = useAnalytic();
+
+  React.useEffect(() => {
+    analytic.trackStart("click_nav_home");
+    analytic.trackStart("click_nav_carpet_service");
+  }, [analytic]);
+
+  const handleClickNavHome = () => {
+    analytic.trackEnd("click_nav_home");
+    analytic.trackEvent("click_nav_home", "Global", { success: 1, message: "OK" });
+  };
+
+  const handleClickNavCarpetService = () => {
+    analytic.trackEnd("click_nav_carpet_service");
+    analytic.trackEvent("click_nav_carpet_service", "Global", { success: 1, message: "OK" });
+  };
+
+  return {
+    handleClickNavHome,
+    handleClickNavCarpetService,
+  };
 };

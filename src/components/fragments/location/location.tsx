@@ -19,12 +19,16 @@ export const LaundryLocation = () => {
   const isMapIntersecting = useIsVisible({ ref: refMap, once: true });
 
   const pathname = usePathname();
-  const { ref } = useTrackEnterSection({
-    envetKey: pathname === ROUTES.HOME
-      ? "enter_home_location"
-      : "enter_carpet_service_location",
-    featureKey: "Home Page",
-  });
+  const { ref } = useTrackEnterSection(
+    pathname === ROUTES.HOME
+      ? {
+        envetKey: "enter_home_footer",
+        featureKey: "Home Page",
+      } : {
+        envetKey: "enter_carpet_service_footer",
+        featureKey: "Carpet Service Page",
+      }
+  );
 
   const days = [
     { day: "Senin", time: "09:00 - 21:00 WIB" },

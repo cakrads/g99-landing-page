@@ -1,12 +1,13 @@
 import Image from "next/image";
 
-import Link from "@/components/ui/link";
-import { WA_LINK } from "@/constant/whatsapp";
 import { CARPET_HERO_DESCRIPTION, CARPET_HERO_TITLE, CARPET_IMG_ALT } from "@/constant/seo/laundry-karpet-marelan-page";
+
+import { CarpetServiceCtaBtn, CarpetServiceHeroTracker } from "../service-laundry-carpet-tracker";
 
 export const LaundryCarpetHero = () => {
   return (
     <section className="w-full pt-16 pb-20 sm:py-20">
+      <CarpetServiceHeroTracker />
       <div className="container">
         <div className="flex flex-col lg:flex-row gap-10">
           <div className="flex flex-col lg:pt-3 xl:pt-6 space-y-4">
@@ -19,15 +20,7 @@ export const LaundryCarpetHero = () => {
               </p>
             </div>
             <div className="flex xs:flex-row animate-fade-up animate-once animate-ease-in-out animate-delay-150">
-              <Link
-                href={WA_LINK}
-                className="inline-flex h-10 items-center justify-center rounded-md bg-primary px-8 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
-                prefetch={false}
-                target="_blank"
-              >
-                Pesan Sekarang
-              </Link>
-
+              <CarpetServiceCtaBtn />
             </div>
           </div>
           <div className="min-w-[300px] flex flex-col md:flex-row lg:flex-col gap-5">

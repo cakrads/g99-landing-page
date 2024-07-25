@@ -6,12 +6,18 @@ import { CARPET_WHY_DESCRIPTION, CARPET_WHY_TITLE, CARPET_IMG_ALT } from "@/cons
 import { SectionHeader } from "@/components/fragments/section-header";
 import { WaveBottomBgShapeSM, WaveTopBgShape, WaveTopBgShapeSM } from "@/components/ui/shapes";
 import { useIsVisible } from "@/utils/use-in-view";
+import { useTrackEnterSection } from "@/libs/analytic/use-enter-section";
 
 export const LaundryCarpetWhy = () => {
   const refText = useRef(null);
   const isTextIntersecting = useIsVisible({ ref: refText, once: true });
   const refImage = useRef(null);
   const isImageIntersecting = useIsVisible({ ref: refImage, once: true });
+
+  const { ref } = useTrackEnterSection({
+    envetKey: "enter_carpet_service_why",
+    featureKey: "Carpet Service Page",
+  });
 
   const data = [
     "Laundry kami melayani GRATIS Antar Jemput untuk wilayah Medan.",
@@ -22,7 +28,7 @@ export const LaundryCarpetWhy = () => {
   ];
 
   return (
-    <section>
+    <section ref={ref}>
       <WaveTopBgShapeSM className="w-full block lg:hidden" />
       <WaveTopBgShape className="w-full hidden lg:block" />
       <div className="bg-muted pt-24 pb-16 md:pt-28 sm:py-24 relative">

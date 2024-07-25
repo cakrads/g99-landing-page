@@ -1,0 +1,56 @@
+"use client";
+
+import React, { useEffect } from "react";
+
+import { useAnalytic } from "@/libs/analytic/provider";
+import { useTrackEnterSection } from "@/libs/analytic/use-enter-section";
+import Link from "@/components/ui/link";
+import { WA_LINK } from "@/constant/whatsapp";
+
+export const CarpetServicePageTracker = () => {
+  const analytic = useAnalytic();
+
+  useEffect(() => {
+    analytic.trackStart("enter_carpet_service_why");
+    analytic.trackStart("enter_carpet_service_location");
+    analytic.trackStart("enter_carpet_service_footer");
+  }, [analytic]);
+
+  return null;
+};
+
+export const CarpetServiceHeroTracker = () => {
+  // Hero is SSR, so need this hidden div to track in client
+  const { ref } = useTrackEnterSection({
+    envetKey: "enter_carpet_service_hero",
+    featureKey: "Carpet Service Page",
+    hasStartTrack: false,
+  });
+
+  return <div ref={ref} className="hidden" />;
+};
+
+export const CarpetServiceCtaBtn = () => {
+  const analytic = useAnalytic();
+
+  useEffect(() => {
+    analytic.trackStart("click_carpet_service_hero_cta");
+  }, [analytic]);
+
+  const handleClickCta = () => {
+    analytic.trackEnd("click_carpet_service_hero_cta");
+    analytic.trackEvent("click_carpet_service_hero_cta", "Carpet Service Page", { success: 1, message: "OK" });
+  };
+
+  return (
+    <Link
+      href={WA_LINK}
+      className="inline-flex h-10 items-center justify-center rounded-md bg-primary px-8 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
+      prefetch={false}
+      target="_blank"
+      onClick={handleClickCta}
+    >
+      Pesan Sekarang
+    </Link>
+  );
+};

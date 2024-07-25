@@ -18,7 +18,7 @@ enum eventKey {
   "click_nav_logo",
   "click_nav_home",
   "click_nav_carpet_service",
-  "click_nav_whatsapp",
+  // "click_nav_whatsapp",
 
   "click_fab_whatsapp",
   "click_footer_phone1",

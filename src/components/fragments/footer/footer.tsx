@@ -48,7 +48,7 @@ export const Footer = () => {
         onClick={handleClickFABWhatsapp}
       >
         <WhatsAppIcon className="w-12 h-12 md:w-14 md:h-14" />
-        <b className="text-xs md:text-sm">PESAN JASA KAMI</b>
+        <b className="text-xs md:text-sm drop-shadow-xl">PESAN JASA KAMI</b>
         {/* <span className="sr-only">WhatsApp</span> */}
       </Link>
       <footer ref={ref}>

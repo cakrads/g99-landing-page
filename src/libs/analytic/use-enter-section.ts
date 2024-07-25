@@ -11,7 +11,6 @@ interface IUseEnterSection {
   hasStartTrack?: boolean;
 }
 
-
 export const useTrackEnterSection = (props: IUseEnterSection) => {
   const ref = React.useRef<HTMLDivElement>(null);
   const { envetKey, featureKey, active = true, hasStartTrack = true } = props;
