@@ -1,0 +1,11 @@
+.scrollable-x-backdrop-right {
+  background: linear-gradient(to left, white, transparent);
+}
+
+.scrollable-x-button {
+  box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.16);
+}
+
+.scrollable-x-backdrop-left {
+  background: linear-gradient(to right, white, transparent);
+}

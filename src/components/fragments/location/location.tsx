@@ -31,13 +31,13 @@ export const LaundryLocation = () => {
   );
 
   const days = [
-    { day: "Senin", time: "09:00 - 21:00 WIB" },
-    { day: "Selasa", time: "09:00 - 21:00 WIB" },
-    { day: "Rabu", time: "09:00 - 21:00 WIB" },
-    { day: "Kamis", time: "09:00 - 21:00 WIB" },
-    { day: "Jum'at", time: "09:00 - 21:00 WIB" },
-    { day: "Sabtu", time: "09:00 - 21:00 WIB" },
-    { day: "Minggu", time: "09:00 - 21:00 WIB" },
+    { day: "Senin", time: "07:00 - 21:00 WIB" },
+    { day: "Selasa", time: "07:00 - 21:00 WIB" },
+    { day: "Rabu", time: "07:00 - 21:00 WIB" },
+    { day: "Kamis", time: "07:00 - 21:00 WIB" },
+    { day: "Jum'at", time: "07:00 - 21:00 WIB" },
+    { day: "Sabtu", time: "07:00 - 21:00 WIB" },
+    { day: "Minggu", time: "07:00 - 21:00 WIB" },
   ];
 
   return (

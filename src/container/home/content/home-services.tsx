@@ -1,56 +1,32 @@
 import Image from "next/image";
-import React, { useEffect } from "react";
+import React from "react";
 import clsx from "clsx";
 
 import Link from "@/components/ui/link";
-import { Card } from "@/components/ui/card";
 import { WaveTopBgShapeSM, WaveTopBgShape, WaveBottomBgShapeSM } from "@/components/ui/shapes";
 import { SectionHeader } from "@/components/fragments/section-header";
-import { useIsVisible } from "@/utils/use-in-view";
 import { HOME_SERVICES_DESCRIPTION, HOME_SERVICES_TITLE, HOME_IMG_ALT } from "@/constant/seo/home-page";
 import { useTrackEnterSection } from "@/libs/analytic/use-enter-section";
-import { useAnalytic } from "@/libs/analytic/provider";
+// import { useAnalytic } from "@/libs/analytic/provider";
+import { ScrollableX } from "@/components/ui/scrollable-x";
+import { useIsVisible } from "@/utils/use-in-view";
+import { Card } from "@/components/ui/card";
+
+type ServicesData = {
+  title: string;
+  description: string;
+  imgSrc: string;
+  imgAlt: string;
+  linkPage: string;
+  linkText: string;
+  onClick: () => void
+}
 
 export const HomeServices = () => {
-  const { ref, isInView } = useTrackEnterSection({
+  const { ref } = useTrackEnterSection({
     envetKey: "enter_home_services",
     featureKey: "Home Page",
   });
-  const {
-    handleClickCarpet,
-    handleClickLaundryDry,
-    handleClickLaundryIron
-  } = useHomeServicesTracker({ isInView });
-
-  const data = [
-    {
-      title: "Cuci Karpet",
-      description: "Dapatkan karpet Bersih dan Higienis bebas Bakteri <b>dalam waktu 1 hari</b> dengan Mesin Pengering Modern. Rumah yang nyaman, sehat dengan harga bersahabat.",
-      imgSrc: "/images/rug.png",
-      imgAlt: "Cuci Karpet -" + HOME_IMG_ALT,
-      linkPage: "/laundry-karpet-marelan",
-      linkText: "Lihat Detail",
-      onclick: handleClickCarpet
-    },
-    {
-      title: "Cuci Kering dan Lipat",
-      description: "Cucian Menumpuk? Serahkan Pada Kami! Dapatkan pakaian yang Wangi, Rapi, dan Siap Pakai dengan harga bersahabat.",
-      imgSrc: "/images/washing-machine.png",
-      imgAlt: "Cuci Kering dan Lipat -" + HOME_IMG_ALT,
-      linkPage: "#our-location",
-      linkText: "Pesan Sekarang",
-      onclick: handleClickLaundryDry
-    },
-    {
-      title: "Cuci Gosok",
-      description: "Rasakan kenyamanan memakai pakaian yang Bersih, Wangi, dan Rapi. Tampil percaya diri dengan pakaian yang Bebas Kusut.",
-      imgSrc: "/images/iron.png",
-      imgAlt: "Cuci Gosok - " + HOME_IMG_ALT,
-      linkPage: "#our-location",
-      linkText: "Pesan Sekarang",
-      onclick: handleClickLaundryIron
-    }
-  ];
 
   return (
     <section ref={ref}>
@@ -59,23 +35,13 @@ export const HomeServices = () => {
       <div className="bg-muted pt-24 pb-16 md:pt-28 sm:py-24 relative">
         <div className="container mx-auto px-4">
           <SectionHeader
+            classNames="mb-12"
             title={HOME_SERVICES_TITLE}
             description={HOME_SERVICES_DESCRIPTION}
           />
-          <div className="grid grid-cols-1 gap-8 py-12 sm:grid-cols-2 lg:grid-cols-3 px-0 xs:px-10 xs:max-w-[500px] mx-auto sm:max-w-full animate-fade-right animate-ease-in-out">
-            {data.map((item, index) => (
-              <HomeServicesCard
-                onClick={item.onclick}
-                key={`${index} - ${item.title}`}
-                title={item.title}
-                description={item.description}
-                imgSrc={item.imgSrc}
-                imgAlt={item.imgAlt}
-                linkPage={item.linkPage}
-                linkText={item.linkText}
-              />
-            ))}
-          </div>
+          <HomeServicesHouseSuplies />
+          <HomeServicesPersonalSuplies />
+          <HomeServicesWashingClothes />
         </div>
       </div>
       <WaveBottomBgShapeSM className="w-full" />
@@ -83,90 +49,314 @@ export const HomeServices = () => {
   );
 };
 
-const HomeServicesCard: React.FC<{
+const HomeServicesHouseSuplies = () => {
+  const dataHouseSuplies: ServicesData[] = [
+    {
+      title: "Cuci Karpet",
+      // description: "Dapatkan karpet Bersih dan Higienis bebas Bakteri <b>dalam waktu 1 hari</b> dengan Mesin Pengering Modern. Rumah yang nyaman, sehat dengan harga bersahabat.",
+      description: "Dapatkan karpet Bersih dan Higienis bebas Bakteri <b>dalam waktu 1 hari</b> dengan Mesin Pengering Modern.",
+      imgSrc: "/images/services/cuci-karpet-2.jpg",
+      imgAlt: "Cuci Karpet -" + HOME_IMG_ALT,
+      linkPage: "/laundry-karpet-marelan",
+      linkText: "Lihat Detail",
+      onClick: () => { }
+    },
+    {
+      title: "Cuci Spring Bed",
+      description: "Hilangkan Tungau dan Bakteri pada kasur Anda, nikmati tidur yang lebih Sehat dan Nyaman.",
+      imgSrc: "/images/services/cuci-spring-bed.jpg",
+      imgAlt: "Cuci Spring Bed -" + HOME_IMG_ALT,
+      linkPage: "#our-location",
+      linkText: "Pesan Sekarang",
+      onClick: () => { }
+    },
+    {
+      title: "Cuci Bantal",
+      description: "Dapatkan bantal yang Bersih untuk tidur yang lebih Nyaman dan lebih Nyenyak.",
+      imgSrc: "/images/services/cuci-bantal.jpg",
+      imgAlt: "Cuci Bantal -" + HOME_IMG_ALT,
+      linkPage: "#our-location",
+      linkText: "Pesan Sekarang",
+      onClick: () => { }
+    },
+    {
+      title: "Cuci Sofa",
+      description: "Percantik ruang tamu Anda dengan Sofa yang Bersih dan Bebas Noda dengan layanan Cuci Sofa kami.",
+      imgSrc: "/images/services/cuci-sofa-2.jpg",
+      imgAlt: "Cuci Sofa Terdekat -" + HOME_IMG_ALT,
+      linkPage: "#our-location",
+      linkText: "Pesan Sekarang",
+      onClick: () => { }
+    },
+    {
+      title: "Cuci Stroller",
+      description: "Pastikan stroller bayi Anda Bersih dan Higienis agar si kecil tetap Sehat dan Nyaman.",
+      imgSrc: "/images/services/cuci-stroller-3.jpg",
+      imgAlt: "Cuci Stroller Terdekat -" + HOME_IMG_ALT,
+      linkPage: "#our-location",
+      linkText: "Pesan Sekarang",
+      onClick: () => { }
+    },
+    {
+      title: "Cuci Gorden",
+      description: "Bersihkan dan cuci gorden Anda dari Debu dan Kotoran untuk suasana rumah yang Lebih Segar.",
+      imgSrc: "/images/services/cuci-gorden.jpg",
+      imgAlt: "Cuci Gorden Terdekat -" + HOME_IMG_ALT,
+      linkPage: "#our-location",
+      linkText: "Pesan Sekarang",
+      onClick: () => { }
+    },
+  ];
+
+  return (
+    <ServicesList
+      title="Layanan Cuci Perlengkapan Rumah dan Keluarga :"
+      data={dataHouseSuplies}
+    />
+  );
+};
+
+const HomeServicesPersonalSuplies = () => {
+  const dataPersonalSuplies = [
+    {
+      title: "Cuci Sepatu",
+      description: "Buat sepatu Anda kembali Bersih terlihat Seperti Baru dengan layanan Cuci Sepatu kami.",
+      imgSrc: "/images/services/cuci-sepatu.jpg",
+      imgAlt: "Cuci Sepatu -" + HOME_IMG_ALT,
+      linkPage: "#our-location",
+      linkText: "Pesan Sekarang",
+      onClick: () => { }
+    },
+    {
+      title: "Cuci Tas",
+      description: "Pastikan tas Anda tetap bersih dan awet dengan layanan cuci tas kami. Tas Anda akan terlihat seperti Baru lagi.",
+      imgSrc: "/images/services/cuci-tas.jpg",
+      imgAlt: "Cuci Tas -" + HOME_IMG_ALT,
+      linkPage: "#our-location",
+      linkText: "Pesan Sekarang",
+      onClick: () => { }
+    },
+    {
+      title: "Cuci Helm",
+      description: "Jaga kebersihan helm Anda untuk Kenyamanan dan Keamanan berkendara.",
+      imgSrc: "/images/services/cuci-helm.jpg",
+      imgAlt: "Cuci Helm -" + HOME_IMG_ALT,
+      linkPage: "#our-location",
+      linkText: "Pesan Sekarang",
+      onClick: () => { }
+    },
+    {
+      title: "Cuci Boneka",
+      description: "Buat boneka kesayangan Anda kembali Bersih, Higienis, Bersih dan Lembut.",
+      imgSrc: "/images/services/cuci-boneka.jpg",
+      imgAlt: "Cuci Boneka -" + HOME_IMG_ALT,
+      linkPage: "#our-location",
+      linkText: "Pesan Sekarang",
+      onClick: () => { }
+    },
+    {
+      title: "Cuci Koper",
+      description: "Jaga koper Anda tetap Bersih dan Siap untuk Perjalanan Berikutnya.",
+      imgSrc: "/images/services/cuci-koper.jpg",
+      imgAlt: "Cuci Koper -" + HOME_IMG_ALT,
+      linkPage: "#our-location",
+      linkText: "Pesan Sekarang",
+      onClick: () => { }
+    },
+  ];
+
+  return (
+    <ServicesList
+      title="Layanan Cuci Perlengkapan Pribadi Anda :"
+      data={dataPersonalSuplies}
+    />
+  );
+};
+
+const HomeServicesWashingClothes = () => {
+  const dataWashClothes = [
+    {
+      title: "Cuci Seterika Uap",
+      description: "Rasakan kenyamanan memakai pakaian yang Bersih dan Rapi. Tampil percaya diri dengan pakaian yang Bebas Kusut.",
+      imgSrc: "/images/services/cuci-setrika-uap.jpg",
+      imgAlt: "Laundry Terdekat -" + HOME_IMG_ALT,
+      linkPage: "#our-location",
+      linkText: "Pesan Sekarang",
+      onClick: () => { }
+    },
+    {
+      title: "Cuci Kering (Dry Cleaning)",
+      description: "Jaga Kebaya maupun Jas Anda agar tetap bersih dan rapi untuk acara spesial.",
+      imgSrc: "/images/services/cuci-kering.jpg",
+      imgAlt: "Cuci Jas maupun Cuci Kebaya -" + HOME_IMG_ALT,
+      linkPage: "#our-location",
+      linkText: "Pesan Sekarang",
+      onClick: () => { }
+    },
+    {
+      title: "Cuci Lipat",
+      description: "Cucian Menumpuk? Serahkan Pada Kami! Dapatkan pakaian yang Wangi, Rapi, dan Siap Pakai dengan harga bersahabat.",
+      imgSrc: "/images/services/cuci-lipat.jpg",
+      imgAlt: "Laundry Terdekat -" + HOME_IMG_ALT,
+      linkPage: "#our-location",
+      linkText: "Pesan Sekarang",
+      onClick: () => { }
+    },
+    {
+      title: "Seterika Saja",
+      description: "Malas Setrika? Sertahkan pakaian kusut Anda pada layanan Setrika Pakaian Kami.",
+      imgSrc: "/images/services/laundry-setrika.jpg",
+      imgAlt: "Laundry Setrika Terdekat -" + HOME_IMG_ALT,
+      linkPage: "#our-location",
+      linkText: "Pesan Sekarang",
+      onClick: () => { }
+    },
+    {
+      title: "Cuci Selimut",
+      description: "Pastikan Selimut Anda selalu Bersih dan Higienis untuk Kesehatan dan Kenyamanan tidur Anda.",
+      imgSrc: "/images/services/cuci-selimut.jpg",
+      imgAlt: "Laundry Selimut Terdekat -" + HOME_IMG_ALT,
+      linkPage: "#our-location",
+      linkText: "Pesan Sekarang",
+      onClick: () => { }
+    },
+    {
+      title: "Cuci Bed Cover",
+      description: "Dapatkan Bed Cover Bersih dan Wangi untuk Tidur lebih Nyaman dan Nyenyak setiap malam.",
+      imgSrc: "/images/services/cuci-bed-cover.jpg",
+      imgAlt: "Laundry Bed Cover Terdekat -" + HOME_IMG_ALT,
+      linkPage: "#our-location",
+      linkText: "Pesan Sekarang",
+      onClick: () => { }
+    },
+  ];
+
+  return (
+    <ServicesList
+      title="Layanan Laundry Pakaian :"
+      data={dataWashClothes}
+    />
+  );
+};
+
+const ServicesList: React.FC<{
   title: string;
-  description: string;
-  imgSrc: string;
-  imgAlt: string;
-  linkPage: string;
-  linkText: string;
-  onClick: () => void;
-}> = ({ title, description, imgSrc, imgAlt, linkPage, linkText, onClick }) => {
+  data: ServicesData[]
+}> = ({ title, data }) => {
   const ref = React.useRef(null);
   const isIntersecting = useIsVisible({ ref, once: true });
 
   return (
-    <Card ref={ref} className={clsx(
-      "flex flex-col text-center items-center space-y-4 rounded-lg bg-background !p-10 shadow-md",
-      isIntersecting ? "animate-fade-up animate-once animate-ease-in-out" : "opacity-0"
-    )}>
-      <Image
-        className={clsx(
-          isIntersecting ? "animate-fade-up animate-once animate-ease-in-out animate-delay-75" : "opacity-0"
-        )}
-        src={imgSrc} alt={imgAlt} width={80} height={80}
-      />
-      <h3
-        className={clsx(
-          "text-xl font-bold text-primary",
-          isIntersecting ? "animate-fade-up animate-once animate-ease-in-out animate-delay-200" : "opacity-0"
-        )}
-      >
+    <div ref={ref} className="pb-5">
+      <h5 className={clsx(
+        "mb-2 text-xl font-bold pl-3 md:pl-5",
+        isIntersecting ? "animate-fade-up animate-ease-in-out animate-delay-500" : "opacity-0"
+      )}>
         {title}
-      </h3>
-      <p
-        className={clsx(
-          "text-foreground-secondary",
-          isIntersecting ? "animate-fade-up animate-once animate-ease-in-out animate-delay-500" : "opacity-0"
-        )}
-        dangerouslySetInnerHTML={{ __html: description }}
-      />
-      <Link
-        className={clsx(
-          "inline-flex h-10 items-center justify-center rounded-md px-8 text-sm font-medium text-muted-foreground shadow transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50",
-          linkPage === "/laundry-karpet-marelan"
-            ? "bg-secondary text-white hover:bg-secondary/90"
-            : "bg-muted hover:bg-primary hover:text-primary-foreground",
-          isIntersecting ? "animate-fade-up animate-once animate-ease-in-out animate-delay-[600ms]" : "opacity-0"
-        )}
-        href={linkPage}
-        onClick={onClick}
-      >
-        {linkText}
-      </Link>
+      </h5>
+      <div className={clsx(
+        isIntersecting ? "animate-fade-up animate-ease-in-out animate-delay-700" : "opacity-0"
+      )}>
+        <ScrollableX className="grid gap-2 pb-1">
+          {data.map((item, index) => (
+            <HomeServicesCard
+              key={`${index} - ${item.title}`}
+              itemId={`${index} - ${item.title}`}
+              {...item}
+            />
+          ))}
+        </ScrollableX>
+      </div>
+    </div >
+  );
+};
+
+const HomeServicesCard: React.FC<
+  { itemId: string; } & ServicesData
+> = ({ itemId, title, description, imgSrc, imgAlt, linkPage, linkText, onClick }): React.JSX.Element => {
+  const ref = React.useRef(null);
+  const isIntersecting = useIsVisible({ ref, once: true });
+
+  return (
+    <Card
+      ref={ref}
+      id={itemId}
+      className="w-[300px] h-full p-0 flex flex-col"
+    >
+      <div className="h-[167px] w-full relative">
+        <Image
+          className="rounded-t-lg"
+          src={imgSrc}
+          alt={imgAlt}
+          width={300}
+          height={167}
+        />
+      </div>
+      <main className={clsx(
+        "flex-1 pt-5 px-5",
+        isIntersecting ? "animate-fade-up animate-once animate-ease-in-out" : "opacity-0"
+      )}>
+        <h3 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 ">
+          {title}
+        </h3>
+        <p
+          className="font-normal text-gray-700"
+          dangerouslySetInnerHTML={{ __html: description }}
+        />
+      </main>
+      <footer className={clsx(
+        "p-5",
+        isIntersecting ? "animate-fade-up animate-once animate-ease-in-out" : "opacity-0"
+      )}>
+        <Link
+          onClick={onClick}
+          href={linkPage}
+          className={clsx(
+            linkPage === "/laundry-karpet-marelan"
+              ? "bg-secondary text-white hover:bg-secondary/90"
+              : "bg-muted text-muted-foreground hover:bg-secondary hover:text-white",
+            "inline-flex items-center px-3 py-2 text-sm font-medium text-center rounded-lg"
+          )}
+        >
+          {linkText}
+          <svg className="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+            <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
+          </svg>
+        </Link>
+      </footer>
     </Card>
   );
 };
 
-const useHomeServicesTracker = ({ isInView }: { isInView: boolean }) => {
-  const analytic = useAnalytic();
+// const useHomeServicesTracker = ({ isInView }: { isInView: boolean }) => {
+//   const analytic = useAnalytic();
 
-  useEffect(() => {
-    if (isInView) {
-      analytic.trackStart("click_home_service_carpet");
-      analytic.trackStart("click_home_service_laundry_dry");
-      analytic.trackStart("click_home_service_laundry_iron");
-    }
-  }, [isInView, analytic]);
+//   useEffect(() => {
+//     if (isInView) {
+//       analytic.trackStart("click_home_service_carpet");
+//       analytic.trackStart("click_home_service_laundry_dry");
+//       analytic.trackStart("click_home_service_laundry_iron");
+//     }
+//   }, [isInView, analytic]);
 
-  const handleClickCarpet = () => {
-    analytic.trackEnd("click_home_service_carpet");
-    analytic.trackEvent("click_home_service_carpet", "Home Page", { success: 1, message: "OK" });
-  };
+//   const handleClickCarpet = () => {
+//     analytic.trackEnd("click_home_service_carpet");
+//     analytic.trackEvent("click_home_service_carpet", "Home Page", { success: 1, message: "OK" });
+//   };
 
-  const handleClickLaundryDry = () => {
-    analytic.trackEnd("click_home_service_laundry_dry");
-    analytic.trackEvent("click_home_service_laundry_dry", "Home Page", { success: 1, message: "OK" });
-  };
+//   const handleClickLaundryDry = () => {
+//     analytic.trackEnd("click_home_service_laundry_dry");
+//     analytic.trackEvent("click_home_service_laundry_dry", "Home Page", { success: 1, message: "OK" });
+//   };
 
-  const handleClickLaundryIron = () => {
-    analytic.trackEnd("click_home_service_laundry_iron");
-    analytic.trackEvent("click_home_service_laundry_iron", "Home Page", { success: 1, message: "OK" });
-  };
+//   const handleClickLaundryIron = () => {
+//     analytic.trackEnd("click_home_service_laundry_iron");
+//     analytic.trackEvent("click_home_service_laundry_iron", "Home Page", { success: 1, message: "OK" });
+//   };
 
-  return {
-    handleClickCarpet,
-    handleClickLaundryDry,
-    handleClickLaundryIron,
-  };
-};
+//   return {
+//     handleClickCarpet,
+//     handleClickLaundryDry,
+//     handleClickLaundryIron,
+//   };
+// };

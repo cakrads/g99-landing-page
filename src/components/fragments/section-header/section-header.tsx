@@ -6,12 +6,16 @@ import { useIsVisible } from "@/utils/use-in-view";
 export const SectionHeader: FC<{
   title: string;
   description: string;
-}> = ({ title, description }) => {
+  classNames?: string;
+}> = ({ title, description, classNames }) => {
   const ref = useRef(null);
   const isIntersecting = useIsVisible({ ref, once: true });
 
   return (
-    <div ref={ref} className="flex flex-col items-center justify-center space-y-2 text-center">
+    <div ref={ref} className={clsx(
+      "flex flex-col items-center justify-center space-y-2 text-center",
+      classNames
+    )}>
       <h2
         className={clsx(
           "text-3xl font-bold  sm:text-5xl lg:leading-tight",
