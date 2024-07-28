@@ -54,7 +54,7 @@ export const HOME_HERO_TITLE = "Laundry Terdekat, Hemat & Berkualitas!";
 export const HOME_HERO_DESCRIPTION = "Nikmati layanan laundry Premium dengan Harga Terjangkau, proses Cepat dan Hasil Memuaskan.";
 // export const HOME_HERO_DESCRIPTION = "Layanan premium dengan harga terjangkau, proses cepat dan hasil memuaskan.";
 
-export const HOME_SERVICES_TITLE = "Laundry Karpet dan Pakaian Berkualitas";
+export const HOME_SERVICES_TITLE = "One Stop Laundry Service";
 export const HOME_SERVICES_DESCRIPTION = "Berikut layanan kami yang memberikan solusi cepat, efisien dan berkualitas untuk semua kebutuhan laundry Anda.";
 
 export const HOME_WHY_TITLE = "Kenapa Memilih Laundry Karpet Marelan G99?";

@@ -275,13 +275,14 @@ const HomeServicesCard: React.FC<
   { itemId: string; } & ServicesData
 > = ({ itemId, title, description, imgSrc, imgAlt, linkPage, linkText, onClick }): React.JSX.Element => {
   const ref = React.useRef(null);
-  const isIntersecting = useIsVisible({ ref, once: true });
+  // const isIntersecting = useIsVisible({ ref, once: true });
+  const isIntersecting = true;
 
   return (
     <Card
       ref={ref}
       id={itemId}
-      className="w-[300px] h-full p-0 flex flex-col"
+      className="w-[300px] h-full !p-0 flex flex-col"
     >
       <div className="h-[167px] w-full relative">
         <Image
