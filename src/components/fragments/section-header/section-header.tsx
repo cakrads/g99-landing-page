@@ -24,14 +24,14 @@ export const SectionHeader: FC<{
       >
         {title}
       </h2>
-      <h5
+      <p
         className={clsx(
           "max-w-[900px] text-foreground-secondary md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed",
           isIntersecting ? "animate-fade-up animate-once animate-ease-in-out animate-delay-200" : "opacity-0"
         )}
       >
         {description}
-      </h5>
+      </p>
     </div>
   );
 };
