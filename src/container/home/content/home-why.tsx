@@ -23,6 +23,11 @@ export const HomeWhy = () => {
       icon: <IconPremiumAndBestPrice className="w-28 h-28 text-primary" />
     },
     {
+      title: "1 Mesin  \n untuk 1 Pelanggan",
+      description: "Setiap pelanggan mendapatkan mesin cuci sendiri untuk memastikan kebersihan dan privasi pakaian Anda.",
+      icon: <IconOneMachineOneLaundry className="w-28 h-28 text-primary" />
+    },
+    {
       title: "Menggunakan \n Mesin Laundry Modern",
       description: "Mesin-mesin kami dilengkapi dengan teknologi terbaru untuk hasil cucian yang maksimal.",
       icon: <IconWashingMachine className="w-28 h-28 text-primary" />
@@ -31,11 +36,6 @@ export const HomeWhy = () => {
       title: "Deterjen dan Pewangi Berkualitas",
       description: "Menggunakan deterjen dan pewangi berkualitas tinggi yang aman untuk kulit dan pakaian, memberikan hasil yang bersih, lembut, dan harum tahan lama.",
       icon: <IconDetergent className="w-28 h-28 text-primary" />
-    },
-    {
-      title: "1 Mesin  \n untuk 1 Pelanggan",
-      description: "Setiap pelanggan mendapatkan mesin cuci sendiri untuk memastikan kebersihan dan privasi pakaian Anda.",
-      icon: <IconOneMachineOneLaundry className="w-28 h-28 text-primary" />
     },
     {
       title: "Layanan  \n Antar-Jemput",
