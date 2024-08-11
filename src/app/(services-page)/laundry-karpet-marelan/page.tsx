@@ -35,12 +35,12 @@ export const metadata: Metadata = {
     // creator: "@sadmann17",
   },
   icons: {
-    icon: "/favicon.ico",
+    icon: "/icon.ico",
   },
   // manifest: absoluteUrl("/site.webmanifest"),
 };
 
-export default function Home() {
+export default function LaundryKarpetMarelan() {
   return (
     <>
       <Head>
