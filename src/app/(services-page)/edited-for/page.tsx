@@ -40,7 +40,7 @@ export const metadata: Metadata = {
   // manifest: absoluteUrl("/site.webmanifest"),
 };
 
-export default function LaundryKarpetMarelan() {
+export default function CuciKarpetMedan() {
   return (
     <>
       <Head>
@@ -49,7 +49,7 @@ export default function LaundryKarpetMarelan() {
           {JSON.stringify(APPLICATION_ID_JSON)}
         </script>
       </Head>
-      <ServiceLaundryCarpetContainer source="laundry-karpet-marelan" />
+      <ServiceLaundryCarpetContainer source="cuci-karpet-medan" />
     </>
   );
 }

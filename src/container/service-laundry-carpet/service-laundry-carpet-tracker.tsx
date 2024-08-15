@@ -30,7 +30,7 @@ export const CarpetServiceHeroTracker = () => {
   return <div ref={ref} className="hidden" />;
 };
 
-export const CarpetServiceCtaBtn = () => {
+export const CarpetServiceCtaBtn = ({ label }: { label: string }) => {
   const analytic = useAnalytic();
 
   useEffect(() => {
@@ -50,7 +50,7 @@ export const CarpetServiceCtaBtn = () => {
       target="_blank"
       onClick={handleClickCta}
     >
-      Pesan Sekarang
+      {label}
     </Link>
   );
 };

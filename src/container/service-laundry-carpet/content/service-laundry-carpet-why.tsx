@@ -1,8 +1,10 @@
 import Image from "next/image";
 import { useRef } from "react";
 import clsx from "clsx";
+import { usePathname } from "next/navigation";
 
-import { CARPET_WHY_DESCRIPTION, CARPET_WHY_TITLE, CARPET_IMG_ALT } from "@/constant/seo/laundry-karpet-marelan-page";
+import * as DATA_LAUNDRY_CARPET_MARELAN from "@/constant/seo/laundry-karpet-marelan-page";
+import * as DATA_CUCI_KARPET_MEDAN from "@/constant/seo/cuci-karpet-medan-page";
 import { SectionHeader } from "@/components/fragments/section-header";
 import { WaveBottomBgShapeSM, WaveTopBgShape, WaveTopBgShapeSM } from "@/components/ui/shapes";
 import { useIsVisible } from "@/utils/use-in-view";
@@ -19,13 +21,9 @@ export const LaundryCarpetWhy = () => {
     featureKey: "Carpet Service Page",
   });
 
-  const data = [
-    "Laundry kami melayani GRATIS Antar Jemput untuk wilayah Medan.",
-    "Kami cuci karpet dengan teknik pencucian terbaik yang membuat semua noda, kotoran, dan aroma tidak sedap terlepas sempurna tanpa harus khawatir terjadinya resiko kerusakan.",
-    "Laundry kami menggunakan bahan pembersih khusus yang memiliki pH 8 sehingga sangat aman dan bebas dari resiko bau apek.",
-    "Karpet diproses dengan mesin Yusima Carpet Spinner seharga Rp50 Jutaan, sehingga proses pengeringan berlangsung sangat cepat",
-    "Kami berani menggaransi kepuasan Anda. Jika Anda tidak puas, Anda bisa mengklaim untuk cuci kembali atau GRATIS tidak perlu membayar.",
-  ];
+  const pathname = usePathname();
+  const data = pathname === "/cuci-karpet-medan" ? DATA_CUCI_KARPET_MEDAN : DATA_LAUNDRY_CARPET_MARELAN;
+  const { CARPET_WHY_DESCRIPTION, CARPET_WHY_TITLE, CARPET_IMG_ALT, CARPET_WHY_LIST } = data;
 
   return (
     <section ref={ref}>
@@ -86,9 +84,14 @@ export const LaundryCarpetWhy = () => {
                   isTextIntersecting ? "animate-fade-left animate-once animate-ease-in-out" : "opacity-0"
                 )}
               >
-                {data.map((item, index) => (
+                {CARPET_WHY_LIST.map((item, index) => (
                   <li key={index}>
-                    {item}
+                    <b className="font-semibold">
+                      {item.label} :
+                    </b>
+                    <p>
+                      {item.description}
+                    </p>
                   </li>
                 ))}
               </ul>

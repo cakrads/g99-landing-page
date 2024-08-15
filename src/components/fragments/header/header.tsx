@@ -115,7 +115,7 @@ const MenuList: React.FC<{
           }}
           href={ROUTES.CARPET_SERVICES}
         >
-          Laundry Karpet Marelan
+          Laundry Karpet
         </MenuItem>
       </li>
     </ul>
@@ -137,8 +137,8 @@ const MenuItem: React.FC<{
       className={clsx(
         "block py-2 pr-4 pl-3",
         isActive
-          ? "text-white rounded bg-primary md:bg-transparent md:text-primary md:p-0 dark:text-white"
-          : "text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-primary md:p-0"
+          ? "text-foreground hover:no-underline"
+          : "text-foreground/70 hover:text-foreground hover:no-underline"
       )}
     >
       {children}

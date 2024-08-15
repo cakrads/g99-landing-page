@@ -28,3 +28,10 @@ Cuci Pakaian:
 [x] Tentang kami hasil cucian bersih (ganti atau buang), ganti dgn cepat
 [x] Cuci karpet gambarnya karpe
 [x] Cuci kering ganti gambar
+
+
+[] jika d share d social seperti apa?
+  [] Facebook : https://developers.facebook.com/tools/debug/?q=https%3A%2F%2Flaundryg99.com%2F
+      [] fb:app_id
+  [] IG
+  [] 

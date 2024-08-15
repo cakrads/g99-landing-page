@@ -78,138 +78,36 @@ export const APPLICATION_ID_JSON = {
 export const CARPET_HERO_TITLE = "Laundry Karpet Terdekat di Marelan, Selesai 1 Hari";
 export const CARPET_HERO_DESCRIPTION = "Cuci Karpet Express 1 Hari Selesai di Marelan, Medan. Layanan cuci karpet profesional dengan harga terjangkau.";
 // export const CARPET_WHY_DESCRIPTION = "Jasa Laundry Karpet cepat & bersih Siap menerima layanan antar-jemput untuk daerah Bandung dan Sekitarnya";
+export const CARPET_HERO_CTA = "Pesan Sekarang";
 
 export const CARPET_WHY_TITLE = "Kenapa Harus Laundry Karpet di Kami?";
 export const CARPET_WHY_DESCRIPTION = "";
+export const CARPET_WHY_LIST = [
+  {
+    "label": "???",
+    "description": "Laundry kami melayani GRATIS Antar Jemput untuk wilayah Medan.",
+  },
+  {
 
-// dengan menggunakan google trend antara "laundry karpet" dan "cuci karpet",
-//   didapatkan "laundry karpet" rata - rata 32 sedangkan "cuci karpet" rata - rata 47
+    "label": "???",
+    "description": "Kami cuci karpet dengan teknik pencucian terbaik yang membuat semua noda, kotoran, dan aroma tidak sedap terlepas sempurna tanpa harus khawatir terjadinya resiko kerusakan.",
+  },
+  {
+    "label": "???",
+    "description": "Laundry kami menggunakan bahan pembersih khusus yang memiliki pH 8 sehingga sangat aman dan bebas dari resiko bau apek.",
+  },
+  {
+    "label": "???",
+    "description": "Karpet diproses dengan mesin Yusima Carpet Spinner seharga Rp50 Jutaan, sehingga proses pengeringan berlangsung sangat cepat",
+  },
+  {
 
-// hasil Kueri google trend: "laundry karpet":
-// `
-// TOP
-// laundry karpet terdekat,100
-// laundry terdekat,99
-// harga laundry karpet,84
-// harga laundry,84
-// harga karpet,83
-// cuci karpet,57
-// mesin laundry,22
-// harga cuci karpet,16
-// cuci karpet terdekat,16
-// laundry terdekat dari lokasi saya,12
-// laundry karpet terdekat dari lokasi saya,12
-// laundry terdekat antar jemput,8
-// laundry karpet masjid,8
-// laundry karpet antar jemput terdekat,8
-// harga mesin laundry,8
+    "label": "???",
+    "description": "Kami berani menggaransi kepuasan Anda. Jika Anda tidak puas, Anda bisa mengklaim untuk cuci kembali atau GRATIS tidak perlu membayar.",
+  },
+];
 
-// RISING
-// laundry karpet antar jemput terdekat,Pesat
-// laundry karpet terdekat dari lokasi saya,+2.450%
-// laundry terdekat dari lokasi saya,+2.000%
-// laundry terdekat antar jemput,+1.350%
-// laundry karpet terdekat,+350%
-// cuci karpet terdekat,+350%
-// laundry terdekat,+350%
-// `
-
-// hasil kueri trend "cuci karpet":
-// `
-// TOP
-// cuci karpet terdekat,100
-// harga cuci karpet,82
-// harga karpet,82
-// mesin cuci,78
-// jasa cuci karpet,78
-// mesin cuci karpet,78
-// laundry karpet,65
-// laundry,65
-// cara cuci karpet,38
-// tempat cuci karpet,33
-// cuci sofa,33
-// karpet mobil,32
-// alat cuci karpet,32
-// cuci karpet jakarta,28
-// cuci karpet masjid,28
-// harga mesin cuci,24
-// harga laundry karpet,18
-// laundry karpet terdekat,18
-// laundry terdekat,17
-// cuci karpet jogja,17
-// karpet lantai,15
-// cuci karpet kantor,15
-// jasa cuci karpet terdekat,14
-// jasa cuci sofa,13
-// cuci springbed,13
-
-// RISING
-// jasa cuci karpet terdekat,+1.500%
-// cuci karpet terdekat,+700%
-// laundry terdekat,+600%
-// laundry karpet terdekat,+550%
-// `
-
-// `
-// laundry karpet terdekat,100
-// laundry terdekat,99
-// harga laundry karpet,84
-// harga laundry,84
-// harga karpet,83
-// cuci karpet,57
-// mesin laundry,22
-// mesin laundry karpet,22
-// harga cuci karpet,16
-// cuci karpet terdekat,16
-// laundry terdekat dari lokasi saya,12
-// laundry karpet terdekat dari lokasi saya,12
-// laundry terdekat antar jemput,8
-// laundry karpet masjid,8
-// laundry karpet antar jemput terdekat,8
-
-// RISING
-// laundry karpet antar jemput terdekat,Pesat
-// laundry karpet terdekat dari lokasi saya,+2.450%
-// laundry terdekat dari lokasi saya,+2.000%
-// laundry terdekat antar jemput,+1.350%
-// laundry karpet terdekat,+350%
-// cuci karpet terdekat,+350%
-// laundry terdekat,+350%
-// `
-
-// hasil kueri trend "cuci karpet":
-// `
-// TOP
-// cuci karpet terdekat,100
-// harga cuci karpet,82
-// harga karpet,82
-// mesin cuci,78
-// jasa cuci karpet,78
-// mesin cuci karpet,78
-// laundry karpet,65
-// laundry,65
-// cara cuci karpet,38
-// tempat cuci karpet,33
-// cuci sofa,33
-// karpet mobil,32
-// alat cuci karpet,32
-// cuci karpet jakarta,28
-// cuci karpet masjid,28
-// harga mesin cuci,24
-// harga laundry karpet,18
-// laundry karpet terdekat,18
-// laundry terdekat,17
-// cuci karpet jogja,17
-// karpet lantai,15
-// cuci karpet kantor,15
-// jasa cuci karpet terdekat,14
-// jasa cuci sofa,13
-// karpet bulu,13
-
-// RISING
-// jasa cuci karpet terdekat,+1.500%
-// cuci karpet terdekat,+700%
-// laundry terdekat,+600%
-// laundry karpet terdekat,+550%
-// tempat cuci karpet terdekat,+400%
-// `
+export const CARPET_SERVICES_DETAIL_TITLE = "Layanan Cuci Karpet di Marelan";
+export const CARPET_SERVICES_DETAIL_DESCRIPTION = `
+  Kami menyediakan layanan cuci karpet terdekat di Marelan, Medan. Cuci karpet cepat, bersih, dan higienis.
+`;

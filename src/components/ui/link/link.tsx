@@ -14,7 +14,7 @@ const Link: React.FC<LinkProps & {
   return (
     <NextLink
       {...props}
-      className={className ? className : "hover:text-primary"}
+      className={className}
       target={target}
       aria-label={ariaLabel || GLOBAL_WEB_TITLE}
     >
