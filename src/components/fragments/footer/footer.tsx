@@ -2,6 +2,7 @@
 
 import { usePathname } from "next/navigation";
 import React from "react";
+import clsx from "clsx";
 
 import Link from "@/components/ui/link";
 import { SHOP_ADDRESS, SHOP_DESCRIPTION, SHOP_FB, SHOP_IG, SHOP_MOTTO, SHOP_NAME, SHOP_PHONE, SHOP_PHONE_2, SHOP_PHONE_SHOW, SHOP_PHONE_SHOW_2, SHOP_TIKTOK } from "@/constant/shop";
@@ -43,48 +44,52 @@ export const Footer = () => {
       <Link
         href={WA_LINK}
         target="_blank"
-        className="fixed flex-col bottom-4 right-4 flex items-center gap-2 drop-shadow-xl hover:drop-shadow-2xl"
+        className={clsx(
+          "fixed bottom-4 right-4 flex items-center gap-2",
+          "rounded-full bg-[#51cd5e] py-2 px-4 md:px-5",
+          "shadow-xl hover:shadow-2xl active:shadow-2xl focus:shadow-2xl"
+        )}
         prefetch={false}
         onClick={handleClickFABWhatsapp}
       >
-        <WhatsAppIcon className="w-12 h-12 md:w-14 md:h-14" />
-        <b className="text-xs md:text-sm drop-shadow-xl">PESAN JASA KAMI</b>
+        <WhatsAppIcon className="w-5 h-5" />
+        <b className="text-[#fff] text-xs md:text-sm drop-shadow-xl">PESAN JASA KAMI</b>
         {/* <span className="sr-only">WhatsApp</span> */}
       </Link>
       <footer ref={ref}>
-        <WaveTopBgShapeSM className="w-full block lg:hidden" />
-        <WaveTopBgShape className="w-full hidden lg:block" />
-        <div className="bg-muted py-8">
+        <WaveTopBgShapeSM className="w-full block lg:hidden" color="hsl(223 9% 15%)" />
+        <WaveTopBgShape className="w-full hidden lg:block" color="hsl(223 9% 15%)" />
+        <div className="bg-secondary text-secondary-foreground py-8">
           <div className="container mt-8 mx-auto">
             <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4 mb-6">
               <div>
                 <h3 className="mb-4 text-lg font-bold">Tentang Kami</h3>
-                <p className="text-muted-foreground">
+                <p className="text-muted">
                   {SHOP_DESCRIPTION}
                 </p>
               </div>
               <div>
                 <h3 className="mb-4 text-lg font-bold">Hubungi Kami</h3>
-                <p className="text-muted-foreground mb-2">
+                <p className="text-muted mb-2">
                   {SHOP_ADDRESS}
                 </p>
-                <a onClick={handleClickPhone1} href={`tel:${SHOP_PHONE}`} className="text-muted-foreground hover:text-primary">
+                <a onClick={handleClickPhone1} href={`tel:${SHOP_PHONE}`} className="text-muted hover:text-primary">
                   {SHOP_PHONE_SHOW}
                 </a><br />
-                <a onClick={handleClickPhone2} href={`tel:${SHOP_PHONE_2}`} className="text-muted-foreground hover:text-primary">
+                <a onClick={handleClickPhone2} href={`tel:${SHOP_PHONE_2}`} className="text-muted hover:text-primary">
                   {SHOP_PHONE_SHOW_2}
                 </a>
               </div>
               <div>
                 <h3 className="mb-4 text-lg font-bold">Halaman Lainnya</h3>
-                <ul className="space-y-2 text-muted-foreground">
+                <ul className="space-y-2 text-muted">
                   <li>
-                    <Link href="/" onClick={handleClickNavHome}>
+                    <Link href="/" onClick={handleClickNavHome} className="hover:text-primary">
                       Beranda
                     </Link>
                   </li>
                   <li>
-                    <Link href="/laundry-karpet-marelan" onClick={handleClickNavCarpetService}>
+                    <Link href="/laundry-karpet-marelan" onClick={handleClickNavCarpetService} className="hover:text-primary">
                       Laundry Karpet
                     </Link>
                   </li>
@@ -93,19 +98,19 @@ export const Footer = () => {
               <div>
                 <h3 className="mb-4 text-lg font-bold">Follow Us</h3>
                 <div className="flex space-x-4">
-                  <Link href={SHOP_IG} className="text-muted-foreground hover:text-primary" onClick={handleClickFacebook}>
+                  <Link href={SHOP_IG} className="text-muted hover:text-primary" onClick={handleClickFacebook}>
                     <FacebookIcon className="h-6 w-6" />
                   </Link>
-                  <Link href={SHOP_TIKTOK} className="text-muted-foreground hover:text-primary" onClick={handleClickInstagram}>
+                  <Link href={SHOP_TIKTOK} className="text-muted hover:text-primary" onClick={handleClickInstagram}>
                     <InstagramIcon className="h-6 w-6" />
                   </Link>
-                  <Link href={SHOP_FB} className="text-muted-foreground hover:text-primary" onClick={handleClickTiktok}>
+                  <Link href={SHOP_FB} className="text-muted hover:text-primary" onClick={handleClickTiktok}>
                     <TiktokIcon className="h-6 w-6" />
                   </Link>
                 </div>
               </div>
             </div>
-            <div className="pt-6 text-center text-sm text-muted-foreground border-t">
+            <div className="pt-6 text-center text-sm text-muted border-t">
               &copy; {currentYear} {SHOP_MOTTO} - {SHOP_NAME}. All rights reserved.
             </div>
           </div>

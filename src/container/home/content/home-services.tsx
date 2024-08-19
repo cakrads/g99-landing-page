@@ -3,7 +3,6 @@ import React from "react";
 import clsx from "clsx";
 
 import Link from "@/components/ui/link";
-import { WaveTopBgShapeSM, WaveTopBgShape, WaveBottomBgShapeSM } from "@/components/ui/shapes";
 import { SectionHeader } from "@/components/fragments/section-header";
 import { HOME_SERVICES_DESCRIPTION, HOME_SERVICES_TITLE, HOME_IMG_ALT } from "@/constant/seo/home-page";
 import { useTrackEnterSection } from "@/libs/analytic/use-enter-section";
@@ -11,6 +10,7 @@ import { useTrackEnterSection } from "@/libs/analytic/use-enter-section";
 import { ScrollableX } from "@/components/ui/scrollable-x";
 import { useIsVisible } from "@/utils/use-in-view";
 import { Card } from "@/components/ui/card";
+import { WaveBottomBgShapeSM } from "@/components/ui/shapes";
 
 type ServicesData = {
   title: string;
@@ -30,12 +30,10 @@ export const HomeServices = () => {
 
   return (
     <section ref={ref}>
-      <WaveTopBgShapeSM className="w-full block lg:hidden" />
-      <WaveTopBgShape className="w-full hidden lg:block" />
-      <div className="bg-muted pt-24 pb-16 md:pt-28 sm:py-24 relative">
+      <div className="bg-primary pt-24 pb-16 md:pt-28 sm:py-24 relative">
         <div className="container mx-auto px-4">
           <SectionHeader
-            classNames="mb-12"
+            classNames="mb-16"
             title={HOME_SERVICES_TITLE}
             description={HOME_SERVICES_DESCRIPTION}
           />
@@ -44,7 +42,7 @@ export const HomeServices = () => {
           <HomeServicesWashingClothes />
         </div>
       </div>
-      <WaveBottomBgShapeSM className="w-full" />
+      <WaveBottomBgShapeSM className="w-full" color="hsl(38 100% 55%)" />
     </section>
   );
 };
@@ -249,7 +247,7 @@ const ServicesList: React.FC<{
   return (
     <div ref={ref} className="pb-5">
       <h5 className={clsx(
-        "mb-2 text-xl font-bold pl-3 md:pl-5",
+        "mb-2 text-xl pl-3 md:pl-5 font-medium",
         isIntersecting ? "animate-fade-up animate-ease-in-out animate-delay-500" : "opacity-0"
       )}>
         {title}
@@ -257,7 +255,7 @@ const ServicesList: React.FC<{
       <div className={clsx(
         isIntersecting ? "animate-fade-up animate-ease-in-out animate-delay-700" : "opacity-0"
       )}>
-        <ScrollableX className="grid gap-2 pb-1">
+        <ScrollableX className="grid gap-2 pb-1" theme="primary">
           {data.map((item, index) => (
             <HomeServicesCard
               key={`${index} - ${item.title}`}
@@ -282,7 +280,9 @@ const HomeServicesCard: React.FC<
     <Card
       ref={ref}
       id={itemId}
-      className="w-[300px] h-full !p-0 flex flex-col"
+      className={clsx(
+        "w-[300px] h-full !p-0 flex flex-col border-none shadow-inner shadow-primary",
+      )}
     >
       <div className="h-[167px] w-full relative">
         <Image
@@ -297,11 +297,11 @@ const HomeServicesCard: React.FC<
         "flex-1 pt-5 px-5",
         isIntersecting ? "animate-fade-up animate-once animate-ease-in-out" : "opacity-0"
       )}>
-        <h3 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 ">
+        <h3 className="mb-2 text-2xl font-bold tracking-tight">
           {title}
         </h3>
         <p
-          className="font-normal text-gray-700"
+          className="font-normal"
           dangerouslySetInnerHTML={{ __html: description }}
         />
       </main>
@@ -313,9 +313,7 @@ const HomeServicesCard: React.FC<
           onClick={onClick}
           href={linkPage}
           className={clsx(
-            linkPage === "/laundry-karpet-marelan"
-              ? "bg-secondary text-white hover:bg-secondary/90"
-              : "bg-muted text-muted-foreground hover:bg-secondary hover:text-white",
+            "bg-secondary text-secondary-foreground hover:bg-primary hover:text-secondary",
             "inline-flex items-center px-3 py-2 text-sm font-medium text-center rounded-lg"
           )}
         >

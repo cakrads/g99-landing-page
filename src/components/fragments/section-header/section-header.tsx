@@ -13,7 +13,7 @@ export const SectionHeader: FC<{
 
   return (
     <div ref={ref} className={clsx(
-      "flex flex-col items-center justify-center space-y-2 text-center",
+      "flex flex-col items-center justify-center space-y-6 text-center",
       classNames
     )}>
       <h2
@@ -26,7 +26,7 @@ export const SectionHeader: FC<{
       </h2>
       <p
         className={clsx(
-          "max-w-[900px] text-foreground-secondary md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed",
+          "max-w-[900px] text-foreground-secondary md:text-xl lg:text-base xl:text-xl font-medium",
           isIntersecting ? "animate-fade-up animate-once animate-ease-in-out animate-delay-200" : "opacity-0"
         )}
       >

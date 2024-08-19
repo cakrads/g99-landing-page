@@ -13,14 +13,14 @@ import { useAnalytic } from "@/libs/analytic/provider";
 
 export const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
-  const [shadow, setShadow] = React.useState(false);
+  const [scrolled, setScrolled] = React.useState(false);
 
   React.useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 50) {
-        setShadow(true);
+        setScrolled(true);
       } else {
-        setShadow(false);
+        setScrolled(false);
       }
     };
 
@@ -32,21 +32,29 @@ export const Header = () => {
 
   return (
     <header className={clsx(
-      "sticky top-0 lef-0 z-10 bg-white",
-      "transition-shadow duration-300 ease-in-out",
-      shadow ? "shadow-md" : ""
+      "sticky top-0 lef-0 z-10",
+      "transition-colors duration-500 ease-in-out",
+      scrolled ? "shadow-2xl border-b-[1px] border-muted-foreground bg-secondary" : "bg-primary"
     )}>
-      <nav className="bg-white border-gray-200 py-2.5">
+      <nav className="py-2.5 md:py-7">
         <div className="flex flex-wrap justify-between items-center mx-auto container">
           <Link href="/" className="flex items-center" onClick={handleClickNavLogo}>
             <Image
-              src="/images/washing-machine.png"
+              src="/images/logo.png"
               width={36}
               height={36}
-              className="mr-3 h-9"
+              className={clsx(
+                "mr-3 h-9 rounded-md  border-[1px] transition-colors",
+                scrolled ? "border-white" : "border-secondary"
+              )}
               alt={GLOBAL_IMG_ALT}
             />
-            <span className="self-center text-xl font-semibold whitespace-nowrap">Laundry G99</span>
+            <span className={clsx(
+              "self-center text-xl font-semibold whitespace-nowrap transition-colors",
+              scrolled ? "text-white" : "text-secondary"
+            )}>
+              Laundry G 99
+            </span>
           </Link>
           <div className="flex items-center md:order-2 md:hidden">
             {/* <a href="#" className="text-gray-800 hover:bg-gray-50 focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2">Log in</a> */}
@@ -54,7 +62,7 @@ export const Header = () => {
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               type="button"
-              className="inline-flex items-center p-2 ml-1 text-sm text-gray-500 rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
+              className="inline-flex items-center p-2 ml-1 text-sm rounded-lg lg:hidden hover:text-secondary/80"
               aria-expanded="false"
             >
               <span className="sr-only">Open main menu</span>
@@ -65,22 +73,25 @@ export const Header = () => {
                 <path fillRule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clipRule="evenodd"></path>
               </svg>
             </button>
-            <Sheet open={isMenuOpen}>
+            <Sheet open={isMenuOpen} onOpenChange={() => { setIsMenuOpen(prev => !prev); }}>
               <SheetContent>
-                {/* <SheetHeader>
-                  <SheetTitle>Edit profile</SheetTitle>
-                  <SheetDescription>
-                    Make changes to your profile here. Click save when.
-                  </SheetDescription>
-                </SheetHeader> */}
+                <div className="flex justify-center mt-10">
+                  <Image
+                    src="/images/logo.png"
+                    width={150}
+                    height={150}
+                    className="rounded-full border-white border-4"
+                    alt={GLOBAL_IMG_ALT}
+                  />
+                </div>
                 <div className="justify-between items-center w-full lg:flex lg:w-auto lg:order-1">
-                  <MenuList onLinkClick={() => { setIsMenuOpen(false); }} />
+                  <MenuList onLinkClick={() => { setIsMenuOpen(false); }} scrolled={scrolled} />
                 </div>
               </SheetContent>
             </Sheet>
           </div>
           <div className="hidden justify-between items-center w-full md:flex md:w-auto md:order-1">
-            <MenuList onLinkClick={() => { setIsMenuOpen(false); }} />
+            <MenuList onLinkClick={() => { setIsMenuOpen(false); }} scrolled={scrolled} />
           </div>
         </div>
       </nav>
@@ -91,11 +102,16 @@ export const Header = () => {
 
 const MenuList: React.FC<{
   onLinkClick: () => void
-}> = ({ onLinkClick }) => {
+  scrolled: boolean
+}> = ({ onLinkClick, scrolled }) => {
   const { handleClickNavHome, handleClickNavCarpetService } = useHeaderLinkTracker();
 
   return (
-    <ul className="flex flex-col mt-4 font-medium md:flex-row md:space-x-8 md:mt-0">
+    <ul className={clsx(
+      "flex",
+      "mt-10 flex-col items-center space-y-5",
+      "md:mt-0 md:flex-row md:space-x-10 md:space-y-0"
+    )}>
       <li>
         <MenuItem
           onClick={() => {
@@ -103,8 +119,9 @@ const MenuList: React.FC<{
             handleClickNavHome();
           }}
           href={ROUTES.HOME}
+          scrolled={scrolled}
         >
-          Beranda
+          BERANDA
         </MenuItem>
       </li>
       <li>
@@ -114,8 +131,9 @@ const MenuList: React.FC<{
             handleClickNavCarpetService();
           }}
           href={ROUTES.CARPET_SERVICES}
+          scrolled={scrolled}
         >
-          Laundry Karpet
+          LAUNDRY KARPET
         </MenuItem>
       </li>
     </ul>
@@ -126,7 +144,8 @@ const MenuItem: React.FC<{
   href: string
   children: React.ReactNode
   onClick: () => void
-}> = ({ href, children, onClick }) => {
+  scrolled: boolean
+}> = ({ href, children, scrolled, onClick }) => {
   const pathname = usePathname();
   const isActive = pathname === href;
 
@@ -135,10 +154,21 @@ const MenuItem: React.FC<{
       href={href}
       onClick={() => { onClick(); }}
       className={clsx(
-        "block py-2 pr-4 pl-3",
+        "block py-2 transition-colors duration-500 ease-in-out border-b-2",
+        // < md
+        "text-lg text-secondary-foreground",
         isActive
-          ? "text-foreground hover:no-underline"
-          : "text-foreground/70 hover:text-foreground hover:no-underline"
+          ? "border-primary/100"
+          : "border-primary/0 hover:border-primary/100",
+        // > md
+        "md:text-base md:font-semibold",
+        scrolled
+          ? "md:text-secondary-foreground"
+          : "md:text-secondary",
+        (isActive && scrolled) && "md:border-primary/100",
+        (isActive && !scrolled) && "md:border-secondary/100",
+        (!isActive && scrolled) && "md:border-primary/0 hover:md:border-primary/100",
+        (!isActive && !scrolled) && "md:border-secondary/0 hover:md:border-secondary/100",
       )}
     >
       {children}

@@ -25,7 +25,7 @@ tapi di percakan ini, mari kita fokus di Cuci Karpet
 tambahkan info berikut:
 - target pasar menengah kebawah
 - laundry karpet menggunakan pengering khusus yang membuatnya bisa selesai cuci dalam 1 hari
-- nama toko: laundry G99
+- nama toko: laundry G 99
 - lokasi: Pasar 5 Raskam No. 14 (Jl. Marelan Raya Pasar 3), Kecamatan Medan Marelan, Kota Medan, Sumatera Utara
 - phone: 081361610795
 

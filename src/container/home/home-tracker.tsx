@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useEffect } from "react";
+import clsx from "clsx";
 
 import { useAnalytic } from "@/libs/analytic/provider";
 import { useTrackEnterSection } from "@/libs/analytic/use-enter-section";
@@ -45,7 +46,11 @@ export const HomeHeroCtaBtn = () => {
   return (
     <Link
       href="#our-location"
-      className="inline-flex h-10 items-center justify-center rounded-md bg-primary px-8 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
+      className={clsx(
+        "inline-flex items-center justify-center rounded-md py-4 px-10 text-sm font-semibold",
+        "bg-secondary text-secondary-foreground shadow transition-all duration-500",
+        "hover:bg-white hover:text-foreground",
+      )}
       onClick={handleClickCta}
     >
       Pesan Sekarang

@@ -1,6 +1,6 @@
 import clsx from "clsx";
 
-export const HomeImageShapesBg = ({ className }: { className?: string }) => {
+export const HomeImageShapesBg = ({ className, color = "#ffffff" }: { className?: string, color?: string }) => {
   return (
     <svg xmlns="http://www.w3.org/2000/svg"
       zoomAndPan="magnify"
@@ -10,8 +10,8 @@ export const HomeImageShapesBg = ({ className }: { className?: string }) => {
       version="1.0">
       <defs>
         <linearGradient id="sw-gradient" x1="0" x2="1" y1="1" y2="0" >
-          <stop id="stop1" stopColor="hsl(246.8 98.2% 46.5%)" offset="0%"></stop>
-          <stop id="stop2" stopColor="hsl(217.8 100% 57%)" offset="100%"></stop>
+          <stop id="stop1" stopColor="hsl(220, 10%, 24%)" offset="0%"></stop>
+          <stop id="stop2" stopColor="hsl(223 9% 15%)" offset="100%"></stop>
         </linearGradient>
       </defs>
       <path
@@ -25,7 +25,7 @@ export const HomeImageShapesBg = ({ className }: { className?: string }) => {
 };
 
 
-export const WaveTopBgShapeSM = ({ className }: { className?: string }) => {
+export const WaveTopBgShapeSM = ({ className, color = "#ffffff" }: { className?: string, color?: string }) => {
   return (
     <svg xmlns="http://www.w3.org/2000/svg"
       className={className}
@@ -35,7 +35,7 @@ export const WaveTopBgShapeSM = ({ className }: { className?: string }) => {
       version="1.0"
     >
       <path
-        fill="#f2f7fe"
+        fill={color}
         d="M 1422.328125 15.527344 C 1314.503906 51.570312 1237.785156 73.613281 1153.03125 92.730469 C 1055.125 114.878906 985.503906 123.96875 903.566406 125.328125 C 815.050781 126.683594 745.640625 119.476562 637.921875 97.433594 C 594.5 88.550781 544.085938 77.164062 436.886719 51.988281 C 330.527344 27.019531 264.769531 13.75 224.058594 9.257812 C 151.726562 1.109375 78.242188 7.585938 9.351562 28.167969 L -3.484375 31.929688 L -3.695312 187.382812 L -4.007812 342.945312 L 1473.472656 342.945312 L 1473.472656 170.5625 C 1473.472656 75.703125 1473.367188 -1.710938 1473.265625 -1.609375 C 1473.054688 -1.503906 1450.195312 6.226562 1422.328125 15.527344 Z M 1422.328125 15.527344 "
         fillOpacity="1"
         fillRule="nonzero"
@@ -44,7 +44,7 @@ export const WaveTopBgShapeSM = ({ className }: { className?: string }) => {
   );
 };
 
-export const WaveTopBgShape = ({ className }: { className?: string }) => {
+export const WaveTopBgShape = ({ className, color = "#ffffff" }: { className?: string, color?: string }) => {
   return (
     <svg xmlns="http://www.w3.org/2000/svg"
       className={className}
@@ -53,12 +53,12 @@ export const WaveTopBgShape = ({ className }: { className?: string }) => {
       preserveAspectRatio="xMidYMid meet"
       version="1.0"
     >
-      <path fill="#f2f7fe"
+      <path fill={color}
         d="M -846.714844 336.136719 C -889.015625 358.609375 -827.867188 224.285156 -775.921875 157.917969 C -689.082031 47.046875 -567.085938 12.699219 -430.027344 25.894531 C -290.941406 39.265625 -152.363281 92.5 -11.886719 83.53125 C 97.625 76.558594 192.546875 13.441406 301.3125 5.960938 C 422.566406 -2.363281 537.660156 54.324219 658.644531 54.59375 C 730.21875 54.765625 815.125 4.304688 877.089844 56.523438 C 974.347656 138.558594 976.582031 322.703125 977.664062 438.378906 "
         fillOpacity="1"
         fillRule="evenodd"
       />
-      <path fill="#f2f7fe"
+      <path fill={color}
         d="M 1568.585938 249.890625 C 1596.117188 264.535156 1556.316406 176.992188 1522.507812 133.742188 C 1465.988281 61.484375 1386.585938 39.09375 1297.382812 47.699219 C 1206.859375 56.410156 1116.664062 91.105469 1025.234375 85.261719 C 953.957031 80.714844 892.175781 39.582031 821.386719 34.707031 C 742.46875 29.28125 667.558594 66.226562 588.816406 66.402344 C 542.230469 66.511719 486.96875 33.625 446.640625 67.660156 C 383.339844 121.125 381.882812 241.132812 381.179688 316.523438 "
         fillOpacity="1"
         fillRule="evenodd"
@@ -67,7 +67,7 @@ export const WaveTopBgShape = ({ className }: { className?: string }) => {
   );
 };
 
-export const WaveBottomBgShapeSM = ({ className }: { className?: string }) => {
+export const WaveBottomBgShapeSM = ({ className, color = "#ffffff" }: { className?: string, color?: string }) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -78,7 +78,7 @@ export const WaveBottomBgShapeSM = ({ className }: { className?: string }) => {
       version="1.0"
     >
       <path
-        fill="#f2f7fe"
+        fill={color}
         d="M -433.886719 -275.949219 C -481.003906 -300.992188 -412.890625 -151.285156 -355.027344 -77.316406 C -258.300781 46.253906 -122.410156 84.539062 30.257812 69.828125 C 185.183594 54.929688 339.546875 -4.40625 496.019531 5.589844 C 618.003906 13.359375 723.738281 83.707031 844.890625 92.042969 C 979.953125 101.324219 1108.15625 38.144531 1242.914062 37.839844 C 1322.640625 37.652344 1417.21875 93.890625 1486.238281 35.691406 C 1594.574219 -55.742188 1597.0625 -260.972656 1598.269531 -389.898438 "
         fillOpacity="1"
         fillRule="evenodd"

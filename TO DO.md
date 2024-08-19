@@ -31,7 +31,7 @@ Cuci Pakaian:
 
 
 [] jika d share d social seperti apa?
-  [] Facebook : https://developers.facebook.com/tools/debug/?q=https%3A%2F%2Flaundryg99.com%2F
+  [] Facebook : https://developers.facebook.com/tools/debug/?q=https%3A%2F%2FlaundryG 99.com%2F
       [] fb:app_id
   [] IG
   [] 

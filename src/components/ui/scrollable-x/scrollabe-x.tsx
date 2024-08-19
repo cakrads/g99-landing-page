@@ -18,12 +18,13 @@ export const ScrollableX: React.FC<{
   children: ItemType | ItemType[]
   className?: string
   itemClassName?: string
-}> = ({ children, className, itemClassName }) => {
+  theme?: "light" | "dark" | "primary"
+}> = ({ children, className, itemClassName, theme = "light" }) => {
   return (
     <div className="-ml-3 md:ml-0 -mr-3 md:mr-0 relative">
       <ScrollMenu
-        LeftArrow={LeftArrow}
-        RightArrow={RightArrow}
+        LeftArrow={<LeftArrow theme={theme} />}
+        RightArrow={<RightArrow theme={theme} />}
         scrollContainerClassName={className}
         itemClassName={itemClassName}
       >
@@ -33,7 +34,7 @@ export const ScrollableX: React.FC<{
   );
 };
 
-const LeftArrow = () => {
+const LeftArrow = ({ theme = "light" }: { theme: "dark" | "light" | "primary" }) => {
   const visibility = React.useContext(VisibilityContext);
   const isFirstItemVisible = visibility.useIsVisible("first", true);
   return (
@@ -46,19 +47,24 @@ const LeftArrow = () => {
           isFirstItemVisible && "opacity-0 pointer-events-none",
         )}
       >
-        <IconChevronLeft className="w-6 h-6" />
+        <IconChevronLeft className={clsx(
+          "w-6 h-6",
+          theme === "dark" && "text-white"
+        )} />
       </button>
       {!isFirstItemVisible && (
         <div className={clsx(
-          "absolute top-0 left-6 w-6 z-10 h-[calc(100%-16px)]",
-          "scrollable-x-backdrop-left"
+          "absolute top-0 left-6 w-6 z-10 h-full",
+          theme === "light" && "scrollable-x-backdrop-left",
+          theme === "dark" && "scrollable-x-backdrop-left-dark",
+          theme === "primary" && "scrollable-x-backdrop-left-primary",
         )} />
       )}
     </div>
   );
 };
 
-const RightArrow = () => {
+const RightArrow = ({ theme = "light" }: { theme: "dark" | "light" | "primary" }) => {
   const visibility = React.useContext(VisibilityContext);
   const isLastItemVisible = visibility.useIsVisible("last", false);
 
@@ -72,12 +78,17 @@ const RightArrow = () => {
           isLastItemVisible && "opacity-0 pointer-events-none",
         )}
       >
-        <IconChevronRight className="w-6 h-6" />
+        <IconChevronRight className={clsx(
+          "w-6 h-6",
+          theme === "dark" && "text-white"
+        )} />
       </button>
       {!isLastItemVisible && (
         <div className={clsx(
-          "absolute top-0 right-6 w-6 z-10 h-[calc(100%-16px)]",
-          "scrollable-x-backdrop-right"
+          "absolute top-0 right-6 w-6 z-10 h-full",
+          theme === "dark" && "scrollable-x-backdrop-right-dark",
+          theme === "light" && "scrollable-x-backdrop-right",
+          theme === "primary" && "scrollable-x-backdrop-right-primary",
         )} />
       )}
     </div>

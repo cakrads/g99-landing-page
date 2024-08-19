@@ -2,14 +2,14 @@ import { HOST_URL } from "../env";
 import { SHOP_ADDRESS, SHOP_PHONE } from "../shop";
 
 
-export const CARPET_WEB_TITLE = "Cuci Karpet Medan | Laundry G99 - Cepat, Bersih, Murah";
-//GM Cuci Karpet Medan | Laundry Karpet G99 - Bersih dalam 1 Hari
-//GM Cuci Karpet Medan | Laundry G99 - Cepat, Bersih, Murah
-//GPT Laundry G99 - Jasa Cuci Karpet Terbaik di Medan | Selesai 1 Hari
-export const CARPET_WEB_DESCRIPTION = "Cari jasa cuci karpet di Medan? Laundry G99 siap membantu! Karpet bersih dalam 1 hari. GRATIS Antar Jemput. Hubungi kami segera di 081361610795!";
-//GM Butuh jasa cuci karpet cepat dan berkualitas di Medan? Laundry G99 siap membantu! Kami menawarkan layanan cuci karpet dengan pengering khusus, bersih dalam 1 hari. Cek harga dan jadwal sekarang!
-//GM  Butuh jasa cuci karpet cepat dan berkualitas di Medan? Laundry G99 adalah solusinya! Kami menawarkan layanan cuci karpet dengan pengering khusus, selesai dalam 1 hari. Hubungi kami sekarang!
-//GPT Laundry G99 menawarkan jasa cuci karpet profesional di Medan dengan pengering khusus yang memungkinkan selesai dalam 1 hari. Layanan terdekat, berkualitas, dan harga terjangkau. Hubungi kami di 081361610795.
+export const CARPET_WEB_TITLE = "Cuci Karpet Medan | Laundry G 99 - Cepat, Bersih, Murah";
+//GM Cuci Karpet Medan | Laundry Karpet G 99 - Bersih dalam 1 Hari
+//GM Cuci Karpet Medan | Laundry G 99 - Cepat, Bersih, Murah
+//GPT Laundry G 99 - Jasa Cuci Karpet Terbaik di Medan | Selesai 1 Hari
+export const CARPET_WEB_DESCRIPTION = "Cari jasa cuci karpet di Medan? Laundry G 99 siap membantu! Karpet bersih dalam 1 hari. GRATIS Antar Jemput. Hubungi kami segera di 081361610795!";
+//GM Butuh jasa cuci karpet cepat dan berkualitas di Medan? Laundry G 99 siap membantu! Kami menawarkan layanan cuci karpet dengan pengering khusus, bersih dalam 1 hari. Cek harga dan jadwal sekarang!
+//GM  Butuh jasa cuci karpet cepat dan berkualitas di Medan? Laundry G 99 adalah solusinya! Kami menawarkan layanan cuci karpet dengan pengering khusus, selesai dalam 1 hari. Hubungi kami sekarang!
+//GPT Laundry G 99 menawarkan jasa cuci karpet profesional di Medan dengan pengering khusus yang memungkinkan selesai dalam 1 hari. Layanan terdekat, berkualitas, dan harga terjangkau. Hubungi kami di 081361610795.
 
 export const CARPET_WEB_KEYWORDS_PRIMARY = [
   "Cuci Karpet",
@@ -67,11 +67,11 @@ export const APPLICATION_ID_JSON = {
 *****************************************************/
 export const CARPET_HERO_TITLE = `Cuci Karpet Medan yang \n Bersih dalam 1 Hari!`;
 // GM Cuci Karpet Anda Hari Ini, Kering Besok!
-// GPT Cuci Karpet Medan - Laundry Karpet Cepat dan Terpercaya di Laundry G99
+// GPT Cuci Karpet Medan - Laundry Karpet Cepat dan Terpercaya di Laundry G 99
 // 
 export const CARPET_HERO_DESCRIPTION = "Cuci Karpet Express 1 Hari Selesai di Medan. \n Layanan cuci karpet profesional dengan harga terjangkau.";
 // Cuci Karpet Express 1 Hari Selesai di Marelan, Medan. Layanan cuci karpet profesional dengan harga terjangkau.
-// GM Laundry G99 adalah solusi praktis untuk menjaga kebersihan karpet Anda. Dengan teknologi pengeringan terbaru, karpet Anda akan bersih dan segar kembali dalam waktu singkat.
+// GM Laundry G 99 adalah solusi praktis untuk menjaga kebersihan karpet Anda. Dengan teknologi pengeringan terbaru, karpet Anda akan bersih dan segar kembali dalam waktu singkat.
 //GPT "Bersih dan Wangi dalam Sehari" - Jasa Laundry Karpet dengan Pengering Khusus
 
 export const CARPET_HERO_CTA = "Pesan dan Dapatkan Gratis Antar Jemput";
@@ -164,7 +164,7 @@ export const CARPET_SERVICE_TITLE = ``;
 // GM Layanan Cuci Karpet Profesional di Medan
 export const CARPET_SERVICE_DESCRIPTION = ``;
 // GM Kami menawarkan layanan cuci karpet lengkap, mulai dari karpet bulu, karpet masjid, hingga karpet sofa. Proses pencucian dilakukan oleh tenaga ahli dengan menggunakan bahan-bahan berkualitas.
-// GPT Laundry G99 menyediakan layanan cuci karpet dengan hasil bersih dan wangi. Menggunakan teknologi pengering khusus, kami menjamin karpet Anda siap digunakan dalam satu hari.
+// GPT Laundry G 99 menyediakan layanan cuci karpet dengan hasil bersih dan wangi. Menggunakan teknologi pengering khusus, kami menjamin karpet Anda siap digunakan dalam satu hari.
 export const CARPET_SERVICE_BENEFIT = [];
 // GM
 // Karpet bersih dan bebas kuman
@@ -188,7 +188,7 @@ export const CARPET_SERVICE_FAQ = [];
 // GPT
 // Berapa lama waktu yang dibutuhkan untuk mencuci karpet?
 // Kami menggunakan pengering khusus sehingga karpet dapat selesai dalam 1 hari.
-// Apakah karpet saya aman dicuci di Laundry G99?
+// Apakah karpet saya aman dicuci di Laundry G 99?
 // Ya, kami menggunakan teknologi dan bahan yang aman untuk semua jenis karpet.
-// Apakah Laundry G99 melayani pengambilan dan pengantaran?
+// Apakah Laundry G 99 melayani pengambilan dan pengantaran?
 // Ya, kami menyediakan layanan antar-jemput untuk area Medan Marelan.

@@ -8,7 +8,7 @@ import { HomeHeroCtaBtn, HomeHeroTracker } from "../home-tracker";
 
 export const HomeHero = () => {
   return (
-    <section className="w-full pt-16 pb-20 sm:py-20">
+    <section className="w-full pt-16 pb-20 sm:py-20 bg-primary">
       <HomeHeroTracker />
       <div className="container">
         <div className="grid gap-12 lg:grid-cols-[1fr_500px] xl:grid-cols-[1fr_500px]">
@@ -17,7 +17,7 @@ export const HomeHero = () => {
               <h1 className="text-center lg:text-left font-bold text-3xl sm:text-5xl xl:text-6xl/none animate-fade-up animate-once animate-ease-in-out">
                 {HOME_HERO_TITLE}
               </h1>
-              <p className="text-center lg:text-left max-w-[500px] lg:max-w-[600px] items-center text-muted-foreground sm:text-xl animate-fade-up animate-once animate-ease-in-out animate-delay-100">
+              <p className="text-center lg:text-left max-w-[500px] lg:max-w-[600px] items-center sm:text-xl animate-fade-up animate-once animate-ease-in-out animate-delay-100">
                 {HOME_HERO_DESCRIPTION}
               </p>
             </div>

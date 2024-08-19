@@ -9,3 +9,27 @@
 .scrollable-x-backdrop-left {
   background: linear-gradient(to right, white, transparent);
 }
+
+.scrollable-x-backdrop-right-dark {
+  background: linear-gradient(to left, #2a2c30, transparent);
+}
+
+.scrollable-x-button-dark {
+  box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.16);
+}
+
+.scrollable-x-backdrop-left-dark {
+  background: linear-gradient(to right, #2a2c30, transparent);
+}
+
+.scrollable-x-backdrop-right-primary {
+  background: linear-gradient(to left, #ffab1a, transparent);
+}
+
+.scrollable-x-button-primary {
+  box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.16);
+}
+
+.scrollable-x-backdrop-left-primary {
+  background: linear-gradient(to right, #ffab1a, transparent);
+}
