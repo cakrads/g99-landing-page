@@ -3,7 +3,8 @@
 import { dynamic } from "@/libs/api-client/dynamic";
 
 import { LaundryCarpetWhy } from "./content/service-laundry-carpet-why";
-import { LaundryCarpetDetailServices } from "./content/service-laundry-carpet-detail";
+import { LaundryCarpetHooks } from "./content/service-laundry-carpet-hooks";
+// import { LaundryCarpetDetailServices } from "./content/service-laundry-carpet-detail";
 
 const LaundryLocation = dynamic(
   () => import("@/components/fragments/location").then((mod) => mod.LaundryLocation),
@@ -13,8 +14,9 @@ const LaundryLocation = dynamic(
 export const LaundryCarpetBottomContent = () => {
   return (
     <>
+      <LaundryCarpetHooks />
       <LaundryCarpetWhy />
-      <LaundryCarpetDetailServices />
+      {/* <LaundryCarpetDetailServices /> */}
       <LaundryLocation />
     </>
   );

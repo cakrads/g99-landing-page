@@ -5,12 +5,12 @@ import React, { useEffect } from "react";
 import { useAnalytic } from "@/libs/analytic/provider";
 import { useTrackEnterSection } from "@/libs/analytic/use-enter-section";
 import Link from "@/components/ui/link";
-import { WA_LINK } from "@/constant/whatsapp";
 
 export const CarpetServicePageTracker = () => {
   const analytic = useAnalytic();
 
   useEffect(() => {
+    analytic.trackStart("enter_carpet_service_hooks");
     analytic.trackStart("enter_carpet_service_why");
     analytic.trackStart("enter_carpet_service_location");
     analytic.trackStart("enter_carpet_service_footer");
@@ -44,10 +44,9 @@ export const CarpetServiceCtaBtn = ({ label }: { label: string }) => {
 
   return (
     <Link
-      href={WA_LINK}
-      className="inline-flex h-10 items-center justify-center rounded-md bg-primary px-8 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
+      href="#our-location"
+      className="inline-flex h-10 items-center justify-center rounded-md bg-primary px-8 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/80 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
       prefetch={false}
-      target="_blank"
       onClick={handleClickCta}
     >
       {label}

@@ -6,7 +6,6 @@ import { usePathname } from "next/navigation";
 import * as DATA_LAUNDRY_CARPET_MARELAN from "@/constant/seo/laundry-karpet-marelan-page";
 import * as DATA_CUCI_KARPET_MEDAN from "@/constant/seo/cuci-karpet-medan-page";
 import { SectionHeader } from "@/components/fragments/section-header";
-import { WaveBottomBgShapeSM, WaveTopBgShape, WaveTopBgShapeSM } from "@/components/ui/shapes";
 import { useIsVisible } from "@/utils/use-in-view";
 import { useTrackEnterSection } from "@/libs/analytic/use-enter-section";
 
@@ -27,16 +26,14 @@ export const LaundryCarpetWhy = () => {
 
   return (
     <section ref={ref}>
-      <WaveTopBgShapeSM className="w-full block lg:hidden" />
-      <WaveTopBgShape className="w-full hidden lg:block" />
-      <div className="bg-muted pt-24 pb-16 md:pt-28 sm:py-24 relative">
+      <div className="pt-32 pb-16 md:pt-40 sm:py-24 relative">
         <div className="container">
           <SectionHeader
             title={CARPET_WHY_TITLE}
             description={CARPET_WHY_DESCRIPTION}
           />
-          <div ref={refImage} className="flex flex-col lg:flex-row gap-10 py-12 items-center">
-            <div className="order-2 md:order-1 w-full md:min-w-[300px] flex flex-col md:flex-row lg:flex-col gap-5">
+          <div ref={refImage} className="flex flex-col gap-10 py-12 items-center">
+            <div className="order-2 md:order-1 w-full md:min-w-[300px] flex flex-col md:flex-row gap-5">
               <div
                 className={clsx(
                   "relative rounded-3xl w-full h-[150px] md:h-[200px] lg:h-[150px] bg-gray-400 shadow-lg",
@@ -86,12 +83,10 @@ export const LaundryCarpetWhy = () => {
               >
                 {CARPET_WHY_LIST.map((item, index) => (
                   <li key={index}>
-                    <b className="font-semibold">
+                    {/* <b className="font-semibold">
                       {item.label} :
-                    </b>
-                    <p>
-                      {item.description}
-                    </p>
+                    </b> */}
+                    <p dangerouslySetInnerHTML={{ __html: item.description }} />
                   </li>
                 ))}
               </ul>
@@ -99,7 +94,6 @@ export const LaundryCarpetWhy = () => {
           </div>
         </div>
       </div>
-      <WaveBottomBgShapeSM className="w-full" />
     </section>
   );
 };

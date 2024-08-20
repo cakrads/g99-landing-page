@@ -76,34 +76,52 @@ export const APPLICATION_ID_JSON = {
   CONTENT
 *****************************************************/
 export const CARPET_HERO_TITLE = "Laundry Karpet Terdekat di Marelan, Selesai 1 Hari";
-export const CARPET_HERO_DESCRIPTION = "Cuci Karpet Express 1 Hari Selesai di Marelan, Medan. Layanan cuci karpet profesional dengan harga terjangkau.";
+export const CARPET_HERO_DESCRIPTION = "Cuci Karpet Express 1 Hari Selesai di Medan Marelan.\n Layanan cuci karpet profesional dengan harga terjangkau.";
 // export const CARPET_WHY_DESCRIPTION = "Jasa Laundry Karpet cepat & bersih Siap menerima layanan antar-jemput untuk daerah Bandung dan Sekitarnya";
 export const CARPET_HERO_CTA = "Pesan Sekarang";
 
-export const CARPET_WHY_TITLE = "Kenapa Harus Laundry Karpet di Kami?";
+export const CARPET_HOOKS = "Kini, Laundry Karpet Jadi Super Praktis!";
+export const CARPET_HOOKS_DESC = "Tak perlu repot keluar rumah atau pusing mencari waktu luang. Cukup hubungi kami, dan tim kami siap menjemput karpet Anda langsung dari rumah";
+export const CARPET_HOOKS_BTN = "HUBUNGI KAMI";
+
+export const CARPET_WHY_TITLE = "Mengapa harus memilih Laundry G 99 Karpet Expert untuk karpet Anda?";
 export const CARPET_WHY_DESCRIPTION = "";
 export const CARPET_WHY_LIST = [
   {
-    "label": "???",
-    "description": "Laundry kami melayani GRATIS Antar Jemput untuk wilayah Medan.",
+    "label": "Hemat waktu dan tenaga!",
+    "description": "Nikmati kemudahan layanan <b>Antar-Jemput GRATIS</b> untuk karpet Anda di wilayah Medan Marelan, Hamparan Perak, Martubung, Mabar, Medan Belawan, Titi Papan, dan sekitarnya. Hubungi kami sekarang untuk penjadwalan!"
+    // "description": "Karpet akan kami <b>Antar Jemput secara GRATIS</b> untuk wilayah Medan Marelan, Hamparan Perak, Martubung, Mabar, Medan Belawan, Titi Papan dan Sekitarnya.",
   },
   {
-
-    "label": "???",
-    "description": "Kami cuci karpet dengan teknik pencucian terbaik yang membuat semua noda, kotoran, dan aroma tidak sedap terlepas sempurna tanpa harus khawatir terjadinya resiko kerusakan.",
+    "label": "Bersih dan Aman",
+    "description": "<b>Teknik Pencucian Khusus</b> kami memastikan karpet Anda kembali Bersih, Segar, dan terlihat seperti Baru. Semua noda membandel hilang tanpa risiko kerusakan!",
+    // "description": "Kami mencuci karpet Anda dengan <b>teknik pencucian terbaik</b> yang membuat semua noda, kotoran, dan aroma tidak sedap terlepas sempurna tanpa harus khawatir terjadinya resiko kerusakan pada karpet Anda.",
   },
   {
-    "label": "???",
-    "description": "Laundry kami menggunakan bahan pembersih khusus yang memiliki pH 8 sehingga sangat aman dan bebas dari resiko bau apek.",
+    "label": "Pembersih Khusus",
+    "description": "Laundry karpet kami menggunakan <b>Cairan Pembersih Khusus Karpet ber pH 8</b> yang aman, memastikan karpet Anda Bersih Maksimal Tanpa risiko Kerusakan atau Bau Apek.",
+    // "description": "Laundry karpet kami menggunakan <b>bahan pembersih khusus karpet yang memiliki pH 8</b> sehingga sangat aman dan bebas dari resiko bau Apek.",
   },
   {
-    "label": "???",
-    "description": "Karpet diproses dengan mesin Yusima Carpet Spinner seharga Rp50 Jutaan, sehingga proses pengeringan berlangsung sangat cepat",
+    "label": "Teknologi Modern",
+    "description": "Kami menggunakan <b>Mesin Pembersih Karpet Modern</b> yang memastikan setiap Kotoran, Debu, dan Noda Terangkat sempurna, membuat karpet Anda kembali Segar dan terlihat seperti Baru."
+    // "description": "Karpet dicuci dan diproses dengan <b>mesin pembersih karpet terkini</b> yang membuat karpet Anda bersih terlihat seperti baru.",
   },
   {
-
-    "label": "???",
-    "description": "Kami berani menggaransi kepuasan Anda. Jika Anda tidak puas, Anda bisa mengklaim untuk cuci kembali atau GRATIS tidak perlu membayar.",
+    "label": "Selesai dengan Cepat",
+    "description": "Nikmati keunggulan mesin <b>Spinner Karpet Gadhing Kreatologi Indonesia seharga Rp 40 jutaan</b> yang memastikan karpet Anda Kering Sempurna dalam waktu singkat, sehinga Bebas dari Bakteri penyebab Bau Apek.",
+    // "description": "Karpet Anda dikeringkan dengan mesin <b>Spinner Karpet - Gadhing Kreatologi Indonesia dengan harga Rp 40 jutaan</b>, yang membuat karpet Anda cepat kering dan terhindar dari bau Apek.",
+    // 
+  },
+  {
+    "label": "Kualitas premium, harga bersahabat.",
+    "description": "Dapatkan layanan cuci karpet <b>Premium dengan Harga Terjangkau!</b>. Kami menawarkan harga yang kompetitif tanpa mengorbankan hasil terbaik.",
+    // "description": "Laundry Karpet kami menawarkan <b>Harga Kompetitif</b> tanpa mengorbankan hasil.",
+  },
+  {
+    "label": "Garansi Layanan",
+    "description": "Kami sangat percaya diri dengan hasil kerja kami. Jika Anda tidak puas, kami akan <b>cuci ulang karpet Anda tanpa biaya tambahan</b>. Kepuasan Anda adalah prioritas utama kami.",
+    // "description": "Laundry Karpet kami berani <b>menggaransi kepuasan Anda</b>. Jika Anda tidak puas, Anda bisa mengklaim untuk dicuci kembali atau GRATIS tidak perlu membayar.",
   },
 ];
 
@@ -111,3 +129,4 @@ export const CARPET_SERVICES_DETAIL_TITLE = "Layanan Cuci Karpet di Marelan";
 export const CARPET_SERVICES_DETAIL_DESCRIPTION = `
   Kami menyediakan layanan cuci karpet terdekat di Marelan, Medan. Cuci karpet cepat, bersih, dan higienis.
 `;
+

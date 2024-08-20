@@ -1,5 +1,6 @@
 import { HOST_URL } from "../env";
 import { SHOP_ADDRESS, SHOP_PHONE } from "../shop";
+import * as LAUNDRY_KARPET_MARELAN from "./laundry-karpet-marelan-page";
 
 
 export const CARPET_WEB_TITLE = "Cuci Karpet Medan | Laundry G 99 - Cepat, Bersih, Murah";
@@ -76,78 +77,18 @@ export const CARPET_HERO_DESCRIPTION = "Cuci Karpet Express 1 Hari Selesai di Me
 
 export const CARPET_HERO_CTA = "Pesan dan Dapatkan Gratis Antar Jemput";
 
-export const CARPET_WHY_TITLE = "Kenapa Harus Cuci Karpet di Kami?";
+export const CARPET_HOOKS = "Kini, Cuci Karpet Jadi Super Praktis!";
+export const CARPET_HOOKS_DESC = LAUNDRY_KARPET_MARELAN.CARPET_HOOKS_DESC;
+export const CARPET_HOOKS_BTN = LAUNDRY_KARPET_MARELAN.CARPET_HOOKS_BTN;
+
+export const CARPET_WHY_TITLE = "Mengapa harus memilih Laundry G 99 Karpet Expert untuk karpet Anda?";
 export const CARPET_WHY_DESCRIPTION = "";
 
 export const CARPET_SERVICES_DETAIL_TITLE = "";
 export const CARPET_SERVICES_DETAIL_DESCRIPTION = `
 
 `;
-export const CARPET_WHY_LIST = [
-  {
-    "label": "Gratis Antar Jemput",
-    "description": "Laundry kami melayani GRATIS Antar Jemput Karpet untuk wilayah Medan.",
-  },
-  {
-
-    "label": "Bersih dan Aman",
-    "description": "Kami cuci karpet dengan teknik pencucian terbaik yang membuat semua noda, kotoran, dan aroma tidak sedap terlepas sempurna tanpa harus khawatir terjadinya resiko kerusakan.",
-  },
-  {
-    "label": "???",
-    "description": "Laundry kami menggunakan bahan pembersih khusus yang memiliki pH 8 sehingga sangat aman dan bebas dari resiko bau apek.",
-  },
-  {
-    "label": "???",
-    "description": "Karpet diproses dengan mesin Yusima Carpet Spinner seharga Rp50 Jutaan, sehingga proses pengeringan berlangsung sangat cepat",
-  },
-  {
-
-    "label": "???",
-    "description": "Kami berani menggaransi kepuasan Anda. Jika Anda tidak puas, Anda bisa mengklaim untuk cuci kembali atau GRATIS tidak perlu membayar.",
-  },
-
-  {
-    "label": "Jasa Cuci Karpet Medan Profesional",
-    "description": "Nikmati layanan cuci karpet berkualitas tinggi dengan tim ahli berpengalaman.",
-  },
-  {
-    "label": "Bersihkan Karpet Anda dengan Cepat",
-    "description": "Dapatkan karpet bersih dalam waktu singkat tanpa mengorbankan kualitas.",
-  },
-  {
-    "label": "Harga Cuci Karpet Terjangkau",
-    "description": "Kami menawarkan harga kompetitif tanpa mengorbankan hasil maksimal.",
-  },
-  {
-    "label": "Peralatan Modern",
-    "description": "Kami menggunakan peralatan cuci karpet terbaru untuk hasil yang optimal.",
-  },
-  {
-    "label": "Bahan Pembersih Aman",
-    "description": "Semua bahan pembersih kami aman untuk keluarga dan lingkungan.",
-  },
-  {
-    "label": "Garanti Kepuasan",
-    "description": "Kami menjamin kepuasan Anda atau uang kembali.",
-  },
-  {
-    "label": "Gratis Antar Jemput",
-    "description": "Nikmati kemudahan layanan antar jemput tanpa biaya tambahan.",
-  },
-  {
-    "label": "Cuci Karpet Semua Jenis",
-    "description": "Kami melayani semua jenis karpet, dari karpet bulu hingga karpet berbahan sintetis.",
-  },
-  {
-    "label": "Karpet Bersih dan Wangi",
-    "description": "Dapatkan karpet yang bersih, segar, dan bebas kuman.",
-  },
-  {
-    "label": "Layanan 24 Jam",
-    "description": "Hubungi kami kapan saja untuk mendapatkan informasi lebih lanjut.",
-  },
-];
+export const CARPET_WHY_LIST = LAUNDRY_KARPET_MARELAN.CARPET_WHY_LIST;
 // GM
 // Teknologi Modern: Kami menggunakan mesin pengering khusus yang dapat mengeringkan karpet dalam waktu singkat tanpa merusak serat karpet.
 // Tenaga Ahli: Tim kami berpengalaman dalam membersihkan berbagai jenis karpet.

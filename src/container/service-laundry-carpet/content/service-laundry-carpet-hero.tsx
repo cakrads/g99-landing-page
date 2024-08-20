@@ -26,7 +26,7 @@ export const LaundryCarpetHero = ({ source }: { source: TSourcePage }) => {
               <h1 className="font-bold whitespace-pre-line text-3xl sm:text-5xl xl:text-6xl/none !leading-tight animate-fade-up animate-once animate-ease-in-out">
                 {CARPET_HERO_TITLE}
               </h1>
-              <p className="max-w-[600px] whitespace-pre-line text-muted-foreground sm:text-xl animate-fade-up animate-once animate-ease-in-out animate-delay-100">
+              <p className="max-w-[600px] whitespace-pre-line sm:text-xl animate-fade-up animate-once animate-ease-in-out animate-delay-100">
                 {CARPET_HERO_DESCRIPTION}
               </p>
             </div>

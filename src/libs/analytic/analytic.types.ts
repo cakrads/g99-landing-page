@@ -1,6 +1,8 @@
 enum eventKey {
   "enter_home_hero",
   "click_home_hero_cta",
+  "enter_home_hooks",
+  "click_home_hooks_btn",
   "enter_home_services",
   "click_home_service_carpet",
   "click_home_service_laundry_dry",
@@ -11,6 +13,8 @@ enum eventKey {
 
   "enter_carpet_service_hero",
   "click_carpet_service_hero_cta",
+  "enter_carpet_service_hooks",
+  "click_carpet_service_hooks_cta",
   "enter_carpet_service_why",
   "enter_carpet_service_location",
   "enter_carpet_service_footer",

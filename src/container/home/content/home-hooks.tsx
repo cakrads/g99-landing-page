@@ -2,14 +2,15 @@ import React from "react";
 import clsx from "clsx";
 
 import { WaveTopBgShapeSM, WaveTopBgShape, WaveBottomBgShapeSM } from "@/components/ui/shapes";
-import { HOME_HOOKS, HOME_HOOKS_BTN } from "@/constant/seo/home-page";
+import { HOME_HOOKS } from "@/constant/seo/home-page";
 import { useTrackEnterSection } from "@/libs/analytic/use-enter-section";
 import { useIsVisible } from "@/utils/use-in-view";
-import Link from "@/components/ui/link";
 
-export const HomeAboutUs = () => {
+import { HomeHooksBtn } from "../home-tracker";
+
+export const HomeHooks = () => {
   const { ref } = useTrackEnterSection({
-    envetKey: "enter_home_services",
+    envetKey: "enter_home_hooks",
     featureKey: "Home Page",
   });
   const isIntersecting = useIsVisible({ ref, once: true });
@@ -29,17 +30,7 @@ export const HomeAboutUs = () => {
             <h3 className="max-w-[700px] text-secondary-foreground text-2xl md:text-3xl font-semibold !leading-normal">
               {HOME_HOOKS}
             </h3>
-            <Link
-              href="#our-location"
-              className={clsx(
-                "inline-flex items-center justify-center rounded-md py-4 px-10 text-sm font-semibold",
-                "bg-primary text-secondary shadow transition-all duration-500",
-                "hover:bg-white hover:text-foreground whitespace-nowrap",
-              )}
-            // onClick={handleClickCta}
-            >
-              {HOME_HOOKS_BTN}
-            </Link>
+            <HomeHooksBtn />
           </div>
         </div>
       </div>
@@ -49,3 +40,4 @@ export const HomeAboutUs = () => {
     </section>
   );
 };
+

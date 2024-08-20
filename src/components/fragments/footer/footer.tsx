@@ -6,7 +6,7 @@ import clsx from "clsx";
 
 import Link from "@/components/ui/link";
 import { SHOP_ADDRESS, SHOP_DESCRIPTION, SHOP_FB, SHOP_IG, SHOP_MOTTO, SHOP_NAME, SHOP_PHONE, SHOP_PHONE_2, SHOP_PHONE_SHOW, SHOP_PHONE_SHOW_2, SHOP_TIKTOK } from "@/constant/shop";
-import { WA_LINK } from "@/constant/whatsapp";
+import { WA_LINK, WA_SERVICE_NAME } from "@/constant/whatsapp";
 import { FacebookIcon, InstagramIcon, TiktokIcon, WhatsAppIcon } from "@/components/ui/icons/social";
 import { WaveTopBgShape, WaveTopBgShapeSM } from "@/components/ui/shapes";
 import { useTrackEnterSection } from "@/libs/analytic/use-enter-section";
@@ -42,12 +42,12 @@ export const Footer = () => {
   return (
     <>
       <Link
-        href={WA_LINK}
+        href={WA_LINK(WA_SERVICE_NAME.GLOBAL)}
         target="_blank"
         className={clsx(
           "fixed bottom-4 right-4 flex items-center gap-2",
           "rounded-full bg-[#51cd5e] py-2 px-4 md:px-5",
-          "shadow-xl hover:shadow-2xl active:shadow-2xl focus:shadow-2xl"
+          "shadow-2xl hover:shadow-xl active:shadow-2xl focus:shadow-2xl"
         )}
         prefetch={false}
         onClick={handleClickFABWhatsapp}

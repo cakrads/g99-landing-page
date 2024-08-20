@@ -3,7 +3,7 @@
 import { dynamic } from "@/libs/api-client/dynamic";
 
 import { HomeServices } from "./content/home-services";
-import { HomeAboutUs } from "./content/home-about-us";
+import { HomeHooks } from "./content/home-hooks";
 
 const LaundryLocation = dynamic(
   () => import("@/components/fragments/location").then((mod) => mod.LaundryLocation),
@@ -17,7 +17,7 @@ const HomeWhy = dynamic(
 export const HomeBottomContent = () => {
   return (
     <>
-      <HomeAboutUs />
+      <HomeHooks />
       <HomeServices />
       <HomeWhy />
       {/* SECTION AYO DATANG KE KAMI  */}
