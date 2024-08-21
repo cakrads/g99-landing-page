@@ -6,8 +6,8 @@ import { WaveTopBgShapeSM, WaveTopBgShape, WaveBottomBgShapeSM } from "@/compone
 import { useTrackEnterSection } from "@/libs/analytic/use-enter-section";
 import { useIsVisible } from "@/utils/use-in-view";
 import Link from "@/components/ui/link";
-import * as DATA_CUCI_KARPET_MEDAN from "@/constant/seo/cuci-karpet-medan-page";
-import * as DATA_LAUNDRY_CARPET_MARELAN from "@/constant/seo/laundry-karpet-marelan-page";
+import * as DATA_LAUNDRY_CARPET_MARELAN from "@/constant/seo/custom/laundry-karpet-marelan-page";
+import * as DATA_CUCI_KARPET_MEDAN from "@/constant/seo/custom/cuci-karpet-medan-page";
 
 export const LaundryCarpetHooks = () => {
   const { ref } = useTrackEnterSection({

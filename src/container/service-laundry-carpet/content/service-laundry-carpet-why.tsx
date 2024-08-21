@@ -3,8 +3,8 @@ import { useRef } from "react";
 import clsx from "clsx";
 import { usePathname } from "next/navigation";
 
-import * as DATA_LAUNDRY_CARPET_MARELAN from "@/constant/seo/laundry-karpet-marelan-page";
-import * as DATA_CUCI_KARPET_MEDAN from "@/constant/seo/cuci-karpet-medan-page";
+import * as DATA_LAUNDRY_CARPET_MARELAN from "@/constant/seo/custom/laundry-karpet-marelan-page";
+import * as DATA_CUCI_KARPET_MEDAN from "@/constant/seo/custom/cuci-karpet-medan-page";
 import { SectionHeader } from "@/components/fragments/section-header";
 import { useIsVisible } from "@/utils/use-in-view";
 import { useTrackEnterSection } from "@/libs/analytic/use-enter-section";

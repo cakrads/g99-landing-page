@@ -1,7 +1,7 @@
 import Image from "next/image";
 
-import * as DATA_LAUNDRY_CARPET_MARELAN from "@/constant/seo/laundry-karpet-marelan-page";
-import * as DATA_CUCI_KARPET_MEDAN from "@/constant/seo/cuci-karpet-medan-page";
+import * as DATA_LAUNDRY_CARPET_MARELAN from "@/constant/seo/custom/laundry-karpet-marelan-page";
+import * as DATA_CUCI_KARPET_MEDAN from "@/constant/seo/custom/cuci-karpet-medan-page";
 
 import { CarpetServiceCtaBtn, CarpetServiceHeroTracker } from "../service-laundry-carpet-tracker";
 import { TSourcePage } from "./../service-laundry-carpet";

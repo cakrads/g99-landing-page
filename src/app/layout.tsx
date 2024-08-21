@@ -5,10 +5,10 @@ import NextTopLoader from "nextjs-toploader";
 import { Header } from "@/components/fragments/header";
 import { Footer } from "@/components/fragments/footer";
 import { cn } from "@/components/libs/cn";
-import { HOME_WEB_DESCRIPTION, HOME_WEB_KEYWORDS, HOME_WEB_TITLE } from "@/constant/seo/home-page";
+import { HOME_WEB_DESCRIPTION, HOME_WEB_KEYWORDS, HOME_WEB_TITLE, } from "@/constant/seo/home-page";
 import { HOST_URL } from "@/constant/env";
-import { SHOP_NAME } from "@/constant/shop";
 import { AnalyticProvider } from "@/libs/analytic/provider";
+import { createMetadata } from "@/constant/seo/meta-data";
 
 import type { Metadata } from "next";
 
@@ -26,43 +26,19 @@ const fontBody = Inter({
   variable: "--font-body",
 });
 
-export const metadata: Metadata = {
-  metadataBase: new URL(HOST_URL || ""),
-  title: HOME_WEB_TITLE,
-  description: HOME_WEB_DESCRIPTION,
-  keywords: HOME_WEB_KEYWORDS,
-  authors: [
-    {
-      name: "cakra.ds",
-      // url: "https://www.sadmn.com",
-    },
-  ],
-  creator: "cakra.ds",
-  openGraph: {
-    type: "website",
-    locale: "en_US",
-    url: HOST_URL,
+export function generateMetadata(): Metadata {
+  return createMetadata({
     title: HOME_WEB_TITLE,
     description: HOME_WEB_DESCRIPTION,
-    siteName: SHOP_NAME,
-    images: {
+    primaryKeyword: HOME_WEB_KEYWORDS,
+    secondaryKeyword: [],
+    socialImage: {
       url: HOST_URL + "/images/laundry-karpet-terdekat.png",
       width: 1920,
       height: 957,
-    }
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: HOME_WEB_TITLE,
-    description: HOME_WEB_DESCRIPTION,
-    // images: [`${siteConfig.url}/og.jpg`],
-    // creator: "@sadmann17",
-  },
-  icons: {
-    icon: "/icon.ico",
-  },
-  // manifest: absoluteUrl("/site.webmanifest"),
-};
+    },
+  });
+}
 
 export default function RootLayout({
   children,

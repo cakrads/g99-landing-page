@@ -1,5 +1,6 @@
-import { HOST_URL } from "../env";
-import { SHOP_ADDRESS, SHOP_PHONE } from "../shop";
+import { HOST_URL } from "@/constant/env";
+
+import { generateAppIdJson } from "../app-id-json";
 
 
 // Cuci Karpet Cepat, Cuci Karpet di Medan, Layanan Cuci Karpet, Laundry Karpet Marelan G 99, Cuci Karpet Terdekat, Harga Cuci Karpet, Jasa Cuci Karpet, Cuci Karpet Cepat di Medan, Mesin Cuci Karpet Modern, Solusi Cuci Karpet
@@ -45,32 +46,9 @@ export const CARPET_WEB_KEYWORDS = [
 // laundry karpet, cuci karpet, cuci karpet Medan, laundry karpet Medan, cuci karpet Marelan, laundry karpet Marelan
 // harga laundry karpet, harga cuci karpet, cuci karpet terdekat, laundry karpet terdekat, jasa cuci karpet, jasa cuci karpet Medan, jasa cuci karpet Marelan
 export const CARPET_IMG_ALT = CARPET_WEB_TITLE;
+export const CARPET_SOCIAL_IMAGE = HOST_URL + "/images/meta-image-laundry-karpet.png";
 
-export const APPLICATION_ID_JSON = {
-  "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  name: CARPET_WEB_TITLE,
-  url: "https://www.facebook.com/kiwilaundryco/",
-  logo: "https://www.facebook.com/kiwilaundryco/",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": SHOP_ADDRESS,
-    "addressLocality": "Medan Marelan",
-    "addressRegion": "Sumatra Utara",
-    "postalCode": "20255",
-    "country": "Indonesia"
-  },
-  contactPoint: {
-    "@type": "ContactPoint",
-    telephone: SHOP_PHONE,
-    contactType: "customer service"
-  },
-  "telephone": SHOP_PHONE,
-  "hours": "09:00-21:00",
-  "website": `[${HOST_URL}](${HOST_URL})`,
-  "latitude": "3.702272984566515",
-  "longitude": "98.6581149005907"
-};
+export const APPLICATION_ID_JSON = generateAppIdJson({ webTitle: CARPET_WEB_TITLE });
 
 /****************************************************
   CONTENT

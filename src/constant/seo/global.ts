@@ -1,5 +1,5 @@
 import { HOME_WEB_TITLE } from "./home-page";
-import { CARPET_IMG_ALT, CARPET_WEB_TITLE } from "./laundry-karpet-marelan-page";
+import { CARPET_IMG_ALT, CARPET_WEB_TITLE } from "./custom/laundry-karpet-marelan-page";
 
 export const GLOBAL_WEB_TITLE = CARPET_WEB_TITLE;
 export const GLOBAL_IMG_ALT = CARPET_IMG_ALT;

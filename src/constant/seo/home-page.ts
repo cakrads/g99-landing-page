@@ -1,6 +1,4 @@
-import { HOST_URL } from "../env";
-import { SHOP_ADDRESS, SHOP_PHONE } from "../shop";
-import { CARPET_WEB_KEYWORDS_PRIMARY } from "./laundry-karpet-marelan-page";
+import { CARPET_WEB_KEYWORDS_PRIMARY } from "./custom/laundry-karpet-marelan-page";
 
 
 export const HOME_WEB_TITLE = "Laundry Karpet Marelan G 99 | Laundry Terdekat & Berkualitas di Medan Marelan";
@@ -19,32 +17,6 @@ export const HOME_WEB_KEYWORDS = [
   ...CARPET_WEB_KEYWORDS_PRIMARY,
 ];
 export const HOME_IMG_ALT = HOME_WEB_TITLE;
-
-export const APPLICATION_ID_JSON = {
-  "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  name: HOME_WEB_TITLE,
-  url: "https://www.facebook.com/kiwilaundryco/",
-  logo: "https://www.facebook.com/kiwilaundryco/",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": SHOP_ADDRESS,
-    "addressLocality": "Medan Marelan",
-    "addressRegion": "Sumatra Utara",
-    "postalCode": "20255",
-    "country": "Indonesia"
-  },
-  contactPoint: {
-    "@type": "ContactPoint",
-    telephone: SHOP_PHONE,
-    contactType: "customer service"
-  },
-  "telephone": SHOP_PHONE,
-  "hours": "09:00-21:00",
-  "website": `[${HOST_URL}](${HOST_URL})`,
-  "latitude": "3.702272984566515",
-  "longitude": "98.6581149005907"
-};
 
 /****************************************************
   CONTENT

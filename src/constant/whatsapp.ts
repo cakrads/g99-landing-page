@@ -7,4 +7,5 @@ export const WA_LINK = (services: string = "laundy%20karpet") => `https://wa.me/
 export const WA_SERVICE_NAME = {
   GLOBAL: "memesan%20jasa%20laundry%20karpet%20marelan%20G%2099",
   CARPET: "mencuci%20karpet",
+  STROLLER: "laundry%20stroller",
 }; 
