@@ -75,8 +75,5 @@ export const webContent: IWebContent = {
     "/images/services/stroller/2.png",
     "/images/services/stroller/3.png",
   ],
-  faq: [{
-    question: "",
-    answer: "",
-  }]
+  faq: []
 };

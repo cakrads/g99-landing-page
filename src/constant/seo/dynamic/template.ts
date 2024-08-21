@@ -23,15 +23,9 @@ export const webContent: IWebContent = {
   serviceName: "",
   serviceNameAlt: "",
   article: ``, // will help to edit html: https://onlinehtmleditor.dev/
-  prices: [{
-    type: "",
-    value: "",
-  }],
+  prices: [],
   hooks: "",
   article2: "",
   images: [],
-  faq: [{
-    question: "",
-    answer: "",
-  }]
+  faq: []
 };

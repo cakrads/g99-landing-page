@@ -62,8 +62,5 @@ export const webContent: IWebContent = {
     "/images/services/spring-bed/2.png",
     "/images/services/spring-bed/3.png",
   ],
-  faq: [{
-    question: "",
-    answer: "",
-  }]
+  faq: []
 };

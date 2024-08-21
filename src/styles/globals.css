@@ -103,13 +103,14 @@
     @apply text-3xl;
   }
   .article h2 {
-    @apply text-2xl;
+    @apply text-3xl;
   }
   .article h3 {
-    @apply text-xl;
+    @apply text-2xl;
   }
   .article li {
     @apply list-disc;
     @apply ml-6;
+    @apply text-lg;
   }
 }
