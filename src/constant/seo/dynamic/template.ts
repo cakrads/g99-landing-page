@@ -1,3 +1,5 @@
+import { HOST_URL } from "@/constant/env";
+
 import { generateAppIdJson } from "../app-id-json";
 import { IWebContent, IWebSeo } from "./type";
 
@@ -9,10 +11,10 @@ export const webSeo: IWebSeo = {
   description: "",
   primaryKeyword: [],
   secondaryKeyword: [],
-  imgAlt: "",
+  imgAlt: WEB_TITLE,
   applicationId: generateAppIdJson({ webTitle: WEB_TITLE }),
-  routes: "",
-  socialImage: "",
+  routes: "/" + SLUG,
+  socialImage: HOST_URL + "/images/services/XXXX",
 };
 
 export const webContent: IWebContent = {

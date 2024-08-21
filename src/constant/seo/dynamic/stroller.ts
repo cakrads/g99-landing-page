@@ -1,7 +1,10 @@
+import { HOST_URL } from "@/constant/env";
+
 import { generateAppIdJson } from "../app-id-json";
 import { IWebContent, IWebSeo } from "./type";
 
 const WEB_TITLE = "Laundry Stroller Berkualitas di Medan Marelan";
+export const SLUG = "laundry-stroller";
 export const webSeo: IWebSeo = {
   title: WEB_TITLE,
   description: "Laundry Stroller si buah hati disini, tim kami akan menjemput stroller Anda dan akan dibersihkan secara profesional.",
@@ -26,8 +29,8 @@ export const webSeo: IWebSeo = {
   ],
   imgAlt: WEB_TITLE,
   applicationId: generateAppIdJson({ webTitle: WEB_TITLE }),
-  routes: "/laundry-stroller",
-  socialImage: "/images/services/stroller/2.png",
+  routes: "/" + SLUG,
+  socialImage: HOST_URL + "/images/services/stroller/2.png",
 };
 
 export const webContent: IWebContent = {

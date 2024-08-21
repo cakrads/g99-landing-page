@@ -18,11 +18,11 @@ export const ServiceDynamicContent = ({ slug }: { slug: string }) => {
           )}
         </div>
 
-        <div className="article" dangerouslySetInnerHTML={{ __html: data.article }} />
+        <div className="article mb-10" dangerouslySetInnerHTML={{ __html: data.article }} />
 
         {data.prices.length > 0 && (
-          <div className="pt-5 pb-8">
-            <h2 className="font-bold text-2xl mb-3">Biaya Laundry Stroller :</h2>
+          <div className="pb-8">
+            <h2 className="font-bold text-2xl mb-3">Biaya {data.serviceName} :</h2>
             <div>
               {data.prices.map((price, key) => (
                 <div key={key + price.value}>
@@ -32,17 +32,16 @@ export const ServiceDynamicContent = ({ slug }: { slug: string }) => {
             </div>
           </div>
         )}
-
         {data.images.length > 0 && (
           <div>
-            <h2 className="font-bold text-2xl mb-3">Hasil Pengerjaan Laundry Kami:</h2>
+            <h2 className="font-bold text-2xl mb-3">Hasil Pengerjaan {data.serviceName} Kami:</h2>
             <div className="mx-auto max-w-[600px] flex flex-col gap-5 justify-center">
               {data.images.map((image, key) => (
                 <Image
                   className="rounded-3xl shadow-lg"
                   key={key + image}
                   src={image}
-                  alt={dataSeo.imgAlt}
+                  alt={dataSeo?.imgAlt || ""}
                   style={{
                     width: "100%",
                     height: "auto",

@@ -96,6 +96,7 @@
 
   .article p {
     @apply mb-3;
+    @apply text-lg;
   }
 
   .article h1 {

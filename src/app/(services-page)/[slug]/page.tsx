@@ -2,7 +2,6 @@ import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Head from "next/head";
 
-import { HOST_URL } from "@/constant/env";
 import { ServiceDynamicContainer } from "@/container/services-dynamic";
 import { getDynamicContent } from "@/constant/seo/get-dynamic-content";
 import { createMetadata } from "@/constant/seo/meta-data";
@@ -46,7 +45,7 @@ export default function ServicesDynamic({ params }: Readonly<Props>) {
   return (
     <>
       <Head>
-        <link rel="canonical" href={HOST_URL + dataSeo.routes} />
+        <link rel="canonical" href={dataSeo.routes} />
         <script type="application/ld+json">
           {JSON.stringify(dataSeo.applicationId)}
         </script>
