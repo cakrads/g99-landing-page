@@ -14,6 +14,10 @@ type Props = {
 export function generateMetadata({ params }: Props): Metadata {
   const { dataSeo } = getDynamicContent(params.slug);
 
+  if (dataSeo === null) {
+    return notFound();
+  }
+
   return createMetadata({
     title: dataSeo.title,
     description: dataSeo.description,
@@ -32,7 +36,12 @@ export default function ServicesDynamic({ params }: Readonly<Props>) {
   if (!params.slug) {
     return notFound();
   }
+
   const { dataSeo } = getDynamicContent(params.slug);
+
+  if (!dataSeo) {
+    return notFound();
+  }
 
   return (
     <>

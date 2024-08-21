@@ -7,8 +7,15 @@ export const getDynamicContent = (slug: string) => {
     "laundry-stroller": LAUNDRY_STROLLER
   };
 
-  const dataSeo = mapingData[slug || "laundry-stroller"].webSeo;
-  const dataContent = mapingData[slug || "laundry-stroller"].webContent;
+  if (mapingData[slug] === undefined) {
+    return {
+      dataSeo: null,
+      data: null
+    };
+  }
+
+  const dataSeo = mapingData[slug || "laundry-stroller"]?.webSeo;
+  const dataContent = mapingData[slug || "laundry-stroller"]?.webContent;
 
   return {
     dataSeo,

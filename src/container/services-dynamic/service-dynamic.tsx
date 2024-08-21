@@ -6,6 +6,7 @@ export const ServiceDynamicContainer = ({ slug }: { slug: string }) => {
   return (
     <main>
       <ServiceDynamicPageTracker />
+      {/* Add Breadcumb */}
       <ServiceDynamicContent slug={slug} />
       <LaundryDynamicBottomContent />
     </main>
