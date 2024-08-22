@@ -38,7 +38,7 @@ export const webContent: IWebContent = {
   serviceNameAlt: "Cuci Sofa",
   article: `
   <p><strong>Apakah sofa Anda mulai terlihat kotor atau kurang bersih? Saatnya memberikan perawatan terbaik untuk sofa kesayangan Anda dengan layanan laundry dari Laundry G 99 Kami!</strong></p>
-  <h2>Kenapa Harus Laundry Spring Beddi Laundry G 99 :</h2>
+  <h2>Kenapa Harus Laundry Sofa di Laundry G 99 :</h2>
   <ul>
       <li><strong>Profesional &amp; Berpengalaman:</strong> Kami mampu dalam membersihkan sofa dari berbagai bahan dan jenis.</li>
       <li><strong>Teknologi Canggih:</strong> Menggunakan alat dan produk pembersih terbaru untuk hasil maksimal. </li>

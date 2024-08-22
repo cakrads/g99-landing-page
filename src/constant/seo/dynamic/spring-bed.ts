@@ -38,7 +38,7 @@ export const webContent: IWebContent = {
   serviceNameAlt: "Cuci Spring Bed",
   article: `
   <p><strong>Jaga Kebersihan dan Kenyamanan Spring Bed Anda dengan Laundry G 99 di Marelan!&nbsp;</strong><br><strong>Apakah Spring Bed Anda terlihat kotor ataupun kusam? Biarkan kami mengurusnya! Dengan layanan laundry khusus dari Laundry G 99, spring bed Anda akan kembali bersih, segar, dan nyaman!</strong><br>&nbsp;</p>
-  <h2>Kenapa Harus Laundry Spring Beddi Laundry G 99 :</h2>
+  <h2>Kenapa Harus Laundry Spring Bed di Laundry G 99 :</h2>
   <ul>
       <li><strong>Profesional &amp; Berpengalaman:</strong> Tim kami ahli dalam merawat dan mencuci spring bed berbagai bahan.</li>
       <li><strong>Teknologi Canggih:</strong> Kami menggunakan mesin dan deterjen berkualitas untuk hasil yang maksimal tanpa merusak bahan.</li>
