@@ -35,8 +35,8 @@ export const LaundryCarpetWhy = () => {
             title={CARPET_WHY_TITLE}
             description={CARPET_WHY_DESCRIPTION}
           />
-          <div ref={refImage} className="flex flex-col gap-10 pt-12 pb-0 md:py-12 items-center">
-            <div className="order-2 md:order-1 w-full md:min-w-[300px] flex flex-col md:flex-row gap-3 lg:gap-5">
+          <div className="flex flex-col gap-10 pt-12 pb-0 md:py-12 items-center">
+            <div ref={refImage} className="order-2 md:order-1 w-full md:min-w-[300px] flex flex-col md:flex-row gap-3 lg:gap-5">
               <div
                 className={clsx(
                   "relative rounded-2xl w-full h-[300px] md:h-[150px] lg:h-[200px] bg-gray-400 shadow-lg",
