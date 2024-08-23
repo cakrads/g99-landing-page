@@ -59,14 +59,14 @@ export const webContent: IWebContent = {
     Apabila ada pertanyaan lebih lanjut, dapat menghubungi tim Customer Service kami: <strong>081361610795</strong>,<strong> 0895330398255</strong></p>
   `,
   prices: [
-    {
-      type: "TIDAK TERMASUK LINER / SARUNG STROLLER",
-      value: "Rp 80.000",
-    },
-    {
-      type: "SUDAH TERMASUK LINER / SARUNG STROLLER",
-      value: "Rp 100.000",
-    }
+    // {
+    //   type: "TIDAK TERMASUK LINER / SARUNG STROLLER",
+    //   value: "Rp 80.000",
+    // },
+    // {
+    //   type: "SUDAH TERMASUK LINER / SARUNG STROLLER",
+    //   value: "Rp 100.000",
+    // }
   ],
   hooks: "",
   article2: "",

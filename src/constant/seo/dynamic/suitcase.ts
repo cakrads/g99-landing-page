@@ -65,10 +65,10 @@ export const webContent: IWebContent = {
   </ul>
   `, // will help to edit html: https://onlinehtmleditor.dev/
   prices: [
-    {
-      type: "Harga Mulai Dari",
-      value: "Rp 75.000,-"
-    }
+    // {
+    //   type: "Harga Mulai Dari",
+    //   value: "Rp 75.000,-"
+    // }
   ],
   hooks: "",
   article2: "",

@@ -58,7 +58,7 @@ export const ServiceDynamicContent = ({ slug }: { slug: string }) => {
           <h2 className="mt-20 font-bold text-2xl mb-3 text-left md:text-center">{data.serviceName} Anda Sekarang :</h2>
           <div className="mx-3 flex flex-col md:flex-row justify-center gap-5 md:gap-8">
             <a
-              href={WA_LINK(WA_SERVICE_NAME.STROLLER)}
+              href={WA_LINK(WA_SERVICE_NAME.GLOBAL)} // Need Enhance
               target="_blank"
               className="flex justify-center items-center gap-2 rounded-md py-4 px-8 bg-[#51cd5e] shadow-2xl hover:shadow-xl active:shadow-2xl focus:shadow-2xl"
             >

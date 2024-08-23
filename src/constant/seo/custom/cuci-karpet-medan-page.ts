@@ -37,7 +37,7 @@ export const CARPET_WEB_KEYWORDS = [
   ...CARPET_WEB_KEYWORDS_SECONDARY
 ];
 export const CARPET_IMG_ALT = CARPET_WEB_TITLE;
-export const CARPET_SOCIAL_IMAGE = HOST_URL + "/images/meta-image-laundry-karpet.png";
+export const CARPET_SOCIAL_IMAGE = HOST_URL + "/images/laundry-karpet-marelan-g99.png";
 
 export const APPLICATION_ID_JSON = generateAppIdJson({ webTitle: CARPET_WEB_TITLE });
 

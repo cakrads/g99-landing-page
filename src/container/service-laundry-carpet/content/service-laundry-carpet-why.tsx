@@ -8,6 +8,9 @@ import * as DATA_CUCI_KARPET_MEDAN from "@/constant/seo/custom/cuci-karpet-medan
 import { SectionHeader } from "@/components/fragments/section-header";
 import { useIsVisible } from "@/utils/use-in-view";
 import { useTrackEnterSection } from "@/libs/analytic/use-enter-section";
+import { WA_LINK, WA_SERVICE_NAME } from "@/constant/whatsapp";
+import { SHOP_PHONE_2, SHOP_PHONE_SHOW, SHOP_PHONE_SHOW_2 } from "@/constant/shop";
+import { PhoneIcon, WhatsAppIcon } from "@/components/ui/icons/social";
 
 export const LaundryCarpetWhy = () => {
   const refText = useRef(null);
@@ -41,7 +44,7 @@ export const LaundryCarpetWhy = () => {
                 )}
               >
                 <Image
-                  src="/images/laundry-karpet-terdekat-terpercaya.png"
+                  src="/images/services/carpet/laundry-karpet-terdekat-pembersih-karpet.png"
                   alt={CARPET_IMG_ALT}
                   fill={true}
                   className="w-full h-full top-0 left-0 object-cover rounded-3xl"
@@ -54,7 +57,7 @@ export const LaundryCarpetWhy = () => {
                 )}
               >
                 <Image
-                  src="/images/laundry-karpet-terdekat-jemur-karpet.png"
+                  src="/images/services/carpet/laundry-karpet-terdekat-mesin-pengering-karpet.png"
                   alt={CARPET_IMG_ALT}
                   fill={true}
                   className="w-full h-full top-0 left-0 object-cover rounded-3xl"
@@ -67,7 +70,7 @@ export const LaundryCarpetWhy = () => {
                 )}
               >
                 <Image
-                  src="/images/laundry-karpet-terdekat-mesin-pengering-karpet.png"
+                  src="/images/services/carpet/laundry-karpet-terdekat-tumpukan-karpet.png"
                   alt={CARPET_IMG_ALT}
                   fill={true}
                   className="w-full h-full top-0 left-0 object-cover rounded-3xl"
@@ -90,6 +93,71 @@ export const LaundryCarpetWhy = () => {
                   </li>
                 ))}
               </ul>
+            </div>
+          </div>
+
+          <br />
+
+          <div className="flex flex-col gap-4 my-5">
+            <div
+              className={clsx(
+                "relative rounded-2xl w-full h-[600px] shadow-lg",
+                isImageIntersecting ? "animate-fade-right animate-once animate-ease-in-out animate-delay-400 md:animate-delay-0" : "opacity-0"
+              )}
+            >
+              <Image
+                src="/images/services/carpet/laundry-karpet-terdekat-terpercaya.png"
+                alt={CARPET_IMG_ALT}
+                fill={true}
+                className="w-full h-full top-0 left-0 object-cover rounded-2xl"
+              />
+            </div>
+            <div
+              className={clsx(
+                "relative rounded-2xl w-full h-[600px] shadow-lg",
+                isImageIntersecting ? "animate-fade-right animate-once animate-ease-in-out animate-delay-400 md:animate-delay-0" : "opacity-0"
+              )}
+            >
+              <Image
+                src="/images/services/carpet/laundry-karpet-terdekat-pembersih-dan-pengering-karpet.png"
+                alt={CARPET_IMG_ALT}
+                fill={true}
+                className="w-full h-full top-0 left-0 object-cover rounded-2xl"
+              />
+            </div>
+            <div
+              className={clsx(
+                "relative rounded-2xl w-full h-[600px] shadow-lg",
+                isImageIntersecting ? "animate-fade-right animate-once animate-ease-in-out animate-delay-400 md:animate-delay-0" : "opacity-0"
+              )}
+            >
+              <Image
+                src="/images/services/carpet/laundry-karpet-terdekat-pembersih-karpet.png"
+                alt={CARPET_IMG_ALT}
+                fill={true}
+                className="w-full h-full top-0 left-0 object-cover rounded-2xl"
+              />
+            </div>
+          </div>
+
+          <div>
+            <h2 className="mt-20 font-bold text-2xl mb-3 text-left md:text-center">Laundry Carpet Anda Sekarang :</h2>
+            <div className="mx-3 flex flex-col md:flex-row justify-center gap-5 md:gap-8">
+              <a
+                href={WA_LINK(WA_SERVICE_NAME.CARPET)}
+                target="_blank"
+                className="flex justify-center items-center gap-2 rounded-md py-4 px-8 bg-[#51cd5e] shadow-2xl hover:shadow-xl active:shadow-2xl focus:shadow-2xl"
+              >
+                <WhatsAppIcon className="w-10 h-10" />
+                <b className="text-[#fff] text-xl drop-shadow-xl">{SHOP_PHONE_SHOW}</b>
+              </a>
+              <a
+                href={`tel:${SHOP_PHONE_2}`}
+                className="flex justify-center items-center gap-2 rounded-md py-4 px-8 bg-background shadow-2xl border hover:border-primary hover:shadow-xl active:shadow-2xl focus:shadow-2xl"
+              >
+                <PhoneIcon className="w-10 h-10" />
+                <b className="text-xl drop-shadow-xl">{SHOP_PHONE_SHOW_2}</b>
+              </a>
             </div>
           </div>
         </div>

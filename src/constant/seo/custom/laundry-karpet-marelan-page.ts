@@ -46,7 +46,7 @@ export const CARPET_WEB_KEYWORDS = [
 // laundry karpet, cuci karpet, cuci karpet Medan, laundry karpet Medan, cuci karpet Marelan, laundry karpet Marelan
 // harga laundry karpet, harga cuci karpet, cuci karpet terdekat, laundry karpet terdekat, jasa cuci karpet, jasa cuci karpet Medan, jasa cuci karpet Marelan
 export const CARPET_IMG_ALT = CARPET_WEB_TITLE;
-export const CARPET_SOCIAL_IMAGE = HOST_URL + "/images/meta-image-laundry-karpet.png";
+export const CARPET_SOCIAL_IMAGE = HOST_URL + "/images/laundry-karpet-marelan-g99.png";
 
 export const APPLICATION_ID_JSON = generateAppIdJson({ webTitle: CARPET_WEB_TITLE });
 
