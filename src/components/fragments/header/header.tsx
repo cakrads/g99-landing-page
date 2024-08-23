@@ -56,13 +56,20 @@ export const Header = () => {
               Laundry G 99
             </span>
           </Link>
+
           <div className="flex items-center md:order-2 md:hidden">
             {/* <a href="#" className="text-gray-800 hover:bg-gray-50 focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2">Log in</a> */}
             {/* <a href="#" className="text-white bg-primary hover:bg-primary/90 focus:ring-4 focus:ring-primary/70 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2">Get started</a> */}
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               type="button"
-              className="inline-flex items-center p-2 ml-1 text-sm rounded-lg lg:hidden hover:text-secondary/80"
+              // className="inline-flex items-center p-2 ml-1 text-sm rounded-lg lg:hidden hover:text-secondary/80"
+              className={
+                clsx(
+                  "inline-flex items-center p-2 ml-1 text-sm rounded-lg lg:hidden",
+                  scrolled ? "text-white" : "text-secondary",
+                )
+              }
               aria-expanded="false"
             >
               <span className="sr-only">Open main menu</span>
@@ -73,25 +80,19 @@ export const Header = () => {
                 <path fillRule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clipRule="evenodd"></path>
               </svg>
             </button>
-            <Sheet open={isMenuOpen} onOpenChange={() => { setIsMenuOpen(prev => !prev); }}>
-              <SheetContent>
-                <div className="flex justify-center mt-10">
-                  <Image
-                    src="/images/logo.png"
-                    width={150}
-                    height={150}
-                    className="rounded-full border-white border-4"
-                    alt={GLOBAL_IMG_ALT}
-                  />
-                </div>
-                <div className="justify-between items-center w-full lg:flex lg:w-auto lg:order-1">
-                  <MenuList onLinkClick={() => { setIsMenuOpen(false); }} scrolled={scrolled} />
-                </div>
-              </SheetContent>
-            </Sheet>
+            <SideBarMenu
+              isOpen={isMenuOpen}
+              onOpen={() => setIsMenuOpen(true)}
+              onClose={() => setIsMenuOpen(false)}
+            />
           </div>
+
           <div className="hidden justify-between items-center w-full md:flex md:w-auto md:order-1">
-            <MenuList onLinkClick={() => { setIsMenuOpen(false); }} scrolled={scrolled} />
+            <MenuNavBar
+              onLinkClick={() => { setIsMenuOpen(false); }}
+              scrolled={scrolled}
+              onMenuOpen={() => setIsMenuOpen(true)}
+            />
           </div>
         </div>
       </nav>
@@ -99,11 +100,124 @@ export const Header = () => {
   );
 };
 
+const SideBarMenu: React.FC<{
+  isOpen: boolean;
+  onOpen: () => void;
+  onClose: () => void;
+}> = ({ isOpen, onOpen, onClose }) => {
+  const { handleClickNavHome, handleClickNavCarpetService } = useHeaderLinkTracker();
 
-const MenuList: React.FC<{
+  const handleMenuClick = () => {
+    onClose();
+  };
+
+  return (
+    <Sheet open={isOpen} onOpenChange={() => { isOpen ? onClose() : onOpen(); }}>
+      <SheetContent>
+        <div className="flex justify-center mt-10">
+          <Image
+            src="/images/logo.png"
+            width={150}
+            height={150}
+            className="rounded-full border-white border-4"
+            alt={GLOBAL_IMG_ALT}
+          />
+        </div>
+        <div className="justify-between items-center w-full lg:flex lg:w-auto lg:order-1">
+          <ul className={clsx(
+            "flex",
+            "mt-10 flex-col items-center space-y-5 w-full",
+          )}>
+            <li>
+              <MenuItem
+                onClick={() => {
+                  onClose();
+                  handleClickNavHome();
+                }}
+                href={ROUTES.HOME}
+                scrolled={true}
+              >
+                BERANDA
+              </MenuItem>
+            </li>
+            <li>
+              <MenuItem
+                onClick={() => {
+                  onClose();
+                  handleClickNavCarpetService();
+                }}
+                href={ROUTES.CARPET_SERVICES}
+                scrolled={true}
+              >
+                LAUNDRY KARPET
+              </MenuItem>
+            </li>
+            <li>
+              <MenuItem
+                onClick={handleMenuClick}
+                href={ROUTES.SPRING_BED_SERVICES}
+                scrolled={true}
+              >
+                LAUNDRY SPRING BED
+              </MenuItem>
+            </li>
+            <li>
+              <MenuItem
+                onClick={handleMenuClick}
+                href={ROUTES.SOFA_SERVICES}
+                scrolled={true}
+              >
+                LAUNDRY SOFA
+              </MenuItem>
+            </li>
+            <li>
+              <MenuItem
+                onClick={handleMenuClick}
+                href={ROUTES.STROLLER_SERVICES}
+                scrolled={true}
+              >
+                LAUNDRY STROLLER
+              </MenuItem>
+            </li>
+            <li>
+              <MenuItem
+                onClick={handleMenuClick}
+                href={ROUTES.SUITCASE_SERVICES}
+                scrolled={true}
+              >
+                LAUNDRY KOPER & TAS
+              </MenuItem>
+            </li>
+            <li>
+              <MenuItem
+                onClick={handleMenuClick}
+                href={ROUTES.DOLL_SERVICES}
+                scrolled={true}
+              >
+                LAUNDRY BONEKA
+              </MenuItem>
+            </li>
+            <li>
+              <MenuItem
+                onClick={handleMenuClick}
+                href={ROUTES.HELM_SERVICES}
+                scrolled={true}
+              >
+                LAUNDRY HELM
+              </MenuItem>
+            </li>
+          </ul>
+        </div>
+      </SheetContent>
+    </Sheet>
+  );
+};
+
+const MenuNavBar: React.FC<{
   onLinkClick: () => void
   scrolled: boolean
-}> = ({ onLinkClick, scrolled }) => {
+  onMenuOpen: () => void
+}> = ({ onMenuOpen, onLinkClick, scrolled }) => {
   const { handleClickNavHome, handleClickNavCarpetService } = useHeaderLinkTracker();
 
   return (
@@ -134,6 +248,26 @@ const MenuList: React.FC<{
           scrolled={scrolled}
         >
           LAUNDRY KARPET
+        </MenuItem>
+      </li>
+      <li>
+        <MenuItem
+          onClick={() => { onLinkClick(); }}
+          href={ROUTES.SPRING_BED_SERVICES}
+          scrolled={scrolled}
+        >
+          LAUNDRY SPRING BED
+        </MenuItem>
+      </li>
+      <li className="flex">
+        <MenuItem
+          onClick={() => {
+            onMenuOpen();
+          }}
+          href="#"
+          scrolled={scrolled}
+        >
+          LAUNDRY LAINNYA
         </MenuItem>
       </li>
     </ul>

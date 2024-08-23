@@ -35,11 +35,11 @@ export const LaundryCarpetWhy = () => {
             title={CARPET_WHY_TITLE}
             description={CARPET_WHY_DESCRIPTION}
           />
-          <div ref={refImage} className="flex flex-col gap-10 py-12 items-center">
-            <div className="order-2 md:order-1 w-full md:min-w-[300px] flex flex-col md:flex-row gap-5">
+          <div ref={refImage} className="flex flex-col gap-10 pt-12 pb-0 md:py-12 items-center">
+            <div className="order-2 md:order-1 w-full md:min-w-[300px] flex flex-col md:flex-row gap-3 lg:gap-5">
               <div
                 className={clsx(
-                  "relative rounded-3xl w-full h-[150px] md:h-[200px] lg:h-[150px] bg-gray-400 shadow-lg",
+                  "relative rounded-2xl w-full h-[300px] md:h-[150px] lg:h-[200px] bg-gray-400 shadow-lg",
                   isImageIntersecting ? "animate-fade-right animate-once animate-ease-in-out animate-delay-400 md:animate-delay-0" : "opacity-0"
                 )}
               >
@@ -47,12 +47,12 @@ export const LaundryCarpetWhy = () => {
                   src="/images/services/carpet/laundry-karpet-terdekat-pembersih-karpet.png"
                   alt={CARPET_IMG_ALT}
                   fill={true}
-                  className="w-full h-full top-0 left-0 object-cover rounded-3xl"
+                  className="w-full h-full top-0 left-0 object-cover rounded-2xl"
                 />
               </div>
               <div
                 className={clsx(
-                  "relative rounded-3xl w-full h-[150px] md:h-[200px] lg:h-[150px] bg-gray-400 shadow-lg",
+                  "relative rounded-2xl w-full h-[300px] md:h-[150px] lg:h-[200px] bg-gray-400 shadow-lg",
                   isImageIntersecting ? "animate-fade-right animate-once animate-ease-in-out animate-delay-500 md:animate-delay-150" : "opacity-0"
                 )}
               >
@@ -60,12 +60,12 @@ export const LaundryCarpetWhy = () => {
                   src="/images/services/carpet/laundry-karpet-terdekat-mesin-pengering-karpet.png"
                   alt={CARPET_IMG_ALT}
                   fill={true}
-                  className="w-full h-full top-0 left-0 object-cover rounded-3xl"
+                  className="w-full h-full top-0 left-0 object-cover rounded-2xl"
                 />
               </div>
               <div
                 className={clsx(
-                  "relative rounded-3xl w-full h-[150px] md:h-[200px] lg:h-[150px] bg-gray-400 shadow-lg",
+                  "relative rounded-2xl w-full h-[300px] md:h-[150px] lg:h-[200px] bg-gray-400 shadow-lg",
                   isImageIntersecting ? "animate-fade-right animate-once animate-ease-in-out animate-delay-[600ms] md:animate-delay-300" : "opacity-0"
                 )}
               >
@@ -73,7 +73,7 @@ export const LaundryCarpetWhy = () => {
                   src="/images/services/carpet/laundry-karpet-terdekat-tumpukan-karpet.png"
                   alt={CARPET_IMG_ALT}
                   fill={true}
-                  className="w-full h-full top-0 left-0 object-cover rounded-3xl"
+                  className="w-full h-full top-0 left-0 object-cover rounded-2xl"
                 />
               </div>
             </div>
@@ -96,12 +96,10 @@ export const LaundryCarpetWhy = () => {
             </div>
           </div>
 
-          <br />
-
           <div className="flex flex-col gap-4 my-5">
             <div
               className={clsx(
-                "relative rounded-2xl w-full h-[600px] shadow-lg",
+                "relative rounded-2xl w-full h-[300px] lg:h-[600px] shadow-lg",
                 isImageIntersecting ? "animate-fade-right animate-once animate-ease-in-out animate-delay-400 md:animate-delay-0" : "opacity-0"
               )}
             >
@@ -114,7 +112,7 @@ export const LaundryCarpetWhy = () => {
             </div>
             <div
               className={clsx(
-                "relative rounded-2xl w-full h-[600px] shadow-lg",
+                "relative rounded-2xl w-full h-[300px] lg:h-[600px] shadow-lg",
                 isImageIntersecting ? "animate-fade-right animate-once animate-ease-in-out animate-delay-400 md:animate-delay-0" : "opacity-0"
               )}
             >
@@ -127,7 +125,7 @@ export const LaundryCarpetWhy = () => {
             </div>
             <div
               className={clsx(
-                "relative rounded-2xl w-full h-[600px] shadow-lg",
+                "relative rounded-2xl w-full h-[300px] lg:h-[600px] shadow-lg",
                 isImageIntersecting ? "animate-fade-right animate-once animate-ease-in-out animate-delay-400 md:animate-delay-0" : "opacity-0"
               )}
             >

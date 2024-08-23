@@ -11,6 +11,7 @@ import { ScrollableX } from "@/components/ui/scrollable-x";
 import { useIsVisible } from "@/utils/use-in-view";
 import { Card } from "@/components/ui/card";
 import { WaveBottomBgShapeSM } from "@/components/ui/shapes";
+import { ROUTES } from "@/constant/routes";
 
 type ServicesData = {
   title: string;
@@ -55,7 +56,7 @@ const HomeServicesHouseSuplies = () => {
       description: "Dapatkan karpet Bersih dan Higienis bebas Bakteri <b>dalam waktu 1 hari</b> dengan Mesin Pengering Modern.",
       imgSrc: "/images/services/cuci-karpet-2.jpg",
       imgAlt: "Cuci Karpet -" + HOME_IMG_ALT,
-      linkPage: "/laundry-karpet-marelan",
+      linkPage: ROUTES.CARPET_SERVICES,
       linkText: "Lihat Detail",
       onClick: () => { }
     },
@@ -64,17 +65,8 @@ const HomeServicesHouseSuplies = () => {
       description: "Hilangkan Tungau dan Bakteri pada kasur Anda, nikmati tidur yang lebih Sehat dan Nyaman.",
       imgSrc: "/images/services/cuci-spring-bed.jpg",
       imgAlt: "Cuci Spring Bed -" + HOME_IMG_ALT,
-      linkPage: "#our-location",
-      linkText: "Pesan Sekarang",
-      onClick: () => { }
-    },
-    {
-      title: "Cuci Bantal",
-      description: "Dapatkan bantal yang Bersih untuk tidur yang lebih Nyaman dan lebih Nyenyak.",
-      imgSrc: "/images/services/cuci-bantal.jpg",
-      imgAlt: "Cuci Bantal -" + HOME_IMG_ALT,
-      linkPage: "#our-location",
-      linkText: "Pesan Sekarang",
+      linkPage: ROUTES.SPRING_BED_SERVICES,
+      linkText: "Lihat Detail",
       onClick: () => { }
     },
     {
@@ -82,8 +74,8 @@ const HomeServicesHouseSuplies = () => {
       description: "Percantik ruang tamu Anda dengan Sofa yang Bersih dan Bebas Noda dengan layanan Cuci Sofa kami.",
       imgSrc: "/images/services/cuci-sofa-2.jpg",
       imgAlt: "Cuci Sofa Terdekat -" + HOME_IMG_ALT,
-      linkPage: "#our-location",
-      linkText: "Pesan Sekarang",
+      linkPage: ROUTES.SOFA_SERVICES,
+      linkText: "Lihat Detail",
       onClick: () => { }
     },
     {
@@ -91,6 +83,15 @@ const HomeServicesHouseSuplies = () => {
       description: "Pastikan stroller bayi Anda Bersih dan Higienis agar si kecil tetap Sehat dan Nyaman.",
       imgSrc: "/images/services/cuci-stroller-3.jpg",
       imgAlt: "Cuci Stroller Terdekat -" + HOME_IMG_ALT,
+      linkPage: ROUTES.STROLLER_SERVICES,
+      linkText: "Lihat Detail",
+      onClick: () => { }
+    },
+    {
+      title: "Cuci Bantal",
+      description: "Dapatkan bantal yang Bersih untuk tidur yang lebih Nyaman dan lebih Nyenyak.",
+      imgSrc: "/images/services/cuci-bantal.jpg",
+      imgAlt: "Cuci Bantal -" + HOME_IMG_ALT,
       linkPage: "#our-location",
       linkText: "Pesan Sekarang",
       onClick: () => { }
@@ -130,8 +131,8 @@ const HomeServicesPersonalSuplies = () => {
       description: "Pastikan tas Anda tetap bersih dan awet dengan layanan cuci tas kami. Tas Anda akan terlihat seperti Baru lagi.",
       imgSrc: "/images/services/cuci-tas.jpg",
       imgAlt: "Cuci Tas -" + HOME_IMG_ALT,
-      linkPage: "#our-location",
-      linkText: "Pesan Sekarang",
+      linkPage: ROUTES.SUITCASE_SERVICES,
+      linkText: "Lihat Detail",
       onClick: () => { }
     },
     {
@@ -139,8 +140,8 @@ const HomeServicesPersonalSuplies = () => {
       description: "Jaga kebersihan helm Anda untuk Kenyamanan dan Keamanan berkendara.",
       imgSrc: "/images/services/cuci-helm.jpg",
       imgAlt: "Cuci Helm -" + HOME_IMG_ALT,
-      linkPage: "#our-location",
-      linkText: "Pesan Sekarang",
+      linkPage: ROUTES.HELM_SERVICES,
+      linkText: "Lihat Detail",
       onClick: () => { }
     },
     {
@@ -148,8 +149,8 @@ const HomeServicesPersonalSuplies = () => {
       description: "Buat boneka kesayangan Anda kembali Bersih, Higienis, Bersih dan Lembut.",
       imgSrc: "/images/services/cuci-boneka.jpg",
       imgAlt: "Cuci Boneka -" + HOME_IMG_ALT,
-      linkPage: "#our-location",
-      linkText: "Pesan Sekarang",
+      linkPage: ROUTES.DOLL_SERVICES,
+      linkText: "Lihat Detail",
       onClick: () => { }
     },
     {
@@ -157,8 +158,8 @@ const HomeServicesPersonalSuplies = () => {
       description: "Jaga koper Anda tetap Bersih dan Siap untuk Perjalanan Berikutnya.",
       imgSrc: "/images/services/cuci-koper.jpg",
       imgAlt: "Cuci Koper -" + HOME_IMG_ALT,
-      linkPage: "#our-location",
-      linkText: "Pesan Sekarang",
+      linkPage: ROUTES.SUITCASE_SERVICES,
+      linkText: "Lihat Detail",
       onClick: () => { }
     },
   ];

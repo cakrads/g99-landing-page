@@ -34,7 +34,7 @@ export const HomeHooks = () => {
           </div>
         </div>
       </div>
-      <div className="bg-primary mb-[-24px]">
+      <div className="bg-primary mt-[-2px] mb-[-24px]">
         <WaveBottomBgShapeSM className="w-full" color="hsl(223 9% 15%)" />
       </div>
     </section>

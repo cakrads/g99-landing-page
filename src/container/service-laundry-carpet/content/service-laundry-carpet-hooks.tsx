@@ -57,7 +57,7 @@ export const LaundryCarpetHooks = () => {
           </div>
         </div>
       </div>
-      <div className="mb-[-24px]">
+      <div className="mt-[-2px] mb-[-24px]">
         <WaveBottomBgShapeSM className="w-full" color="hsl(223 9% 15%)" />
       </div>
     </section>

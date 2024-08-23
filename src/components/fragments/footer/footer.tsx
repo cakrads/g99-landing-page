@@ -84,13 +84,43 @@ export const Footer = () => {
                 <h3 className="mb-4 text-lg font-bold">Halaman Lainnya</h3>
                 <ul className="space-y-2 text-muted">
                   <li>
-                    <Link href="/" onClick={handleClickNavHome} className="hover:text-primary">
+                    <Link href={ROUTES.HOME} onClick={handleClickNavHome} className="hover:text-primary">
                       Beranda
                     </Link>
                   </li>
                   <li>
-                    <Link href="/laundry-karpet-marelan" onClick={handleClickNavCarpetService} className="hover:text-primary">
+                    <Link href={ROUTES.CARPET_SERVICES} onClick={handleClickNavCarpetService} className="hover:text-primary">
                       Laundry Karpet
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href={ROUTES.SOFA_SERVICES} onClick={() => { }} className="hover:text-primary">
+                      Laundry Sofa
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href={ROUTES.SPRING_BED_SERVICES} onClick={() => { }} className="hover:text-primary">
+                      Laundry Spring Bed
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href={ROUTES.STROLLER_SERVICES} onClick={() => { }} className="hover:text-primary">
+                      Laundry Stroller
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href={ROUTES.SUITCASE_SERVICES} onClick={() => { }} className="hover:text-primary">
+                      Laundry Koper / Tas
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href={ROUTES.DOLL_SERVICES} onClick={() => { }} className="hover:text-primary">
+                      Laundry Bonek
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href={ROUTES.HELM_SERVICES} onClick={() => { }} className="hover:text-primary">
+                      Laundry Helm
                     </Link>
                   </li>
                 </ul>

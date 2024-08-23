@@ -42,8 +42,8 @@ export const webContent: IWebContent = {
   hooks: "",
   article2: "",
   images: [
-    "/images/services/helm/1.png",
-    "/images/services/helm/2.png"
+    "/images/services/doll/1.png",
+    "/images/services/doll/2.jpg"
   ],
   faq: []
 };

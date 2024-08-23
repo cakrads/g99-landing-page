@@ -34,29 +34,29 @@ export const LaundryCarpetHero = ({ source }: { source: TSourcePage }) => {
               <CarpetServiceCtaBtn label={CARPET_HERO_CTA} />
             </div>
           </div>
-          <div className="min-w-[300px] flex flex-col md:flex-row lg:flex-col gap-5">
-            <div className="relative rounded-3xl w-full h-[150px] md:h-[200px] lg:h-[150px] bg-gray-400 shadow-lg animate-fade-left animate-once animate-ease-in-out animate-delay-500 md:animate-delay-0" >
+          <div className="min-w-[300px] flex flex-col md:flex-row lg:flex-col gap-2">
+            <div className="relative rounded-2xl w-full h-[150px] bg-gray-400 shadow-lg animate-fade-left animate-once animate-ease-in-out animate-delay-500 md:animate-delay-0" >
               <Image
                 src="/images/services/carpet/laundry-karpet-terdekat-membersihkan-karpet.png"
                 alt={CARPET_IMG_ALT}
                 fill={true}
-                className="w-full h-full top-0 left-0 object-cover rounded-3xl"
+                className="w-full h-full top-0 left-0 object-cover rounded-2xl"
               />
             </div>
-            <div className="relative rounded-3xl w-full h-[150px] md:h-[200px] lg:h-[150px] bg-gray-400 shadow-lg animate-fade-left animate-once animate-ease-in-out animate-delay-700 md:animate-delay-150" >
+            <div className="relative rounded-2xl w-full h-[150px] bg-gray-400 shadow-lg animate-fade-left animate-once animate-ease-in-out animate-delay-700 md:animate-delay-150" >
               <Image
                 src="/images/services/carpet/laundry-karpet-terdekat-pembersih-dan-pengering-karpet.png"
                 alt={CARPET_IMG_ALT}
                 fill={true}
-                className="w-full h-full top-0 left-0 object-cover rounded-3xl"
+                className="w-full h-full top-0 left-0 object-cover rounded-2xl"
               />
             </div>
-            <div className="relative rounded-3xl w-full h-[150px] md:h-[200px] lg:h-[150px] bg-gray-400 shadow-lg animate-fade-left animate-once animate-ease-in-out animate-delay-[900ms] md:animate-delay-300" >
+            <div className="relative rounded-2xl w-full h-[150px] bg-gray-400 shadow-lg animate-fade-left animate-once animate-ease-in-out animate-delay-[900ms] md:animate-delay-300" >
               <Image
                 src="/images/services/carpet/laundry-karpet-terdekat-membersihkan-karpet-2.png"
                 alt={CARPET_IMG_ALT}
                 fill={true}
-                className="w-full h-full top-0 left-0 object-cover rounded-3xl"
+                className="w-full h-full top-0 left-0 object-cover rounded-2xl"
               />
             </div>
           </div>
