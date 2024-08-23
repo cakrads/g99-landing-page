@@ -141,7 +141,7 @@ export const LaundryCarpetWhy = () => {
           </div>
 
           <div>
-            <h2 className="mt-20 font-bold text-2xl mb-3 text-left md:text-center">Laundry Carpet Anda Sekarang :</h2>
+            <h2 className="mt-20 font-bold text-2xl mb-3 text-left md:text-center">Laundry Karpet Anda Sekarang :</h2>
             <div className="mx-3 flex flex-col md:flex-row justify-center gap-5 md:gap-8">
               <a
                 href={WA_LINK(WA_SERVICE_NAME.CARPET)}
