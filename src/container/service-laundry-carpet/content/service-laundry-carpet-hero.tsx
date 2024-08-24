@@ -40,6 +40,7 @@ export const LaundryCarpetHero = ({ source }: { source: TSourcePage }) => {
                 src="/images/services/carpet/laundry-karpet-terdekat-membersihkan-karpet.png"
                 alt={CARPET_IMG_ALT}
                 fill={true}
+                priority={true}
                 className="w-full h-full top-0 left-0 object-cover rounded-2xl"
               />
             </div>
@@ -48,6 +49,7 @@ export const LaundryCarpetHero = ({ source }: { source: TSourcePage }) => {
                 src="/images/services/carpet/laundry-karpet-terdekat-pembersih-dan-pengering-karpet.png"
                 alt={CARPET_IMG_ALT}
                 fill={true}
+                priority={true}
                 className="w-full h-full top-0 left-0 object-cover rounded-2xl"
               />
             </div>
@@ -56,6 +58,7 @@ export const LaundryCarpetHero = ({ source }: { source: TSourcePage }) => {
                 src="/images/services/carpet/laundry-karpet-terdekat-membersihkan-karpet-2.png"
                 alt={CARPET_IMG_ALT}
                 fill={true}
+                priority={true}
                 className="w-full h-full top-0 left-0 object-cover rounded-2xl"
               />
             </div>

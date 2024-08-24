@@ -11,5 +11,11 @@ export const ServiceDynamicPageTracker = () => {
     analytic.trackStart("enter_carpet_service_footer");
   }, [analytic]);
 
+  useEffect(() => {
+    setTimeout(() => {
+      window.scrollTo(0, 0);
+    }, 1000);
+  }, []);
+
   return null;
 };

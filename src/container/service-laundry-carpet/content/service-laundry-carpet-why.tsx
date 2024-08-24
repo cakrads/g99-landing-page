@@ -117,6 +117,19 @@ export const LaundryCarpetWhy = () => {
               )}
             >
               <Image
+                src="/images/services/carpet/laundry-karpet-terdekat-mesin-pengering-karpet-2.png"
+                alt={CARPET_IMG_ALT}
+                fill={true}
+                className="w-full h-full top-0 left-0 object-cover rounded-2xl"
+              />
+            </div>
+            <div
+              className={clsx(
+                "hidden md:block relative rounded-2xl w-full h-[300px] lg:h-[600px] shadow-lg",
+                isImageIntersecting ? "animate-fade-right animate-once animate-ease-in-out animate-delay-400 md:animate-delay-0" : "opacity-0"
+              )}
+            >
+              <Image
                 src="/images/services/carpet/laundry-karpet-terdekat-pembersih-dan-pengering-karpet.png"
                 alt={CARPET_IMG_ALT}
                 fill={true}

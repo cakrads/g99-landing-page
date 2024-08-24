@@ -250,7 +250,7 @@ const MenuNavBar: React.FC<{
           LAUNDRY KARPET
         </MenuItem>
       </li>
-      <li>
+      <li className="hidden lg:block">
         <MenuItem
           onClick={() => { onLinkClick(); }}
           href={ROUTES.SPRING_BED_SERVICES}
