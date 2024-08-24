@@ -12,7 +12,7 @@ export const ServiceDynamicContent = ({ slug }: { slug: string }) => {
     <section className="w-full pt-10 pb-20 sm:py-10">
       <div className="container">
         <div className="mb-7">
-          <h1 className="font-bold text-5xl leading-tight mb-1">{data.title}</h1>
+          <h1 className="font-bold text-4xl md:text-5xl leading-tight mb-1">{data.title}</h1>
           {data.subTitle && (
             <h5 className="font-medium text-xl">{data.subTitle}</h5>
           )}

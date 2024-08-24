@@ -115,7 +115,7 @@ export const Footer = () => {
                   </li>
                   <li>
                     <Link href={ROUTES.DOLL_SERVICES} onClick={() => { }} className="hover:text-primary">
-                      Laundry Bonek
+                      Laundry Boneka
                     </Link>
                   </li>
                   <li>

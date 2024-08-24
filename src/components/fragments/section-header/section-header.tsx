@@ -13,12 +13,12 @@ export const SectionHeader: FC<{
 
   return (
     <div ref={ref} className={clsx(
-      "flex flex-col items-center justify-center space-y-6 text-center",
+      "flex flex-col items-center justify-center space-y-4 text-center",
       classNames
     )}>
       <h2
         className={clsx(
-          "text-3xl font-bold  sm:text-5xl lg:leading-tight",
+          "text-3xl font-bold  sm:text-5xl md:leading-tight",
           isIntersecting ? "animate-fade-up animate-once animate-ease-in-out" : "opacity-0"
         )}
       >

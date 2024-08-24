@@ -17,7 +17,7 @@ export const HomeHooks = () => {
 
   return (
     <section ref={ref}>
-      <div className="bg-primary">
+      <div className="bg-primary mb-[-1px]">
         <WaveTopBgShapeSM className="w-full block lg:hidden" color="hsl(223 9% 15%)" />
         <WaveTopBgShape className="w-full hidden lg:block" color="hsl(223 9% 15%)" />
       </div>
