@@ -2,8 +2,10 @@ import * as LAUNDRY_STROLLER from "@/constant/seo/dynamic/stroller";
 import * as LAUNDRY_SPRING_BED from "@/constant/seo/dynamic/spring-bed";
 import * as LAUNDRY_SOFA from "@/constant/seo/dynamic/sofa";
 import * as LAUNDRY_SUITCASE from "@/constant/seo/dynamic/suitcase";
+import * as LAUNDRY_BAG from "@/constant/seo/dynamic/bag";
 import * as LAUNDRY_DOLL from "@/constant/seo/dynamic/doll";
 import * as LAUNDRY_HELM from "@/constant/seo/dynamic/helm";
+import * as LAUNDRY_PILLOW from "@/constant/seo/dynamic/pillows-and-bolsters";
 
 import { IWebContent, IWebSeo } from "./dynamic/type";
 
@@ -15,12 +17,17 @@ export const getDynamicContent = (slug: string) => {
     "cuci-spring-bed": LAUNDRY_SPRING_BED,
     "laundry-sofa": LAUNDRY_SOFA,
     "cuci-sofa": LAUNDRY_SOFA,
-    "laundry-koper-dan-tas": LAUNDRY_SUITCASE,
-    "cuci-koper-dan-tas": LAUNDRY_SUITCASE,
+    "laundry-koper": LAUNDRY_SUITCASE,
+    "cuci-koper": LAUNDRY_SUITCASE,
+    "laundry-tas": LAUNDRY_BAG,
+    "cuci-tas": LAUNDRY_BAG,
     "laundry-boneka": LAUNDRY_DOLL,
     "cuci-boneka": LAUNDRY_DOLL,
     "laundry-helm": LAUNDRY_HELM,
     "cuci-helm": LAUNDRY_HELM,
+    "laundry-bantal-dan-guling": LAUNDRY_PILLOW,
+    "cuci-bantal-dan-guling": LAUNDRY_PILLOW,
+
   };
 
   if (mapingData[slug] === undefined) {

@@ -13,7 +13,6 @@ export const webSeo: IWebSeo = {
     "laundry sofa",
     "cuci sofa",
     "jasa cuci sofa",
-    "service cuci sofa",
   ],
   secondaryKeyword: [
     "cuci sofa panggilan",
@@ -28,7 +27,7 @@ export const webSeo: IWebSeo = {
   imgAlt: WEB_TITLE,
   applicationId: generateAppIdJson({ webTitle: WEB_TITLE }),
   routes: "/" + SLUG,
-  socialImage: HOST_URL + "/images/services/sofa/1.png",
+  socialImage: HOST_URL + "/images/services/sofa/laundry-sofa-medan-marelan.png",
 };
 
 export const webContent: IWebContent = {
@@ -62,8 +61,8 @@ export const webContent: IWebContent = {
   hooks: "",
   article2: "",
   images: [
-    "/images/services/sofa/1.png",
-    "/images/services/sofa/2.png",
+    "/images/services/sofa/laundry-sofa-medan-marelan.png",
+    "/images/services/sofa/laundry-sofa-antar-jemput.png",
   ],
   faq: []
 };

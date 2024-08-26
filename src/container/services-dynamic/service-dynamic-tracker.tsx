@@ -14,7 +14,7 @@ export const ServiceDynamicPageTracker = () => {
   useEffect(() => {
     setTimeout(() => {
       window.scrollTo(0, 0);
-    }, 1000);
+    }, 200);
   }, []);
 
   return null;

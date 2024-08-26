@@ -6,5 +6,7 @@ export const ROUTES = {
   HELM_SERVICES: "/laundry-helm",
   DOLL_SERVICES: "/laundry-boneka",
   STROLLER_SERVICES: "/laundry-stroller",
-  SUITCASE_SERVICES: "/laundry-koper-dan-tas",
+  SUITCASE_SERVICES: "/laundry-koper",
+  BAG_SERVICES: "/laundry-tas",
+  PILLOW_SERVICES: "/laundry-bantal-dan-guling",
 };

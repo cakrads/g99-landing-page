@@ -8,12 +8,11 @@ export const SLUG = "laundry-boneka";
 
 export const webSeo: IWebSeo = {
   title: WEB_TITLE,
-  description: "Nikmati jasa cuci spring bed premium dengan harga terjangkau, bisa Antar-Jemput. Kami menggunakan teknologi terbaru untuk membersihkan spring bed Anda secara efektif.",
+  description: "Nikmati jasa cuci boneka premium dengan harga terjangkau, bisa Antar-Jemput. Kami menggunakan teknologi terbaru untuk membersihkan boneka Anda secara efektif.",
   primaryKeyword: [
     "laundry boneka",
     "cuci boneka",
     "jasa cuci boneka",
-    "service cuci boneka",
   ],
   secondaryKeyword: [
     "cuci boneka panggilan",
@@ -25,7 +24,7 @@ export const webSeo: IWebSeo = {
   imgAlt: "",
   applicationId: generateAppIdJson({ webTitle: WEB_TITLE }),
   routes: "/" + SLUG,
-  socialImage: HOST_URL + "/images/services/doll/1.png",
+  socialImage: HOST_URL + "/images/services/doll/laundry-boneka-medan-marelan.png",
 };
 
 export const webContent: IWebContent = {
@@ -42,8 +41,8 @@ export const webContent: IWebContent = {
   hooks: "",
   article2: "",
   images: [
-    "/images/services/doll/1.png",
-    "/images/services/doll/2.jpg"
+    "/images/services/doll/laundry-boneka-medan-marelan.png",
+    "/images/services/doll/laundry-boneka-premium.jpg"
   ],
   faq: []
 };

@@ -107,6 +107,7 @@ const SideBarMenu: React.FC<{
   onClose: () => void;
 }> = ({ isOpen, onOpen, onClose }) => {
   const { handleClickNavHome, handleClickNavCarpetService } = useHeaderLinkTracker();
+  const pathname = usePathname();
 
   const handleMenuClick = () => {
     onClose();
@@ -127,7 +128,7 @@ const SideBarMenu: React.FC<{
         <div className="justify-between items-center w-full lg:flex lg:w-auto lg:order-1">
           <ul className={clsx(
             "flex",
-            "mt-10 flex-col items-center space-y-5 w-full",
+            "mt-10 flex-col items-center space-y-4 w-full",
           )}>
             <li>
               <MenuItem
@@ -135,6 +136,7 @@ const SideBarMenu: React.FC<{
                   onClose();
                   handleClickNavHome();
                 }}
+                isActive={pathname === ROUTES.HOME}
                 href={ROUTES.HOME}
                 scrolled={true}
               >
@@ -147,6 +149,7 @@ const SideBarMenu: React.FC<{
                   onClose();
                   handleClickNavCarpetService();
                 }}
+                isActive={pathname === ROUTES.CARPET_SERVICES}
                 href={ROUTES.CARPET_SERVICES}
                 scrolled={true}
               >
@@ -156,6 +159,7 @@ const SideBarMenu: React.FC<{
             <li>
               <MenuItem
                 onClick={handleMenuClick}
+                isActive={pathname === ROUTES.SPRING_BED_SERVICES}
                 href={ROUTES.SPRING_BED_SERVICES}
                 scrolled={true}
               >
@@ -165,6 +169,7 @@ const SideBarMenu: React.FC<{
             <li>
               <MenuItem
                 onClick={handleMenuClick}
+                isActive={pathname === ROUTES.SOFA_SERVICES}
                 href={ROUTES.SOFA_SERVICES}
                 scrolled={true}
               >
@@ -174,6 +179,7 @@ const SideBarMenu: React.FC<{
             <li>
               <MenuItem
                 onClick={handleMenuClick}
+                isActive={pathname === ROUTES.STROLLER_SERVICES}
                 href={ROUTES.STROLLER_SERVICES}
                 scrolled={true}
               >
@@ -183,15 +189,27 @@ const SideBarMenu: React.FC<{
             <li>
               <MenuItem
                 onClick={handleMenuClick}
+                isActive={pathname === ROUTES.SUITCASE_SERVICES}
                 href={ROUTES.SUITCASE_SERVICES}
                 scrolled={true}
               >
-                LAUNDRY KOPER & TAS
+                LAUNDRY KOPER
               </MenuItem>
             </li>
             <li>
               <MenuItem
                 onClick={handleMenuClick}
+                isActive={pathname === ROUTES.BAG_SERVICES}
+                href={ROUTES.BAG_SERVICES}
+                scrolled={true}
+              >
+                LAUNDRY TAS
+              </MenuItem>
+            </li>
+            <li>
+              <MenuItem
+                onClick={handleMenuClick}
+                isActive={pathname === ROUTES.DOLL_SERVICES}
                 href={ROUTES.DOLL_SERVICES}
                 scrolled={true}
               >
@@ -201,10 +219,21 @@ const SideBarMenu: React.FC<{
             <li>
               <MenuItem
                 onClick={handleMenuClick}
+                isActive={pathname === ROUTES.HELM_SERVICES}
                 href={ROUTES.HELM_SERVICES}
                 scrolled={true}
               >
                 LAUNDRY HELM
+              </MenuItem>
+            </li>
+            <li>
+              <MenuItem
+                onClick={handleMenuClick}
+                isActive={pathname === ROUTES.PILLOW_SERVICES}
+                href={ROUTES.PILLOW_SERVICES}
+                scrolled={true}
+              >
+                LAUNDRY BANTAL & GULING
               </MenuItem>
             </li>
           </ul>
@@ -221,6 +250,8 @@ const MenuNavBar: React.FC<{
 }> = ({ onMenuOpen, onLinkClick, scrolled }) => {
   const { handleClickNavHome, handleClickNavCarpetService } = useHeaderLinkTracker();
 
+  const pathname = usePathname();
+
   return (
     <ul className={clsx(
       "flex",
@@ -229,6 +260,7 @@ const MenuNavBar: React.FC<{
     )}>
       <li>
         <MenuItem
+          isActive={pathname === ROUTES.HOME}
           onClick={() => {
             onLinkClick();
             handleClickNavHome();
@@ -241,6 +273,7 @@ const MenuNavBar: React.FC<{
       </li>
       <li>
         <MenuItem
+          isActive={pathname === ROUTES.CARPET_SERVICES}
           onClick={() => {
             onLinkClick();
             handleClickNavCarpetService();
@@ -253,6 +286,7 @@ const MenuNavBar: React.FC<{
       </li>
       <li className="hidden lg:block">
         <MenuItem
+          isActive={pathname === ROUTES.SPRING_BED_SERVICES}
           onClick={() => { onLinkClick(); }}
           href={ROUTES.SPRING_BED_SERVICES}
           scrolled={scrolled}
@@ -262,6 +296,11 @@ const MenuNavBar: React.FC<{
       </li>
       <li className="flex">
         <MenuItem
+          isActive={(
+            pathname !== ROUTES.HOME &&
+            pathname !== ROUTES.CARPET_SERVICES &&
+            pathname !== ROUTES.SPRING_BED_SERVICES
+          )}
           onClick={() => {
             onMenuOpen();
           }}
@@ -280,9 +319,8 @@ const MenuItem: React.FC<{
   children: React.ReactNode
   onClick: () => void
   scrolled: boolean
-}> = ({ href, children, scrolled, onClick }) => {
-  const pathname = usePathname();
-  const isActive = pathname === href;
+  isActive: boolean
+}> = ({ href, isActive, children, scrolled, onClick }) => {
 
   return (
     <Link

@@ -12,7 +12,6 @@ export const webSeo: IWebSeo = {
     "laundry stroller",
     "cuci stroller bayi",
     "jasa cuci stroller",
-    "service cuci stroller",
   ],
   secondaryKeyword: [
     "cuci stroller terdekat",
@@ -30,7 +29,7 @@ export const webSeo: IWebSeo = {
   imgAlt: WEB_TITLE,
   applicationId: generateAppIdJson({ webTitle: WEB_TITLE }),
   routes: "/" + SLUG,
-  socialImage: HOST_URL + "/images/services/stroller/2.png",
+  socialImage: HOST_URL + "/images/services/stroller/laundry-stroller-medan-marelan.png",
 };
 
 export const webContent: IWebContent = {
@@ -71,9 +70,9 @@ export const webContent: IWebContent = {
   hooks: "",
   article2: "",
   images: [
-    "/images/services/stroller/1.png",
-    "/images/services/stroller/2.png",
-    "/images/services/stroller/3.png",
+    "/images/services/stroller/laundry-stroller-medan-marelan.png",
+    "/images/services/stroller/cuci-stroller-medan-marelan.png",
+    "/images/services/stroller/laundry-kleen-medan-marelan.png",
   ],
   faq: []
 };

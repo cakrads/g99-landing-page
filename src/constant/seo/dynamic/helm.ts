@@ -8,12 +8,11 @@ export const SLUG = "laundry-helm";
 
 export const webSeo: IWebSeo = {
   title: WEB_TITLE,
-  description: "Nikmati jasa cuci spring bed premium dengan harga terjangkau, bisa Antar-Jemput. Kami menggunakan teknologi terbaru untuk membersihkan spring bed Anda secara efektif.",
+  description: "Nikmati jasa cuci helm premium dengan harga terjangkau, bisa Antar-Jemput. Kami menggunakan teknologi terbaru untuk membersihkan helm Anda secara efektif.",
   primaryKeyword: [
     "laundry helm",
     "cuci helm",
     "jasa cuci helm",
-    "service cuci helm",
   ],
   secondaryKeyword: [
     "cuci helm panggilan",
@@ -25,7 +24,7 @@ export const webSeo: IWebSeo = {
   imgAlt: "",
   applicationId: generateAppIdJson({ webTitle: WEB_TITLE }),
   routes: "/" + SLUG,
-  socialImage: HOST_URL + "/images/services/helm/1.png",
+  socialImage: HOST_URL + "/images/services/helm/laundry-helm.png",
 };
 
 export const webContent: IWebContent = {
@@ -45,7 +44,7 @@ export const webContent: IWebContent = {
   hooks: "",
   article2: "",
   images: [
-    "/images/services/helm/1.png"
+    "/images/services/helm/laundry-helm.png"
   ],
   faq: []
 };

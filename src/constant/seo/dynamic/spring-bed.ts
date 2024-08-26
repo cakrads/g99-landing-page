@@ -28,7 +28,7 @@ export const webSeo: IWebSeo = {
   imgAlt: "",
   applicationId: generateAppIdJson({ webTitle: WEB_TITLE }),
   routes: "/" + SLUG,
-  socialImage: HOST_URL + "/images/services/spring-bed/1.png",
+  socialImage: HOST_URL + "/images/services/spring-bed/laundry-spring-bed-medan-marelan.png",
 };
 
 export const webContent: IWebContent = {
@@ -58,9 +58,9 @@ export const webContent: IWebContent = {
   hooks: "",
   article2: "",
   images: [
-    "/images/services/spring-bed/1.png",
-    "/images/services/spring-bed/2.png",
-    "/images/services/spring-bed/3.png",
+    "/images/services/spring-bed/laundry-spring-bed-medan-marelan.png",
+    "/images/services/spring-bed/laundry-spring-bed-antar-jemput.png",
+    "/images/services/spring-bed/laundry-spring-bed-cepat.png",
   ],
   faq: []
 };
