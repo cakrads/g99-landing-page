@@ -69,6 +69,9 @@ const config = {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
       },
+      backgroundImage: {
+        "whatsapp-gradient": "linear-gradient(to right, #128C7E, #25D366 80%)",
+      }
     },
   },
   plugins: [

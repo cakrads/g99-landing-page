@@ -27,9 +27,9 @@ export const HomeHooks = () => {
             "flex flex-col md:flex-row text-center md:text-left justify-center md:justify-between items-center gap-10 lg:gap-2",
             isIntersecting ? "animate-fade-up animate-once animate-ease-in-out animate-delay-200" : "opacity-0"
           )}>
-            <h3 className="max-w-[700px] text-secondary-foreground text-2xl md:text-3xl font-semibold !leading-normal">
+            <p className="max-w-[700px] text-secondary-foreground text-2xl md:text-3xl font-semibold !leading-normal">
               {HOME_HOOKS}
-            </h3>
+            </p>
             <HomeHooksBtn />
           </div>
         </div>

@@ -133,6 +133,7 @@ const ButtonIcon = React.forwardRef<HTMLButtonElement, ButtonIconProps>(
         ref={ref}
         disabled={disabled || loading}
         {...props}
+        aria-label="btn-icon"
       >
         {React.isValidElement(children) ? React.cloneElement(children as React.ReactElement, { className: "scale-125" }) : children}
         {!!loading && (

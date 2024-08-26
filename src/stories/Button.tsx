@@ -41,6 +41,7 @@ export const Button = ({
       type="button"
       className={["storybook-button", `storybook-button--${size}`, mode].join(" ")}
       {...props}
+      aria-label="btn"
     >
       {label}
       <style jsx>{`

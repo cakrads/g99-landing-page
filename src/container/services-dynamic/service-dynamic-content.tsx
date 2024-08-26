@@ -60,7 +60,7 @@ export const ServiceDynamicContent = ({ slug }: { slug: string }) => {
             <a
               href={WA_LINK(WA_SERVICE_NAME.GLOBAL)} // Need Enhance
               target="_blank"
-              className="flex justify-center items-center gap-2 rounded-md py-4 px-8 bg-[#51cd5e] shadow-2xl hover:shadow-xl active:shadow-2xl focus:shadow-2xl"
+              className="flex justify-center items-center gap-2 rounded-md py-4 px-8 bg-[#4ecb5b] shadow-2xl hover:shadow-xl active:shadow-2xl focus:shadow-2xl"
             >
               <WhatsAppIcon className="w-10 h-10" />
               <b className="text-[#fff] text-xl drop-shadow-xl">{SHOP_PHONE_SHOW}</b>

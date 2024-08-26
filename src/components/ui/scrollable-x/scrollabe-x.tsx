@@ -46,6 +46,7 @@ const LeftArrow = ({ theme = "light" }: { theme: "dark" | "light" | "primary" })
           "left",
           isFirstItemVisible && "opacity-0 pointer-events-none",
         )}
+        aria-label="btn-scrolable-left"
       >
         <IconChevronLeft className={clsx(
           "w-6 h-6",
@@ -77,6 +78,7 @@ const RightArrow = ({ theme = "light" }: { theme: "dark" | "light" | "primary" }
           "right",
           isLastItemVisible && "opacity-0 pointer-events-none",
         )}
+        aria-label="btn-scrolable-right"
       >
         <IconChevronRight className={clsx(
           "w-6 h-6",

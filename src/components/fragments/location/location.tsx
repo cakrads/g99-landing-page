@@ -84,7 +84,7 @@ export const LaundryLocation = () => {
                 <a
                   href={WA_LINK(WA_SERVICE_NAME.GLOBAL)}
                   target="_blank"
-                  className="flex w-full justify-center items-center gap-2 rounded-md py-4 px-2 bg-[#51cd5e] md:px-5 shadow-2xl hover:shadow-xl active:shadow-2xl focus:shadow-2xl"
+                  className="flex w-full justify-center items-center gap-2 rounded-md py-4 px-2 bg-whatsapp-gradient md:px-5 shadow-2xl hover:shadow-xl active:shadow-2xl focus:shadow-2xl"
                 >
                   <WhatsAppIcon className="w-5 h-5" />
                   <b className="text-[#fff] text-xs md:text-sm drop-shadow-xl">{SHOP_PHONE_SHOW}</b>

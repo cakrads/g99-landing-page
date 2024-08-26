@@ -36,9 +36,9 @@ export const LaundryCarpetHooks = () => {
             isIntersecting ? "animate-fade-up animate-once animate-ease-in-out animate-delay-200" : "opacity-0"
           )}>
             <div>
-              <h3 className="max-w-[700px] text-secondary-foreground text-4xl font-semibold !leading-normal mb-2">
+              <h2 className="max-w-[700px] text-secondary-foreground text-4xl font-semibold !leading-normal mb-2">
                 {CARPET_HOOKS}
-              </h3>
+              </h2>
               <p className="text-secondary-foreground text-2xl font-semibold">
                 {CARPET_HOOKS_DESC}
               </p>

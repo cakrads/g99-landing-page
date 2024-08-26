@@ -247,12 +247,12 @@ const ServicesList: React.FC<{
 
   return (
     <div ref={ref} className="pb-5">
-      <h5 className={clsx(
+      <h3 className={clsx(
         "mb-2 text-xl pl-3 md:pl-5 font-medium",
         isIntersecting ? "animate-fade-up animate-ease-in-out animate-delay-500" : "opacity-0"
       )}>
         {title}
-      </h5>
+      </h3>
       <div className={clsx(
         isIntersecting ? "animate-fade-up animate-ease-in-out animate-delay-700" : "opacity-0"
       )}>

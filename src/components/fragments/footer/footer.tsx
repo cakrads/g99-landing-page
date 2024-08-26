@@ -46,7 +46,7 @@ export const Footer = () => {
         target="_blank"
         className={clsx(
           "fixed bottom-4 right-4 flex items-center gap-2",
-          "rounded-full bg-[#51cd5e] py-2 px-4 md:px-5",
+          "rounded-full bg-whatsapp-gradient py-2 px-4 md:px-5",
           "shadow-2xl hover:shadow-xl active:shadow-2xl focus:shadow-2xl"
         )}
         prefetch={false}
@@ -73,53 +73,53 @@ export const Footer = () => {
                 <p className="text-muted mb-2">
                   {SHOP_ADDRESS}
                 </p>
-                <a onClick={handleClickPhone1} href={`tel:${SHOP_PHONE}`} className="text-muted hover:text-primary">
+                <a onClick={handleClickPhone1} href={`tel:${SHOP_PHONE}`} className="hover:text-primary">
                   {SHOP_PHONE_SHOW}
                 </a><br />
-                <a onClick={handleClickPhone2} href={`tel:${SHOP_PHONE_2}`} className="text-muted hover:text-primary">
+                <a onClick={handleClickPhone2} href={`tel:${SHOP_PHONE_2}`} className="hover:text-primary">
                   {SHOP_PHONE_SHOW_2}
                 </a>
               </div>
               <div>
                 <h3 className="mb-4 text-lg font-bold">Halaman Lainnya</h3>
-                <ul className="space-y-2 text-muted">
+                <ul className="space-y-2">
                   <li>
-                    <Link href={ROUTES.HOME} onClick={handleClickNavHome} className="hover:text-primary">
+                    <Link href={ROUTES.HOME} onClick={handleClickNavHome} className="py-3 hover:text-primary">
                       Beranda
                     </Link>
                   </li>
                   <li>
-                    <Link href={ROUTES.CARPET_SERVICES} onClick={handleClickNavCarpetService} className="hover:text-primary">
+                    <Link href={ROUTES.CARPET_SERVICES} onClick={handleClickNavCarpetService} className="py-3 hover:text-primary">
                       Laundry Karpet
                     </Link>
                   </li>
                   <li>
-                    <Link href={ROUTES.SOFA_SERVICES} onClick={() => { }} className="hover:text-primary">
+                    <Link href={ROUTES.SOFA_SERVICES} onClick={() => { }} className="py-3 hover:text-primary">
                       Laundry Sofa
                     </Link>
                   </li>
                   <li>
-                    <Link href={ROUTES.SPRING_BED_SERVICES} onClick={() => { }} className="hover:text-primary">
+                    <Link href={ROUTES.SPRING_BED_SERVICES} onClick={() => { }} className="py-3 hover:text-primary">
                       Laundry Spring Bed
                     </Link>
                   </li>
                   <li>
-                    <Link href={ROUTES.STROLLER_SERVICES} onClick={() => { }} className="hover:text-primary">
+                    <Link href={ROUTES.STROLLER_SERVICES} onClick={() => { }} className="py-3 hover:text-primary">
                       Laundry Stroller
                     </Link>
                   </li>
                   <li>
-                    <Link href={ROUTES.SUITCASE_SERVICES} onClick={() => { }} className="hover:text-primary">
+                    <Link href={ROUTES.SUITCASE_SERVICES} onClick={() => { }} className="py-3 hover:text-primary">
                       Laundry Koper / Tas
                     </Link>
                   </li>
                   <li>
-                    <Link href={ROUTES.DOLL_SERVICES} onClick={() => { }} className="hover:text-primary">
+                    <Link href={ROUTES.DOLL_SERVICES} onClick={() => { }} className="py-3 hover:text-primary">
                       Laundry Boneka
                     </Link>
                   </li>
                   <li>
-                    <Link href={ROUTES.HELM_SERVICES} onClick={() => { }} className="hover:text-primary">
+                    <Link href={ROUTES.HELM_SERVICES} onClick={() => { }} className="py-3 hover:text-primary">
                       Laundry Helm
                     </Link>
                   </li>
@@ -127,14 +127,14 @@ export const Footer = () => {
               </div>
               <div>
                 <h3 className="mb-4 text-lg font-bold">Follow Us</h3>
-                <div className="flex space-x-4">
-                  <Link href={SHOP_IG} className="text-muted hover:text-primary" onClick={handleClickFacebook}>
+                <div className="flex">
+                  <Link href={SHOP_IG} className="hover:text-primary h-11 w-11" onClick={handleClickFacebook}>
                     <FacebookIcon className="h-6 w-6" />
                   </Link>
-                  <Link href={SHOP_TIKTOK} className="text-muted hover:text-primary" onClick={handleClickInstagram}>
+                  <Link href={SHOP_TIKTOK} className="hover:text-primary h-11 w-11" onClick={handleClickInstagram}>
                     <InstagramIcon className="h-6 w-6" />
                   </Link>
-                  <Link href={SHOP_FB} className="text-muted hover:text-primary" onClick={handleClickTiktok}>
+                  <Link href={SHOP_FB} className="hover:text-primary h-11 w-11" onClick={handleClickTiktok}>
                     <TiktokIcon className="h-6 w-6" />
                   </Link>
                 </div>
