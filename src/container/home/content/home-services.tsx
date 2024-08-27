@@ -92,8 +92,8 @@ const HomeServicesHouseSuplies = () => {
       description: "Dapatkan bantal yang Bersih untuk tidur yang lebih Nyaman dan lebih Nyenyak.",
       imgSrc: "/images/services/cuci-bantal.jpg",
       imgAlt: "Cuci Bantal -" + HOME_IMG_ALT,
-      linkPage: "#our-location",
-      linkText: "Pesan Sekarang",
+      linkPage: ROUTES.PILLOW_SERVICES,
+      linkText: "Lihat Detail",
       onClick: () => { }
     },
     {
@@ -131,7 +131,7 @@ const HomeServicesPersonalSuplies = () => {
       description: "Pastikan tas Anda tetap bersih dan awet dengan layanan cuci tas kami. Tas Anda akan terlihat seperti Baru lagi.",
       imgSrc: "/images/services/cuci-tas.jpg",
       imgAlt: "Cuci Tas -" + HOME_IMG_ALT,
-      linkPage: ROUTES.SUITCASE_SERVICES,
+      linkPage: ROUTES.BAG_SERVICES,
       linkText: "Lihat Detail",
       onClick: () => { }
     },
