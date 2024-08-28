@@ -21,7 +21,7 @@ export const HOME_IMG_ALT = HOME_WEB_TITLE;
 /****************************************************
   CONTENT
 *****************************************************/
-export const HOME_HERO_TITLE = "Laundry Terdekat, Hemat & Berkualitas!";
+export const HOME_HERO_TITLE = "Laundry Premium, Hemat & Berkualitas!";
 //export const HOME_HERO_TITLE = "Nikmati Layanan Laundry Hemat dan Berkualitas!";
 export const HOME_HERO_DESCRIPTION = "Nikmati layanan laundry Premium dengan Harga Terjangkau, proses Cepat dan Hasil Memuaskan.";
 // export const HOME_HERO_DESCRIPTION = "Layanan premium dengan harga terjangkau, proses cepat dan hasil memuaskan.";
