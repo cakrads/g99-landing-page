@@ -9,4 +9,5 @@ export const ROUTES = {
   SUITCASE_SERVICES: "/laundry-koper",
   BAG_SERVICES: "/laundry-tas",
   PILLOW_SERVICES: "/laundry-bantal-dan-guling",
+  SHOES_SERVICES: "/laundry-sepatu",
 };

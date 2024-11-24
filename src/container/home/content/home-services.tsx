@@ -122,8 +122,8 @@ const HomeServicesPersonalSuplies = () => {
       description: "Buat sepatu Anda kembali Bersih terlihat Seperti Baru dengan layanan Cuci Sepatu kami.",
       imgSrc: "/images/services/cuci-sepatu.jpg",
       imgAlt: "Cuci Sepatu -" + HOME_IMG_ALT,
-      linkPage: "#our-location",
-      linkText: "Pesan Sekarang",
+      linkPage: ROUTES.SHOES_SERVICES,
+      linkText: "Lihat Detail",
       onClick: () => { }
     },
     {
@@ -188,6 +188,24 @@ const HomeServicesWashingClothes = () => {
       description: "Jaga Kebaya maupun Jas Anda agar tetap bersih dan rapi untuk acara spesial.",
       imgSrc: "/images/services/cuci-kering.jpg",
       imgAlt: "Cuci Jas maupun Cuci Kebaya -" + HOME_IMG_ALT,
+      linkPage: "#our-location",
+      linkText: "Pesan Sekarang",
+      onClick: () => { }
+    },
+    {
+      title: "Cuci Tangan Manual",
+      description: "Kami menawarkan jasa cuci pakaian Anda dengan tangan manual untuk hasil yang lebih memuaskan",
+      imgSrc: "/images/services/cuci-tangan-manual.jpg",
+      imgAlt: "Laundry Terdekat -" + HOME_IMG_ALT,
+      linkPage: "#our-location",
+      linkText: "Pesan Sekarang",
+      onClick: () => { }
+    },
+    {
+      title: "Cuci Ulos",
+      description: "Rawat dan bersihkan Ulos Anda agar tetap bersih dan rapi untuk acara spesial.",
+      imgSrc: "/images/services/cuci-ulos-marelan.jpg",
+      imgAlt: "Laundry Terdekat -" + HOME_IMG_ALT,
       linkPage: "#our-location",
       linkText: "Pesan Sekarang",
       onClick: () => { }
