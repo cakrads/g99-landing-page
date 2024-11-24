@@ -8,7 +8,7 @@ export const SLUG = "laundry-sepatu";
 
 export const webSeo: IWebSeo = {
   title: WEB_TITLE,
-  description: "Rawat sepatu kesayangan Anda dengan di Laundry G99: Laundry Sepatu Medan Marelan. Aman untuk berbagai bahan dan mempertahankan keindahan dan usia sepatu. Pesan sekarang!",
+  description: "Rawat sepatu kesayangan Anda di Laundry G99: Laundry Sepatu Medan Marelan. Aman untuk berbagai bahan dan mempertahankan keindahan dan usia sepatu. Pesan sekarang!",
   primaryKeyword: [
     "laundry sepatu",
     "cuci sepatu",
