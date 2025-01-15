@@ -10,7 +10,7 @@ import { useTrackEnterSection } from "@/libs/analytic/use-enter-section";
 import { ScrollableX } from "@/components/ui/scrollable-x";
 import { useIsVisible } from "@/utils/use-in-view";
 import { Card } from "@/components/ui/card";
-import { WaveBottomBgShapeSM } from "@/components/ui/shapes";
+import { WaveBottomBgShape } from "@/components/ui/shapes";
 import { ROUTES } from "@/constant/routes";
 
 type ServicesData = {
@@ -31,7 +31,7 @@ export const HomeServices = () => {
 
   return (
     <section ref={ref}>
-      <div className="bg-primary pt-24 pb-16 md:pt-28 sm:py-24 relative">
+      <div className="bg-primary pt-24 pb-24 sm:py-24 md:py-28 relative">
         <div className="container mx-auto px-4">
           <SectionHeader
             classNames="mb-16"
@@ -43,7 +43,7 @@ export const HomeServices = () => {
           <HomeServicesWashingClothes />
         </div>
       </div>
-      <WaveBottomBgShapeSM className="w-full" color="hsl(38 100% 55%)" />
+      <WaveBottomBgShape currentSectionColor="hsl(38 100% 55%)" nextSectionColor="#fff" />
     </section>
   );
 };

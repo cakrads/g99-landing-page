@@ -2,7 +2,7 @@ import React from "react";
 import clsx from "clsx";
 import { usePathname } from "next/navigation";
 
-import { WaveTopBgShapeSM, WaveTopBgShape, WaveBottomBgShapeSM } from "@/components/ui/shapes";
+import { WaveTopBgShape, WaveBottomBgShape } from "@/components/ui/shapes";
 import { useTrackEnterSection } from "@/libs/analytic/use-enter-section";
 import { useIsVisible } from "@/utils/use-in-view";
 import Link from "@/components/ui/link";
@@ -26,10 +26,9 @@ export const LaundryCarpetHooks = () => {
   } = data;
 
   return (
-    <section ref={ref}>
-      <WaveTopBgShapeSM className="w-full block lg:hidden" color="hsl(223 9% 15%)" />
-      <WaveTopBgShape className="w-full hidden lg:block" color="hsl(223 9% 15%)" />
-      <div className="bg-secondary pt-12 pb-24 md:pt-16 md:pb-32 sm:py-32 relative">
+    <section ref={ref} className="mt-10">
+      <WaveTopBgShape className="bg-white" shapeColor="hsl(223 9% 15%)" />
+      <div className="bg-secondary py-32 relative">
         <div className="container px-4 xs:px-10">
           <div className={clsx(
             "flex flex-col md:flex-row text-center md:text-left justify-center md:justify-between items-center gap-14 lg:gap-10",
@@ -57,9 +56,7 @@ export const LaundryCarpetHooks = () => {
           </div>
         </div>
       </div>
-      <div className="mt-[-2px] mb-[-24px]">
-        <WaveBottomBgShapeSM className="w-full" color="hsl(223 9% 15%)" />
-      </div>
+      <WaveBottomBgShape currentSectionColor="hsl(223 9% 15%)" nextSectionColor="#fff" />
     </section>
   );
 };

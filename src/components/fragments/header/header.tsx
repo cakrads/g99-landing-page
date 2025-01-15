@@ -50,7 +50,7 @@ export const Header = () => {
               alt={GLOBAL_IMG_ALT}
             />
             <span className={clsx(
-              "self-center text-xl font-semibold whitespace-nowrap transition-colors",
+              "self-center text-xl font-bold whitespace-nowrap transition-colors",
               scrolled ? "text-white" : "text-secondary"
             )}>
               Laundry G 99

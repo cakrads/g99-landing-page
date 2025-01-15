@@ -1,6 +1,7 @@
 import clsx from "clsx";
+import React from "react";
 
-export const HomeImageShapesBg = ({ className, color = "#ffffff" }: { className?: string, color?: string }) => {
+export const HomeImageShapesBg = ({ className, }: { className?: string, }) => {
   return (
     <svg xmlns="http://www.w3.org/2000/svg"
       zoomAndPan="magnify"
@@ -24,65 +25,67 @@ export const HomeImageShapesBg = ({ className, color = "#ffffff" }: { className?
   );
 };
 
-
-export const WaveTopBgShapeSM = ({ className, color = "#ffffff" }: { className?: string, color?: string }) => {
+export const WaveTopBgShape: React.FC<{
+  className?: string
+  bgColor?: string
+  shapeColor?: string
+}> = ({ className = "bg-primary", bgColor, shapeColor = "#ffffff" }) => {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg"
-      className={className}
-      zoomAndPan="magnify"
-      viewBox="0 0 1422.328125 157.5"
-      preserveAspectRatio="xMidYMid meet"
-      version="1.0"
-    >
-      <path
-        fill={color}
-        d="M 1422.328125 15.527344 C 1314.503906 51.570312 1237.785156 73.613281 1153.03125 92.730469 C 1055.125 114.878906 985.503906 123.96875 903.566406 125.328125 C 815.050781 126.683594 745.640625 119.476562 637.921875 97.433594 C 594.5 88.550781 544.085938 77.164062 436.886719 51.988281 C 330.527344 27.019531 264.769531 13.75 224.058594 9.257812 C 151.726562 1.109375 78.242188 7.585938 9.351562 28.167969 L -3.484375 31.929688 L -3.695312 187.382812 L -4.007812 342.945312 L 1473.472656 342.945312 L 1473.472656 170.5625 C 1473.472656 75.703125 1473.367188 -1.710938 1473.265625 -1.609375 C 1473.054688 -1.503906 1450.195312 6.226562 1422.328125 15.527344 Z M 1422.328125 15.527344 "
-        fillOpacity="1"
-        fillRule="nonzero"
-      />
-    </svg>
+    <div className={clsx(
+      "relative -mt-1",
+      "h-0 md:h-28 lg:h-32 xl:h-72",
+      bgColor && `bg-[${bgColor}]`,
+      className
+    )}>
+      <div className="w-full absolute -bottom-1 z-0 -scale-x-100">
+        <svg className="w-full " fill={shapeColor} viewBox="0 0 1440 96" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0 64L80 48C160 32 320 2.86102e-06 480 5.3C640 11 800 53 960 58.7C1120 64 1280 32 1360 16L1440 0V96H1360C1280 96 1120 96 960 96C800 96 640 96 480 96C320 96 160 96 80 96H0V64Z"></path>
+        </svg>
+      </div>
+      <div className="w-full absolute -bottom-1 z-0">
+        <svg className="w-full opacity-50" fill={shapeColor} viewBox="0 0 1440 174" xmlns="http://www.w3.org/2000/svg">
+          <g clipPath="url(#clip0_452_184)">
+            <path d="M0 128L60 117.3C120 107 240 85 360 90.7C480 96 600 128 720 117.3C840 107 960 53 1080 26.7C1200 -3.8147e-06 1320 0 1380 0H1440V224H1380C1320 224 1200 224 1080 224C960 224 840 224 720 224C600 224 480 224 360 224C240 224 120 224 60 224H0V128Z"></path>
+          </g>
+          <defs>
+            <clipPath id="clip0_452_184"><rect width="1440" height="174"></rect></clipPath>
+          </defs>
+        </svg>
+      </div>
+      <div className="w-full absolute -bottom-1 z-0">
+        <svg className="w-full opacity-50" fill={shapeColor} viewBox="0 0 1440 256" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0 64L80 85.3C160 107 320 149 480 144C640 139 800 85 960 53.3C1120 21 1280 11 1360 5.3L1440 0V256H1360C1280 256 1120 256 960 256C800 256 640 256 480 256C320 256 160 256 80 256H0V64Z"></path>
+        </svg>
+      </div>
+    </div>
   );
 };
 
-export const WaveTopBgShape = ({ className, color = "#ffffff" }: { className?: string, color?: string }) => {
+export const WaveBottomBgShape: React.FC<{
+  className?: string
+  currentSectionColor?: string
+  nextSectionColor?: string
+}> = ({ className, currentSectionColor = " hsl(223 9% 15%)", nextSectionColor = "hsl(38 100% 55%)" }) => {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg"
-      className={className}
-      zoomAndPan="magnify"
-      viewBox="0 0 1470 92.999996"
-      preserveAspectRatio="xMidYMid meet"
-      version="1.0"
+    <div
+      className={clsx(
+        "relative -mt-1",
+        "h-28 md:h-44 lg:h-48 xl:h-52 2xl:h-72",
+        className
+      )}
+      style={{ backgroundColor: currentSectionColor }}
     >
-      <path fill={color}
-        d="M -846.714844 336.136719 C -889.015625 358.609375 -827.867188 224.285156 -775.921875 157.917969 C -689.082031 47.046875 -567.085938 12.699219 -430.027344 25.894531 C -290.941406 39.265625 -152.363281 92.5 -11.886719 83.53125 C 97.625 76.558594 192.546875 13.441406 301.3125 5.960938 C 422.566406 -2.363281 537.660156 54.324219 658.644531 54.59375 C 730.21875 54.765625 815.125 4.304688 877.089844 56.523438 C 974.347656 138.558594 976.582031 322.703125 977.664062 438.378906 "
-        fillOpacity="1"
-        fillRule="evenodd"
-      />
-      <path fill={color}
-        d="M 1568.585938 249.890625 C 1596.117188 264.535156 1556.316406 176.992188 1522.507812 133.742188 C 1465.988281 61.484375 1386.585938 39.09375 1297.382812 47.699219 C 1206.859375 56.410156 1116.664062 91.105469 1025.234375 85.261719 C 953.957031 80.714844 892.175781 39.582031 821.386719 34.707031 C 742.46875 29.28125 667.558594 66.226562 588.816406 66.402344 C 542.230469 66.511719 486.96875 33.625 446.640625 67.660156 C 383.339844 121.125 381.882812 241.132812 381.179688 316.523438 "
-        fillOpacity="1"
-        fillRule="evenodd"
-      />
-    </svg>
-  );
-};
-
-export const WaveBottomBgShapeSM = ({ className, color = "#ffffff" }: { className?: string, color?: string }) => {
-  return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      className={clsx("mb-6", className)}
-      zoomAndPan="magnify"
-      viewBox="0 0 1470 92.999996"
-      preserveAspectRatio="xMidYMid meet"
-      version="1.0"
-    >
-      <path
-        fill={color}
-        d="M -433.886719 -275.949219 C -481.003906 -300.992188 -412.890625 -151.285156 -355.027344 -77.316406 C -258.300781 46.253906 -122.410156 84.539062 30.257812 69.828125 C 185.183594 54.929688 339.546875 -4.40625 496.019531 5.589844 C 618.003906 13.359375 723.738281 83.707031 844.890625 92.042969 C 979.953125 101.324219 1108.15625 38.144531 1242.914062 37.839844 C 1322.640625 37.652344 1417.21875 93.890625 1486.238281 35.691406 C 1594.574219 -55.742188 1597.0625 -260.972656 1598.269531 -389.898438 "
-        fillOpacity="1"
-        fillRule="evenodd"
-      />
-    </svg>
+      <div className="absolute bottom-0 w-full z-0">
+        <svg
+          className="w-full absolute -bottom-1 z-0"
+          viewBox="0 0 1440 150"
+          version="1.1"
+          xmlns="http://www.w3.org/2000/svg"
+          fill={nextSectionColor}
+        >
+          <path d="M0,120L80,100C160,80,320,40,480,25C640,10,800,20,960,37.5C1120,55,1280,80,1440,80C1600,80,1760,55,1920,40C2080,25,2240,20,2400,15C2560,10,2720,5,2880,17.5C3040,30,3200,60,3360,62.5C3520,65,3680,40,3840,27.5C4000,15,4160,15,4320,12.5C4480,10,4640,5,4800,22.5C4960,40,5120,80,5280,102.5C5440,125,5600,130,5760,110C5920,90,6080,45,6240,27.5C6400,10,6560,20,6720,37.5C6880,55,7040,80,7200,95C7360,110,7520,115,7680,117.5C7840,120,8000,120,8160,105C8320,90,8480,60,8640,47.5C8800,35,8960,40,9120,35C9280,30,9440,15,9600,20C9760,25,9920,50,10080,62.5C10240,75,10400,75,10560,75C10720,75,10880,75,11040,72.5C11200,70,11360,65,11440,62.5L11520,60L11520,150L11440,150C11360,150,11200,150,11040,150C10880,150,10720,150,10560,150C10400,150,10240,150,10080,150C9920,150,9760,150,9600,150C9440,150,9280,150,9120,150C8960,150,8800,150,8640,150C8480,150,8320,150,8160,150C8000,150,7840,150,7680,150C7520,150,7360,150,7200,150C7040,150,6880,150,6720,150C6560,150,6400,150,6240,150C6080,150,5920,150,5760,150C5600,150,5440,150,5280,150C5120,150,4960,150,4800,150C4640,150,4480,150,4320,150C4160,150,4000,150,3840,150C3680,150,3520,150,3360,150C3200,150,3040,150,2880,150C2720,150,2560,150,2400,150C2240,150,2080,150,1920,150C1760,150,1600,150,1440,150C1280,150,1120,150,960,150C800,150,640,150,480,150C320,150,160,150,80,150L0,150Z"></path>
+        </svg>
+      </div>
+    </div >
   );
 };

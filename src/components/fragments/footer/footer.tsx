@@ -8,7 +8,7 @@ import Link from "@/components/ui/link";
 import { SHOP_ADDRESS, SHOP_DESCRIPTION, SHOP_FB, SHOP_IG, SHOP_MOTTO, SHOP_NAME, SHOP_PHONE, SHOP_PHONE_2, SHOP_PHONE_SHOW, SHOP_PHONE_SHOW_2, SHOP_TIKTOK } from "@/constant/shop";
 import { WA_LINK, WA_SERVICE_NAME } from "@/constant/whatsapp";
 import { FacebookIcon, InstagramIcon, TiktokIcon, WhatsAppIcon } from "@/components/ui/icons/social";
-import { WaveTopBgShape, WaveTopBgShapeSM } from "@/components/ui/shapes";
+import { WaveTopBgShape } from "@/components/ui/shapes";
 import { useTrackEnterSection } from "@/libs/analytic/use-enter-section";
 import { ROUTES } from "@/constant/routes";
 import { useAnalytic } from "@/libs/analytic/provider";
@@ -45,7 +45,7 @@ export const Footer = () => {
         href={WA_LINK(WA_SERVICE_NAME.GLOBAL)}
         target="_blank"
         className={clsx(
-          "fixed bottom-4 right-4 flex items-center gap-2",
+          "fixed bottom-2 right-2 sm:bottom-4 sm:right-4 flex items-center gap-2",
           "rounded-full bg-whatsapp-gradient py-2 px-4 md:px-5",
           "shadow-2xl hover:shadow-xl active:shadow-2xl focus:shadow-2xl"
         )}
@@ -57,8 +57,7 @@ export const Footer = () => {
         {/* <span className="sr-only">WhatsApp</span> */}
       </Link>
       <footer ref={ref}>
-        <WaveTopBgShapeSM className="w-full block lg:hidden" color="hsl(223 9% 15%)" />
-        <WaveTopBgShape className="w-full hidden lg:block" color="hsl(223 9% 15%)" />
+        <WaveTopBgShape className="bg-white" shapeColor="hsl(223 9% 15%)" />
         <div className="bg-secondary text-secondary-foreground py-8">
           <div className="container mt-8 mx-auto">
             <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4 mb-6">

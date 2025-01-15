@@ -1,7 +1,7 @@
 import React from "react";
 import clsx from "clsx";
 
-import { WaveTopBgShapeSM, WaveTopBgShape, WaveBottomBgShapeSM } from "@/components/ui/shapes";
+import { WaveBottomBgShape, WaveTopBgShape } from "@/components/ui/shapes";
 import { HOME_HOOKS } from "@/constant/seo/home-page";
 import { useTrackEnterSection } from "@/libs/analytic/use-enter-section";
 import { useIsVisible } from "@/utils/use-in-view";
@@ -17,11 +17,8 @@ export const HomeHooks = () => {
 
   return (
     <section ref={ref}>
-      <div className="bg-primary mb-[-1px]">
-        <WaveTopBgShapeSM className="w-full block lg:hidden" color="hsl(223 9% 15%)" />
-        <WaveTopBgShape className="w-full hidden lg:block" color="hsl(223 9% 15%)" />
-      </div>
-      <div className="bg-secondary pt-12 pb-24 md:pt-20 md:pb-40 sm:py-32 relative">
+      <WaveTopBgShape className="bg-primary" shapeColor="hsl(223 9% 15%)" />
+      <div className="bg-secondary py-28 relative">
         <div className="container px-4 xs:px-10">
           <div className={clsx(
             "flex flex-col md:flex-row text-center md:text-left justify-center md:justify-between items-center gap-10 lg:gap-2",
@@ -31,13 +28,11 @@ export const HomeHooks = () => {
               {HOME_HOOKS}
             </p>
             <HomeHooksBtn />
+            {/* <div className="bg-primary sm:bg-purple-500 md:bg-red-500 lg:bg-green-500 xl:bg-blue-500 2xl:bg-orange-500 h-10 w-10" /> */}
           </div>
         </div>
       </div>
-      <div className="bg-primary mt-[-2px] mb-[-24px]">
-        <WaveBottomBgShapeSM className="w-full" color="hsl(223 9% 15%)" />
-      </div>
+      <WaveBottomBgShape />
     </section>
   );
 };
-
