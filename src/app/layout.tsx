@@ -2,17 +2,21 @@ import React from "react";
 import { Inter } from "next/font/google";
 import NextTopLoader from "nextjs-toploader";
 
-import { Header } from "@/components/fragments/header";
+import type { Metadata } from "next";
+
 import { Footer } from "@/components/fragments/footer";
 import { cn } from "@/components/libs/cn";
 import { HOME_WEB_DESCRIPTION, HOME_WEB_KEYWORDS, HOME_WEB_TITLE, } from "@/constant/seo/home-page";
 import { HOST_URL } from "@/constant/env";
 import { AnalyticProvider } from "@/libs/analytic/provider";
 import { createMetadata } from "@/constant/seo/meta-data";
-
-import type { Metadata } from "next";
-
 import "./../styles/globals.css";
+import { dynamic } from "@/libs/api-client/dynamic";
+
+const Header = dynamic(
+  () => import("@/components/fragments/header").then((mod) => mod.Header),
+  { ssr: false }
+);
 
 const fontHeading = Inter({
   subsets: ["latin"],

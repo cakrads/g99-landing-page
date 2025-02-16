@@ -4,9 +4,17 @@
  * Documentation: https://v0.dev/docs#integrating-generated-code-into-your-nextjs-app
  */
 
+import { dynamic } from "@/libs/api-client/dynamic";
 import { HomeHero } from "./content/home-hero";
-import { HomeBottomContent } from "./home-bottom-content";
-import { HomePageTracker } from "./home-tracker";
+
+const HomeBottomContent = dynamic(
+  () => import("./home-bottom-content").then((mod) => mod.HomeBottomContent),
+  { ssr: false }
+);
+const HomePageTracker = dynamic(
+  () => import("./home-tracker").then((mod) => mod.HomePageTracker),
+  { ssr: false }
+);
 
 export function HomeContainer() {
   return (
