@@ -15,7 +15,7 @@ export const HomeHero = () => {
         <div className="grid gap-12 lg:grid-cols-[1fr_500px] xl:grid-cols-[1fr_500px]">
           <div className="flex flex-col justify-center items-center lg:items-start space-y-6">
             <div className="flex flex-col items-center lg:items-start space-y-2">
-              <h1 className="text-center lg:text-left font-bold text-3xl sm:text-5xl xl:text-6xl/none animate-fade-up animate-once animate-ease-in-out">
+              <h1 className="text-center lg:text-left font-bold text-3xl sm:text-5xl xl:text-6xl/none">
                 {HOME_HERO_TITLE}
               </h1>
               <p className="text-center lg:text-left max-w-[500px] lg:max-w-[600px] items-center sm:text-xl animate-fade-up animate-once animate-ease-in-out animate-delay-100">
@@ -26,7 +26,10 @@ export const HomeHero = () => {
               <HomeHeroCtaBtn />
             </div>
           </div>
-          <div className="relative flex justify-center items-center h-[450px] xs:h-[550px] xl:h-[500px]">
+          <div className={clsx(
+            "relative flex justify-center items-center h-[450px] xs:h-[550px] xl:h-[500px]",
+            "animate-fade-up animate-once animate-ease-in-out animate-delay-300 md:animate-delay-75"
+          )}>
             <HomeImageShapesBg className={clsx(
               "h-full w-full drop-shadow-xl",
               "animate-fade-up animate-once animate-ease-in-out animate-delay-75",
