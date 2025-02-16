@@ -2,7 +2,9 @@ import Image from "next/image";
 import clsx from "clsx";
 
 import { HomeImageShapesBg } from "@/components/ui/shapes";
-import { HOME_HERO_DESCRIPTION, HOME_HERO_TITLE, HOME_IMG_ALT } from "@/constant/seo/home-page";
+import {
+  HOME_HERO_DESCRIPTION, HOME_HERO_TITLE, HOME_IMG_ALT
+} from "@/constant/seo/home-page";
 import { HomeHeroCtaBtn, HomeHeroTracker } from "../home-tracker";
 
 export const HomeHero = () => {
@@ -34,11 +36,11 @@ export const HomeHero = () => {
               <Image
                 src="/images/hero-image.webp"
                 alt={HOME_IMG_ALT}
-                width={350}
-                height={350}
                 quality={75}
-                sizes="(max-width: 768px) 350px, 500px"
+                fill
+                sizes="(max-width: 640px) 100vw, 640px"
                 priority={true}
+                style={{ objectFit: "cover" }}
               />
             </div>
           </div>
