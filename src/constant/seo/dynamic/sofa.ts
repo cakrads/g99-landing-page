@@ -39,7 +39,7 @@ export const webContent: IWebContent = {
   <p><strong>Apakah sofa Anda mulai terlihat kotor atau kurang bersih? Saatnya memberikan perawatan terbaik untuk sofa kesayangan Anda dengan layanan laundry dari Laundry G 99 Kami!</strong></p>
   <h2>Kenapa Harus Laundry Sofa di Laundry G 99 :</h2>
   <ul>
-      <li><strong>Profesional &amp; Berpengalaman:</strong> Kami mampu dalam membersihkan sofa dari berbagai bahan dan jenis.</li>
+      <li><strong>Profesional &; Berpengalaman:</strong> Kami mampu dalam membersihkan sofa dari berbagai bahan dan jenis.</li>
       <li><strong>Teknologi Canggih:</strong> Menggunakan alat dan produk pembersih terbaru untuk hasil maksimal. </li>
       <li><strong>Hemat Waktu dan Tenaga:</strong> Antar dan jemput sofa Anda, tanpa ribet! </li>
       <li><strong>Ramah Lingkungan:</strong> Produk pembersih kami aman dan ramah lingkungan.</li>

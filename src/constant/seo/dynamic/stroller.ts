@@ -43,7 +43,7 @@ export const webContent: IWebContent = {
     <br/>
     <h2>Kenapa Harus Laundry Stroller di Laundry G 99 :</h2>
     <ul>
-        <li>Kami membersihkan stroller &amp; perlengkapan bayi Anda dengan&nbsp;teknik pencucian terbaik&nbsp;yang membuat semua noda, kotoran, dan aroma tidak sedap terlepas sempurna tanpa harus khawatir terjadinya resiko kerusakan pada stroller Anda.</li>
+        <li>Kami membersihkan stroller &; perlengkapan bayi Anda dengan&nbsp;teknik pencucian terbaik&nbsp;yang membuat semua noda, kotoran, dan aroma tidak sedap terlepas sempurna tanpa harus khawatir terjadinya resiko kerusakan pada stroller Anda.</li>
         <li>Kami menggunakan&nbsp;chemical pembersih khusus perlengkapan bayi yang memiliki pH 7&nbsp;sehingga sangat aman dan sesuai untuk kebutuhan bayi.</li>
         <li>Kami berani&nbsp;menggaransi kepuasan Anda. Jika Anda tidak puas, Anda bisa mengklaim untuk dicuci kembali atau GRATIS tidak perlu membayar.</li>
     </ul>

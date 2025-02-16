@@ -1,9 +1,7 @@
-
 import Image from "next/image";
 
 import { HomeImageShapesBg } from "@/components/ui/shapes";
 import { HOME_HERO_DESCRIPTION, HOME_HERO_TITLE, HOME_IMG_ALT } from "@/constant/seo/home-page";
-
 import { HomeHeroCtaBtn, HomeHeroTracker } from "../home-tracker";
 
 export const HomeHero = () => {
@@ -35,6 +33,7 @@ export const HomeHero = () => {
                 width={500}
                 height={500}
                 quality={100}
+                sizes="(max-width: 768px) 300px, 500px"
                 priority={true}
               />
             </div>

@@ -1,5 +1,4 @@
 import { HOST_URL } from "@/constant/env";
-
 import { generateAppIdJson } from "../app-id-json";
 import { IWebContent, IWebSeo } from "./type";
 
@@ -33,7 +32,7 @@ export const webContent: IWebContent = {
   serviceName: "Laundry Sepatu",
   serviceNameAlt: "Cuci Sepatu",
   article: `
-  <p>Kami memahami bahwa sepatu bukan hanya alas kaki, tetapi bagian penting dari gaya dan kepercayaan diri Anda. Dengan layanan berbasis <em>care &amp; quality</em>, kami memberikan lebih dari sekadar mencuci&mdash;kami merawat setiap sepatu dengan hati-hati untuk menjaga kualitasnya.</p>
+  <p>Kami memahami bahwa sepatu bukan hanya alas kaki, tetapi bagian penting dari gaya dan kepercayaan diri Anda. Dengan layanan berbasis <em>care &; quality</em>, kami memberikan lebih dari sekadar mencuci&mdash;kami merawat setiap sepatu dengan hati-hati untuk menjaga kualitasnya.</p>
   <p><strong>Mengapa Pilih Layanan Kami?</strong></p>
   <ol>
   <li style="list-style-type: none;">
