@@ -54,8 +54,8 @@ export default function RootLayout({
       <body
         className={cn(
           "antialiased",
-          fontHeading.className,
-          fontBody.className,
+          fontHeading.variable,
+          fontBody.variable
         )}
       >
         <NextTopLoader
