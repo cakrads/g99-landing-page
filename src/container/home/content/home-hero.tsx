@@ -41,6 +41,7 @@ export const HomeHero = () => {
                 fill
                 sizes="(max-width: 640px) 100vw, 640px"
                 priority={true}
+                fetchPriority="high"
               />
             </div>
           </div>
