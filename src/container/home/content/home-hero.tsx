@@ -26,21 +26,21 @@ export const HomeHero = () => {
               <HomeHeroCtaBtn />
             </div>
           </div>
-          <div className="relative h-[450px] xs:h-[550px] xl:h-[500px] overflow-hidden drop-shadow-2xl">
+          <div className="relative flex justify-center items-center h-[450px] xs:h-[550px] xl:h-[500px]">
             <HomeImageShapesBg className={clsx(
               "h-full w-full drop-shadow-xl",
               "animate-fade-up animate-once animate-ease-in-out animate-delay-75",
               "md:animate-none"
             )} />
-            <div className="absolute top-0 flex justify-center w-full">
+            <div className="absolute top-0 flex justify-center w-[350px] md:w-[450px] h-[350px] md:h-[450px]">
               <Image
+                className="object-cover"
                 src="/images/hero-image.webp"
                 alt={HOME_IMG_ALT}
                 quality={75}
                 fill
                 sizes="(max-width: 640px) 100vw, 640px"
                 priority={true}
-                style={{ objectFit: "cover" }}
               />
             </div>
           </div>
