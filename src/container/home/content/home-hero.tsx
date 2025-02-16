@@ -27,11 +27,11 @@ export const HomeHero = () => {
             </div>
           </div>
           <div className="relative flex justify-center items-center h-[450px] xs:h-[550px] xl:h-[500px]">
-            <HomeImageShapesBg className="h-full w-full drop-shadow-xl" />
-            <div className={clsx(
-              "absolute top-0 flex justify-center w-[350px] md:w-[450px] h-[350px] md:h-[450px]",
+            <HomeImageShapesBg className={clsx(
+              "h-full w-full drop-shadow-xl",
               "animate-fade-up animate-once animate-ease-in-out animate-delay-300"
-            )}>
+            )} />
+            <div className="absolute top-0 flex justify-center w-[350px] md:w-[450px] h-[350px] md:h-[450px]">
               <Image
                 className="object-cover"
                 src="/images/hero-image.webp"
