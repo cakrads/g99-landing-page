@@ -36,7 +36,7 @@ export const HomeHero = () => {
                 alt={HOME_IMG_ALT}
                 width={350}
                 height={350}
-                quality={100}
+                quality={75}
                 sizes="(max-width: 768px) 350px, 500px"
                 priority={true}
               />
