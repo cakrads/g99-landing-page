@@ -24,10 +24,7 @@ export const HomeHero = () => {
               <HomeHeroCtaBtn />
             </div>
           </div>
-          <div className={clsx(
-            "relative h-[450px] xs:h-[550px] xl:h-[500px] overflow-hidden drop-shadow-2xl",
-            "md:animate-fade-up md:animate-once md:animate-ease-in-out md:animate-delay-75"
-          )}>
+          <div className="relative h-[450px] xs:h-[550px] xl:h-[500px] overflow-hidden drop-shadow-2xl">
             <HomeImageShapesBg className={clsx(
               "h-full w-full drop-shadow-xl",
               "animate-fade-up animate-once animate-ease-in-out animate-delay-75",
@@ -35,13 +32,12 @@ export const HomeHero = () => {
             )} />
             <div className="absolute top-0 flex justify-center w-full">
               <Image
-                className="drop-shadow-xl"
-                src="/images/hero-image.png"
+                src="/images/hero-image.webp"
                 alt={HOME_IMG_ALT}
-                width={500}
-                height={500}
+                width={350}
+                height={350}
                 quality={100}
-                sizes="(max-width: 768px) 300px, 500px"
+                sizes="(max-width: 768px) 350px, 500px"
                 priority={true}
               />
             </div>
