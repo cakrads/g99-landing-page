@@ -1,4 +1,5 @@
 import Image from "next/image";
+import clsx from "clsx";
 
 import { HomeImageShapesBg } from "@/components/ui/shapes";
 import { HOME_HERO_DESCRIPTION, HOME_HERO_TITLE, HOME_IMG_ALT } from "@/constant/seo/home-page";
@@ -23,8 +24,15 @@ export const HomeHero = () => {
               <HomeHeroCtaBtn />
             </div>
           </div>
-          <div className="relative h-[450px] xs:h-[550px] xl:h-[500px] overflow-hidden drop-shadow-2xl animate-fade-up animate-once animate-ease-in-out animate-delay-300 md:animate-delay-75">
-            <HomeImageShapesBg className="h-full w-full drop-shadow-xl" />
+          <div className={clsx(
+            "relative h-[450px] xs:h-[550px] xl:h-[500px] overflow-hidden drop-shadow-2xl",
+            "md:animate-fade-up md:animate-once md:animate-ease-in-out md:animate-delay-75"
+          )}>
+            <HomeImageShapesBg className={clsx(
+              "h-full w-full drop-shadow-xl",
+              "animate-fade-up animate-once animate-ease-in-out animate-delay-75",
+              "md:animate-none"
+            )} />
             <div className="absolute top-0 flex justify-center w-full">
               <Image
                 className="drop-shadow-xl"

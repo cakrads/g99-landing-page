@@ -7,12 +7,12 @@
 import { dynamic } from "@/libs/api-client/dynamic";
 import { HomeHero } from "./content/home-hero";
 
-const HomeBottomContent = dynamic(
-  () => import("./home-bottom-content").then((mod) => mod.HomeBottomContent),
-  { ssr: false }
-);
 const HomePageTracker = dynamic(
   () => import("./home-tracker").then((mod) => mod.HomePageTracker),
+  { ssr: false }
+);
+const HomeBottomContent = dynamic(
+  () => import("./home-bottom-content").then((mod) => mod.HomeBottomContent),
   { ssr: false }
 );
 
