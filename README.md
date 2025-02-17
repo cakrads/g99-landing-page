@@ -13,10 +13,6 @@ Live Demo: [nganimation.vercel.app](https://nganimation.vercel.app)
 - **Vercel:** Deployment platform for hosting the app ([source](https://vercel.com/)).
 - **Google Analytic:** Tracking User Experince ([source](https://developers.google.com/analytics)).
 
-## Screenshots
-![Home Desktop](/public/result/desktop.png)
-![Home Mobile](/public/result/mobile.png)
-
 ## Core Web Vitals
 [Mobile](https://pagespeed.web.dev/analysis/https-laundryg99-com/d9mmmt94pr?hl=en&form_factor=mobile)
 [Desktop](https://pagespeed.web.dev/analysis/https-laundryg99-com/d9mmmt94pr?hl=en&form_factor=desktop)
