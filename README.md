@@ -1,7 +1,7 @@
 # Laundry G99 - Landing Page Laundry
 
 
-Live Demo: [nganimation.vercel.app](https://nganimation.vercel.app)
+Live Demo: [https://laundryg99.com/](https://laundryg99.com/)
 
 ## Screenshoot
 ![Desktop](/public/result/desktop.png)
