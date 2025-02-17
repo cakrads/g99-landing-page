@@ -1,18 +1,28 @@
+# Laundry G99 - Landing Page Laundry
+
+
+Live Demo: [nganimation.vercel.app](https://nganimation.vercel.app)
+
+## Screenshoot
+![Desktop](/public/result/desktop.png)
+![Mobile](/public/result/mobile.png)
+
+## Tech Stack
+- **Next.js 14:** Core framework for building the application ([srouce](https://nextjs.org/)).
+- **Tailwind CSS:** Modern styling for a clean and responsive design ([source](https://tailwindui.com/)).
+- **Vercel:** Deployment platform for hosting the app ([source](https://vercel.com/)).
+- **Google Analytic:** Tracking User Experince ([source](https://developers.google.com/analytics)).
+
+## Screenshots
+![Home Desktop](/public/result/desktop.png)
+![Home Mobile](/public/result/mobile.png)
+
+## Core Web Vitals
+[Mobile](https://pagespeed.web.dev/analysis/https-laundryg99-com/d9mmmt94pr?hl=en&form_factor=mobile)
+[Desktop](https://pagespeed.web.dev/analysis/https-laundryg99-com/d9mmmt94pr?hl=en&form_factor=desktop)
+#### Screenshots
+![Desktop](/public/result/lighthouse-desktop.png)
+![Mobile](/public/result/lighthouse-mobile.png)
+
 # TO DO
 [To do in Notion](https://www.notion.so/45fb5434051545ba93a98ccaf10baf1e?v=fb20cf04f5684de2a7b8ef10f0e8d450)
-
-# Documentation
-## Write Doc step by step
-- [Lint in Next 14](https://www.notion.so/Lint-in-Next14-45d10778a77d4ea291efb4f19c46440f)
-- [Install and Config Testing in Next14](https://www.notion.so/Next14-Testing-2f6fcbab7e2a4bf78b9677b1900aac1b)
-- [Install Husky Hooks Commit in 2024](https://www.notion.so/Install-Husky-Hooks-Commit-in-2024-768e5d3796d44524807919585ba1896e)
-
-# Docker
-Build/Create Docker Image 
-```
-docker build --build-arg ARGS_NODE_ENV=production -t next-boilerplate .
-```
-Run Docker Image
-```
-docker run -p 3000:3000 next-boilerplate
-```
