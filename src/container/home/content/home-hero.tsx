@@ -1,10 +1,10 @@
 import Image from "next/image";
-import clsx from "clsx";
 
 import { HomeImageShapesBg } from "@/components/ui/shapes";
 import {
   HOME_HERO_DESCRIPTION, HOME_HERO_TITLE, HOME_IMG_ALT
 } from "@/constant/seo/home-page";
+import { FadeIn } from "@/components/ui/animations";
 import { HomeHeroCtaBtn, HomeHeroTracker } from "../home-tracker";
 
 export const HomeHero = () => {
@@ -13,24 +13,23 @@ export const HomeHero = () => {
       <HomeHeroTracker />
       <div className="container">
         <div className="grid gap-12 lg:grid-cols-[1fr_500px] xl:grid-cols-[1fr_500px]">
-          <div className="flex flex-col justify-center items-center lg:items-start space-y-6">
-            <div className="flex flex-col items-center lg:items-start space-y-2">
-              <h1 className="text-center lg:text-left font-bold text-3xl sm:text-5xl xl:text-6xl/none animate-fade-up animate-once animate-ease-in-out">
-                {HOME_HERO_TITLE}
-              </h1>
-              <p className="text-center lg:text-left max-w-[500px] lg:max-w-[600px] items-center sm:text-xl animate-fade-up animate-once animate-ease-in-out animate-delay-100">
-                {HOME_HERO_DESCRIPTION}
-              </p>
-            </div>
-            <div className="flex xs:flex-row animate-fade-up animate-once animate-ease-in-out animate-delay-150">
-              <HomeHeroCtaBtn />
-            </div>
-          </div>
+            <FadeIn className="flex flex-col justify-center items-center lg:items-start space-y-6">
+              <div className="flex flex-col items-center lg:items-start space-y-2">
+                <h1 className="text-center lg:text-left font-bold text-3xl sm:text-5xl xl:text-6xl/none">
+                  {HOME_HERO_TITLE}
+                </h1>
+                <p className="text-center lg:text-left max-w-[500px] lg:max-w-[600px] items-center sm:text-xl">
+                  {HOME_HERO_DESCRIPTION}
+                </p>
+              </div>
+              <div className="flex xs:flex-row">
+                <HomeHeroCtaBtn />
+              </div>
+            </FadeIn>
           <div className="relative flex justify-center items-center h-[450px] xs:h-[550px] xl:h-[500px]">
-            <HomeImageShapesBg className={clsx(
-              "h-full w-full drop-shadow-xl",
-              "animate-fade-up animate-once animate-ease-in-out animate-delay-300"
-            )} />
+            <FadeIn className="h-full w-full">
+              <HomeImageShapesBg className="h-full w-full drop-shadow-xl" />
+            </FadeIn>
             <div className="absolute top-0 flex justify-center w-[350px] md:w-[450px] h-[350px] md:h-[450px]">
               <Image
                 className="object-cover"

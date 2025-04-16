@@ -1,14 +1,13 @@
 import React from "react";
-import clsx from "clsx";
 
 import { SectionHeader } from "@/components/fragments/section-header";
 import { IconDelivery, IconSmileLove, IconWashingMachine } from "@/components/ui/icons";
 import { IconDetergent } from "@/components/ui/icons/detergent";
 import { IconOneMachineOneLaundry } from "@/components/ui/icons/one-machine-one-laundry";
 import { IconPremiumAndBestPrice } from "@/components/ui/icons/premium-and-best-price";
-import { useIsVisible } from "@/utils/use-in-view";
 import { HOME_WHY_DESCRIPTION, HOME_WHY_TITLE } from "@/constant/seo/home-page";
 import { useTrackEnterSection } from "@/libs/analytic/use-enter-section";
+import { FadeIn } from "@/components/ui/animations";
 
 export const HomeWhy = () => {
   const { ref } = useTrackEnterSection({
@@ -62,7 +61,9 @@ export const HomeWhy = () => {
         />
         <div className="grid grid-cols-1 gap-8 py-12 sm:grid-cols-2 lg:grid-cols-3 px-0 xs:px-10 xs:max-w-[500px] mx-auto sm:max-w-full">
           {data.map((item, index) => (
-            <HomeWhyItem key={`${index} - ${item.title}`} {...item} />
+            <FadeIn delay={index * 0.1} key={index}>
+              <HomeWhyItem key={`${index} - ${item.title}`} {...item} />
+            </FadeIn>
           ))}
         </div>
       </div>
@@ -75,31 +76,14 @@ const HomeWhyItem: React.FC<{
   description: string;
   icon: React.ReactNode;
 }> = ({ title, description, icon }) => {
-  const ref = React.useRef(null);
-  const isIntersecting = useIsVisible({ ref, once: true });
-
   return (
-    <div
-      ref={ref}
-      className={clsx(
-        "flex flex-col text-center items-center space-y-4 bg-background px-4",
-        isIntersecting ? "animate-fade-up animate-once animate-ease-in-out" : "opacity-0"
-      )}
-    >
+    <div className="flex flex-col text-center items-center space-y-4 bg-background px-4">
       {icon}
-      <h3
-        className={clsx(
-          "text-xl font-bold whitespace-pre-wrap",
-          isIntersecting ? "animate-fade-up animate-once animate-ease-in-out delay-200" : "opacity-0"
-        )}
-      >
+      <h3 className="text-xl font-bold whitespace-pre-wrap">
         {title}
       </h3>
       <p
-        className={clsx(
-          "text-foreground-secondary",
-          isIntersecting ? "animate-fade-up animate-once animate-ease-in-out delay-300" : "opacity-0"
-        )}
+        className="text-foreground-secondary"
         dangerouslySetInnerHTML={{ __html: description }}
       />
     </div>

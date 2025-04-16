@@ -1,9 +1,6 @@
-import { useRef } from "react";
-import clsx from "clsx";
 import { usePathname } from "next/navigation";
 
 import { SectionHeader } from "@/components/fragments/section-header";
-import { useIsVisible } from "@/utils/use-in-view";
 import { LOCATION_DESCRIPTION, LOCATION_TITLE } from "@/constant/seo/global";
 import { SHOP_ADDRESS, SHOP_NAME, SHOP_PHONE_2, SHOP_PHONE_SHOW, SHOP_PHONE_SHOW_2 } from "@/constant/shop";
 import { IconClock } from "@/components/ui/icons/clock";
@@ -11,15 +8,10 @@ import { useTrackEnterSection } from "@/libs/analytic/use-enter-section";
 import { ROUTES } from "@/constant/routes";
 import { PhoneIcon, PhoneListIcon, WhatsAppIcon } from "@/components/ui/icons/social";
 import { WA_LINK, WA_SERVICE_NAME } from "@/constant/whatsapp";
-
 import { LocationMap } from "./location-map";
+import { FadeIn, StaggerContainer, StaggerItem } from "@/components/ui/animations";
 
 export const LaundryLocation = () => {
-  const refInfo = useRef(null);
-  const isInfoIntersecting = useIsVisible({ ref: refInfo, once: true });
-  const refMap = useRef(null);
-  const isMapIntersecting = useIsVisible({ ref: refMap, once: true });
-
   const pathname = usePathname();
   const { ref } = useTrackEnterSection(
     pathname === ROUTES.HOME
@@ -49,32 +41,33 @@ export const LaundryLocation = () => {
           title={LOCATION_TITLE}
           description={LOCATION_DESCRIPTION}
         />
-        <div ref={refMap} className="mx-auto grid max-w-5xl gap-6 py-12 lg:grid-cols-2 md:gap-12">
-          <div
-            className={clsx(
-              "order-2 lg:order-1 h-[470px] flex flex-col justify-center space-y-4 rounded-lg overflow-hidden shadow-md shadow-primary",
-              isMapIntersecting ? "animate-fade-right animate-once animate-ease-in-out animate-delay-500 md:animate-delay-0" : "opacity-0"
-            )}
+        <div className="mx-auto grid max-w-5xl gap-6 py-12 lg:grid-cols-2 md:gap-12">
+          <FadeIn
+            delay={0.2}
+            direction="right"
+            className="order-2 lg:order-1 h-[470px] flex flex-col justify-center space-y-4 rounded-lg overflow-hidden shadow-md shadow-primary"
           >
             <LocationMap />
-          </div>
-          <div ref={refInfo} className="order-1 lg:order-2 flex flex-col gap-8">
-            <div className={clsx(
-              "space-y-2",
-              isInfoIntersecting ? "animate-fade-left animate-once animate-ease-in-out animate-delay-100" : "opacity-0"
-            )}>
+          </FadeIn>
+          <StaggerContainer
+            className="order-1 lg:order-2 flex flex-col gap-8"
+            staggerChildren={0.2}
+            delayChildren={0.2}
+          >
+            <StaggerItem
+              direction="left"
+              className="space-y-2"
+            >
               <h3 className="text-2xl sm:text-3xl font-semibold text-primary">
                 {SHOP_NAME}
               </h3>
               <p>
                 {SHOP_ADDRESS}
               </p>
-            </div>
-            <div
-              className={clsx(
-                "space-y-2",
-                isInfoIntersecting ? "animate-fade-left animate-once animate-ease-in-out animate-delay-300" : "opacity-0"
-              )}
+            </StaggerItem>
+            <StaggerItem
+              direction="left"
+              className={"space-y-2"}
             >
               <h4 className="font-semibold flex flex-row gap-1 items-center">
                 <PhoneListIcon />
@@ -97,12 +90,8 @@ export const LaundryLocation = () => {
                   <b className="text-xs md:text-sm drop-shadow-xl">{SHOP_PHONE_SHOW_2}</b>
                 </a>
               </div>
-            </div>
-            <div
-              className={clsx(
-                isInfoIntersecting ? "animate-fade-left animate-once animate-ease-in-out animate-delay-500" : "opacity-0"
-              )}
-            >
+            </StaggerItem>
+            <StaggerItem direction="left">
               <h4 className="font-semibold flex flex-row gap-1 items-center">
                 <IconClock />
                 Jam Operasional :
@@ -113,8 +102,8 @@ export const LaundryLocation = () => {
                   <span>: {entry.time}</span>
                 </div>
               ))}
-            </div>
-          </div>
+            </StaggerItem>
+          </StaggerContainer>
         </div>
       </div>
     </section>

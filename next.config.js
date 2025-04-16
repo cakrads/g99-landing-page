@@ -2,9 +2,6 @@
 
 const nextConfig = {
   compress: true,
-  experimental: {
-    inlineCss: true,
-  },
   reactStrictMode: true,
   redirects: async () => {
     return [

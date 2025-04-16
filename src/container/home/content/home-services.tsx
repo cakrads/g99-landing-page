@@ -6,12 +6,11 @@ import Link from "@/components/ui/link";
 import { SectionHeader } from "@/components/fragments/section-header";
 import { HOME_SERVICES_DESCRIPTION, HOME_SERVICES_TITLE, HOME_IMG_ALT } from "@/constant/seo/home-page";
 import { useTrackEnterSection } from "@/libs/analytic/use-enter-section";
-// import { useAnalytic } from "@/libs/analytic/provider";
 import { ScrollableX } from "@/components/ui/scrollable-x";
-import { useIsVisible } from "@/utils/use-in-view";
 import { Card } from "@/components/ui/card";
 import { WaveBottomBgShape } from "@/components/ui/shapes";
 import { ROUTES } from "@/constant/routes";
+import { FadeIn } from "@/components/ui/animations";
 
 type ServicesData = {
   title: string;
@@ -52,7 +51,6 @@ const HomeServicesHouseSuplies = () => {
   const dataHouseSuplies: ServicesData[] = [
     {
       title: "Cuci Karpet",
-      // description: "Dapatkan karpet Bersih dan Higienis bebas Bakteri <b>dalam waktu 1 hari</b> dengan Mesin Pengering Modern. Rumah yang nyaman, sehat dengan harga bersahabat.",
       description: "Dapatkan karpet Bersih dan Higienis bebas Bakteri <b>dalam waktu 1 hari</b> dengan Mesin Pengering Modern.",
       imgSrc: "/images/services/cuci-karpet-2.jpg",
       imgAlt: "Cuci Karpet -" + HOME_IMG_ALT,
@@ -260,31 +258,24 @@ const ServicesList: React.FC<{
   title: string;
   data: ServicesData[]
 }> = ({ title, data }) => {
-  const ref = React.useRef(null);
-  const isIntersecting = useIsVisible({ ref, once: true });
 
   return (
-    <div ref={ref} className="pb-5">
-      <h3 className={clsx(
-        "mb-2 text-xl pl-3 md:pl-5 font-medium",
-        isIntersecting ? "animate-fade-up animate-ease-in-out animate-delay-500" : "opacity-0"
-      )}>
+    <FadeIn className="pb-5">
+      <h3 className="mb-2 text-xl pl-3 md:pl-5 font-medium">
         {title}
       </h3>
-      <div className={clsx(
-        isIntersecting ? "animate-fade-up animate-ease-in-out animate-delay-700" : "opacity-0"
-      )}>
-        <ScrollableX className="grid gap-2 pb-1" theme="primary">
-          {data.map((item, index) => (
+      <ScrollableX className="grid gap-2 pb-1" theme="primary">
+        {data.map((item, index) => (
+          <FadeIn key={index} delay={index * 0.1} className="h-full">
             <HomeServicesCard
               key={`${index} - ${item.title}`}
               itemId={`${index} - ${item.title}`}
               {...item}
             />
-          ))}
-        </ScrollableX>
-      </div>
-    </div >
+          </FadeIn>
+        ))}
+      </ScrollableX>
+    </FadeIn>
   );
 };
 
@@ -292,16 +283,12 @@ const HomeServicesCard: React.FC<
   { itemId: string; } & ServicesData
 > = ({ itemId, title, description, imgSrc, imgAlt, linkPage, linkText, onClick }): React.JSX.Element => {
   const ref = React.useRef(null);
-  // const isIntersecting = useIsVisible({ ref, once: true });
-  const isIntersecting = true;
 
   return (
     <Card
       ref={ref}
       id={itemId}
-      className={clsx(
-        "w-[300px] h-full !p-0 flex flex-col border-none shadow-inner shadow-primary",
-      )}
+      className="w-[300px] h-full !p-0 flex flex-col border-none shadow-inner shadow-primary"
     >
       <div className="h-[167px] w-full relative">
         <Image
@@ -312,10 +299,7 @@ const HomeServicesCard: React.FC<
           height={167}
         />
       </div>
-      <main className={clsx(
-        "flex-1 pt-5 px-5",
-        isIntersecting ? "animate-fade-up animate-once animate-ease-in-out" : "opacity-0"
-      )}>
+      <main className="flex-1 pt-5 px-5">
         <h3 className="mb-2 text-2xl font-bold tracking-tight">
           {title}
         </h3>
@@ -324,10 +308,7 @@ const HomeServicesCard: React.FC<
           dangerouslySetInnerHTML={{ __html: description }}
         />
       </main>
-      <footer className={clsx(
-        "p-5",
-        isIntersecting ? "animate-fade-up animate-once animate-ease-in-out" : "opacity-0"
-      )}>
+      <footer className="p-5">
         <Link
           onClick={onClick}
           href={linkPage}
@@ -345,36 +326,3 @@ const HomeServicesCard: React.FC<
     </Card>
   );
 };
-
-// const useHomeServicesTracker = ({ isInView }: { isInView: boolean }) => {
-//   const analytic = useAnalytic();
-
-//   useEffect(() => {
-//     if (isInView) {
-//       analytic.trackStart("click_home_service_carpet");
-//       analytic.trackStart("click_home_service_laundry_dry");
-//       analytic.trackStart("click_home_service_laundry_iron");
-//     }
-//   }, [isInView, analytic]);
-
-//   const handleClickCarpet = () => {
-//     analytic.trackEnd("click_home_service_carpet");
-//     analytic.trackEvent("click_home_service_carpet", "Home Page", { success: 1, message: "OK" });
-//   };
-
-//   const handleClickLaundryDry = () => {
-//     analytic.trackEnd("click_home_service_laundry_dry");
-//     analytic.trackEvent("click_home_service_laundry_dry", "Home Page", { success: 1, message: "OK" });
-//   };
-
-//   const handleClickLaundryIron = () => {
-//     analytic.trackEnd("click_home_service_laundry_iron");
-//     analytic.trackEvent("click_home_service_laundry_iron", "Home Page", { success: 1, message: "OK" });
-//   };
-
-//   return {
-//     handleClickCarpet,
-//     handleClickLaundryDry,
-//     handleClickLaundryIron,
-//   };
-// };

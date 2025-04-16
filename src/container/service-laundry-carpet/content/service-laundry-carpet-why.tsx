@@ -1,23 +1,16 @@
 import Image from "next/image";
-import { useRef } from "react";
-import clsx from "clsx";
 import { usePathname } from "next/navigation";
 
 import * as DATA_LAUNDRY_CARPET_MARELAN from "@/constant/seo/custom/laundry-karpet-marelan-page";
 import * as DATA_CUCI_KARPET_MEDAN from "@/constant/seo/custom/cuci-karpet-medan-page";
 import { SectionHeader } from "@/components/fragments/section-header";
-import { useIsVisible } from "@/utils/use-in-view";
 import { useTrackEnterSection } from "@/libs/analytic/use-enter-section";
 import { WA_LINK, WA_SERVICE_NAME } from "@/constant/whatsapp";
 import { SHOP_PHONE_2, SHOP_PHONE_SHOW, SHOP_PHONE_SHOW_2 } from "@/constant/shop";
 import { PhoneIcon, WhatsAppIcon } from "@/components/ui/icons/social";
+import { FadeIn } from "@/components/ui/animations";
 
 export const LaundryCarpetWhy = () => {
-  const refText = useRef(null);
-  const isTextIntersecting = useIsVisible({ ref: refText, once: true });
-  const refImage = useRef(null);
-  const isImageIntersecting = useIsVisible({ ref: refImage, once: true });
-
   const { ref } = useTrackEnterSection({
     envetKey: "enter_carpet_service_why",
     featureKey: "Carpet Service Page",
@@ -36,119 +29,78 @@ export const LaundryCarpetWhy = () => {
             description={CARPET_WHY_DESCRIPTION}
           />
           <div className="flex flex-col gap-10 pt-12 pb-0 md:py-12 items-center">
-            <div ref={refImage} className="order-2 md:order-1 w-full md:min-w-[300px] flex flex-col md:flex-row gap-3 lg:gap-5">
-              <div
-                className={clsx(
-                  "relative rounded-2xl w-full h-[300px] md:h-[150px] lg:h-[200px] bg-gray-400 shadow-lg",
-                  isImageIntersecting ? "animate-fade-right animate-once animate-ease-in-out animate-delay-400 md:animate-delay-0" : "opacity-0"
-                )}
-              >
+            <div className="order-2 md:order-1 w-full md:min-w-[300px] flex flex-col md:flex-row gap-3 lg:gap-5">
+              <FadeIn direction="right" delay={0.4} className="relative rounded-2xl w-full h-[300px] md:h-[150px] lg:h-[200px] bg-gray-400 shadow-lg">
                 <Image
                   src="/images/services/carpet/laundry-karpet-terdekat-pembersih-karpet.png"
                   alt={CARPET_IMG_ALT}
                   fill={true}
                   className="w-full h-full top-0 left-0 object-cover rounded-2xl"
                 />
-              </div>
-              <div
-                className={clsx(
-                  "relative rounded-2xl w-full h-[300px] md:h-[150px] lg:h-[200px] bg-gray-400 shadow-lg",
-                  isImageIntersecting ? "animate-fade-right animate-once animate-ease-in-out animate-delay-500 md:animate-delay-150" : "opacity-0"
-                )}
-              >
+              </FadeIn>
+              <FadeIn direction="right" delay={0.5} className="relative rounded-2xl w-full h-[300px] md:h-[150px] lg:h-[200px] bg-gray-400 shadow-lg">
                 <Image
                   src="/images/services/carpet/laundry-karpet-terdekat-mesin-pengering-karpet.png"
                   alt={CARPET_IMG_ALT}
                   fill={true}
                   className="w-full h-full top-0 left-0 object-cover rounded-2xl"
                 />
-              </div>
-              <div
-                className={clsx(
-                  "relative rounded-2xl w-full h-[300px] md:h-[150px] lg:h-[200px] bg-gray-400 shadow-lg",
-                  isImageIntersecting ? "animate-fade-right animate-once animate-ease-in-out animate-delay-[600ms] md:animate-delay-300" : "opacity-0"
-                )}
-              >
+              </FadeIn>
+              <FadeIn direction="right" delay={0.6} className="relative rounded-2xl w-full h-[300px] md:h-[150px] lg:h-[200px] bg-gray-400 shadow-lg">
                 <Image
                   src="/images/services/carpet/laundry-karpet-terdekat-tumpukan-karpet.png"
                   alt={CARPET_IMG_ALT}
                   fill={true}
                   className="w-full h-full top-0 left-0 object-cover rounded-2xl"
                 />
-              </div>
+              </FadeIn>
             </div>
-            <div ref={refText} className="order-1 md:order-2">
-              <ul
-                className={clsx(
-                  "pl-6 list-disc text-xl md:text-2xl space-y-2 md:space-y-4",
-                  isTextIntersecting ? "animate-fade-left animate-once animate-ease-in-out" : "opacity-0"
-                )}
-              >
-                {CARPET_WHY_LIST.map((item, index) => (
-                  <li key={index}>
-                    {/* <b className="font-semibold">
-                      {item.label} :
-                    </b> */}
-                    <p dangerouslySetInnerHTML={{ __html: item.description }} />
-                  </li>
-                ))}
-              </ul>
+            <div className="order-1 md:order-2">
+              <FadeIn direction="left">
+                <ul className="pl-6 list-disc text-xl md:text-2xl space-y-2 md:space-y-4">
+                  {CARPET_WHY_LIST.map((item, index) => (
+                    <li key={index}>
+                      <p dangerouslySetInnerHTML={{ __html: item.description }} />
+                    </li>
+                  ))}
+                </ul>
+              </FadeIn>
             </div>
           </div>
 
           <div className="flex flex-col gap-4 my-5">
-            <div
-              className={clsx(
-                "relative rounded-2xl w-full h-[300px] lg:h-[600px] shadow-lg",
-                isImageIntersecting ? "animate-fade-right animate-once animate-ease-in-out animate-delay-400 md:animate-delay-0" : "opacity-0"
-              )}
-            >
+            <FadeIn direction="right" delay={0.4} className="relative rounded-2xl w-full h-[300px] lg:h-[600px] shadow-lg">
               <Image
                 src="/images/services/carpet/laundry-karpet-terdekat-terpercaya.png"
                 alt={CARPET_IMG_ALT}
                 fill={true}
                 className="w-full h-full top-0 left-0 object-cover rounded-2xl"
               />
-            </div>
-            <div
-              className={clsx(
-                "relative rounded-2xl w-full h-[300px] lg:h-[600px] shadow-lg",
-                isImageIntersecting ? "animate-fade-right animate-once animate-ease-in-out animate-delay-400 md:animate-delay-0" : "opacity-0"
-              )}
-            >
+            </FadeIn>
+            <FadeIn direction="right" delay={0.4} className="relative rounded-2xl w-full h-[300px] lg:h-[600px] shadow-lg">
               <Image
                 src="/images/services/carpet/laundry-karpet-terdekat-mesin-pengering-karpet-2.png"
                 alt={CARPET_IMG_ALT}
                 fill={true}
                 className="w-full h-full top-0 left-0 object-cover rounded-2xl"
               />
-            </div>
-            <div
-              className={clsx(
-                "hidden md:block relative rounded-2xl w-full h-[300px] lg:h-[600px] shadow-lg",
-                isImageIntersecting ? "animate-fade-right animate-once animate-ease-in-out animate-delay-400 md:animate-delay-0" : "opacity-0"
-              )}
-            >
+            </FadeIn>
+            <FadeIn direction="right" delay={0.4} className="hidden md:block relative rounded-2xl w-full h-[300px] lg:h-[600px] shadow-lg">
               <Image
                 src="/images/services/carpet/laundry-karpet-terdekat-pembersih-dan-pengering-karpet.png"
                 alt={CARPET_IMG_ALT}
                 fill={true}
                 className="w-full h-full top-0 left-0 object-cover rounded-2xl"
               />
-            </div>
-            <div
-              className={clsx(
-                "relative rounded-2xl w-full h-[300px] lg:h-[600px] shadow-lg",
-                isImageIntersecting ? "animate-fade-right animate-once animate-ease-in-out animate-delay-400 md:animate-delay-0" : "opacity-0"
-              )}
-            >
+            </FadeIn>
+            <FadeIn direction="right" delay={0.4} className="relative rounded-2xl w-full h-[300px] lg:h-[600px] shadow-lg">
               <Image
                 src="/images/services/carpet/laundry-karpet-terdekat-pembersih-karpet.png"
                 alt={CARPET_IMG_ALT}
                 fill={true}
                 className="w-full h-full top-0 left-0 object-cover rounded-2xl"
               />
-            </div>
+            </FadeIn>
           </div>
 
           <div>
