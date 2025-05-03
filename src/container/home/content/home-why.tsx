@@ -8,6 +8,7 @@ import { IconPremiumAndBestPrice } from "@/components/ui/icons/premium-and-best-
 import { HOME_WHY_DESCRIPTION, HOME_WHY_TITLE } from "@/constant/seo/home-page";
 import { useTrackEnterSection } from "@/libs/analytic/use-enter-section";
 import { FadeIn } from "@/components/ui/animations";
+import { WaveBottomBgShape } from "@/components/ui/shapes";
 
 export const HomeWhy = () => {
   const { ref } = useTrackEnterSection({
@@ -53,20 +54,24 @@ export const HomeWhy = () => {
   ];
 
   return (
-    <section ref={ref} className="w-full py-12 md:py-24 lg:py-32">
-      <div className="container">
-        <SectionHeader
-          title={HOME_WHY_TITLE}
-          description={HOME_WHY_DESCRIPTION}
-        />
-        <div className="grid grid-cols-1 gap-8 py-12 sm:grid-cols-2 lg:grid-cols-3 px-0 xs:px-10 xs:max-w-[500px] mx-auto sm:max-w-full">
-          {data.map((item, index) => (
-            <FadeIn delay={index * 0.1} key={index}>
-              <HomeWhyItem key={`${index} - ${item.title}`} {...item} />
-            </FadeIn>
-          ))}
+    <section ref={ref}>
+      <div className="w-full pt-32 pb-12 md:py-24 lg:py-32 bg-secondary">
+        <div className="container">
+          <SectionHeader
+            classNames="text-secondary-foreground"
+            title={HOME_WHY_TITLE}
+            description={HOME_WHY_DESCRIPTION}
+          />
+          <div className="grid grid-cols-1 gap-8 py-12 sm:grid-cols-2 lg:grid-cols-3 px-0 xs:px-10 xs:max-w-[500px] mx-auto sm:max-w-full">
+            {data.map((item, index) => (
+              <FadeIn delay={index * 0.1} key={index}>
+                <HomeWhyItem key={`${index} - ${item.title}`} {...item} />
+              </FadeIn>
+            ))}
+          </div>
         </div>
       </div>
+      <WaveBottomBgShape currentSectionColor="hsl(223 9% 15%)" nextSectionColor="#fff" />
     </section>
   );
 };
@@ -77,13 +82,13 @@ const HomeWhyItem: React.FC<{
   icon: React.ReactNode;
 }> = ({ title, description, icon }) => {
   return (
-    <div className="flex flex-col text-center items-center space-y-4 bg-background px-4">
+    <div className="flex flex-col text-center items-center space-y-4 px-4">
       {icon}
-      <h3 className="text-xl font-bold whitespace-pre-wrap">
+      <h3 className="text-xl text-secondary-foreground font-bold whitespace-pre-wrap">
         {title}
       </h3>
       <p
-        className="text-foreground-secondary"
+        className="text-secondary-foreground"
         dangerouslySetInnerHTML={{ __html: description }}
       />
     </div>

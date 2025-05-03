@@ -2,11 +2,9 @@ import * as React from "react";
 import { cva, type VariantProps } from "class-variance-authority";
 import clsx from "clsx";
 
-import { cn } from "@/components/libs/cn";
-
 import type { JSX } from "react";
 
-
+import { cn } from "@/components/libs/cn";
 import { Loading } from "../loading";
 
 const buttonVariants = cva(

@@ -15,6 +15,7 @@ export const HomePageTracker = () => {
   useEffect(() => {
     analytic.trackStart("enter_home_hooks");
     analytic.trackStart("enter_home_services");
+    analytic.trackStart("enter_home_reviews");
     analytic.trackStart("enter_home_why");
     analytic.trackStart("enter_home_location");
     analytic.trackStart("enter_home_footer");

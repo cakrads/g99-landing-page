@@ -3,7 +3,7 @@
 import React, { PropsWithChildren } from "react";
 import { motion } from "motion/react";
 
-export interface ScaleInProps extends PropsWithChildren {
+export type ScaleInProps = Readonly<PropsWithChildren<{
   delay?: number;
   duration?: number;
   scale?: number;
@@ -13,12 +13,12 @@ export interface ScaleInProps extends PropsWithChildren {
     margin?: string;
     amount?: "some" | "all" | number;
   };
-}
+}>>;
 
 export default function ScaleIn({
   children,
   delay = 0,
-  duration = 0.5,
+  duration = 0.8,
   scale = 0.95,
   className = "",
   viewport = { once: true, amount: 0.5 },

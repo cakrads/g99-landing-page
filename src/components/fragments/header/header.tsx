@@ -32,7 +32,7 @@ export const Header = () => {
 
   return (
     <header className={clsx(
-      "sticky top-0 lef-0 z-10",
+      "sticky top-0 lef-0 z-50",
       "transition-colors duration-500 ease-in-out",
       scrolled ? "shadow-2xl border-b-[1px] border-muted-foreground bg-secondary" : "bg-primary"
     )}>

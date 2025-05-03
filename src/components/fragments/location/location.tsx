@@ -35,7 +35,7 @@ export const LaundryLocation = () => {
   ];
 
   return (
-    <section ref={ref} id="our-location" className="w-full pt-24 pb-12 md:py-24 lg:py-32">
+    <section ref={ref} id="our-location" className="w-full py-24 lg:py-32">
       <div className="container">
         <SectionHeader
           title={LOCATION_TITLE}

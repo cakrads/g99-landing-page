@@ -1,5 +1,4 @@
 import { HOST_URL } from "@/constant/env";
-
 import { generateAppIdJson } from "../app-id-json";
 import * as LAUNDRY_KARPET_MARELAN from "./laundry-karpet-marelan-page";
 

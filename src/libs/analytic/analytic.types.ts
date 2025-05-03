@@ -10,6 +10,7 @@ enum eventKey {
   "enter_home_why",
   "enter_home_location",
   "enter_home_footer",
+  "enter_home_reviews",
 
   "enter_carpet_service_hero",
   "click_carpet_service_hero_cta",

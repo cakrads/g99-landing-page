@@ -34,6 +34,10 @@ export const HOME_SERVICES_DESCRIPTION = "Berikut layanan kami yang memberikan s
 export const HOME_WHY_TITLE = "Kenapa Memilih Laundry Karpet Marelan G 99?";
 export const HOME_WHY_DESCRIPTION = "Berikut beberapa alasan mengapa Anda harus memilih Laundry Karpet Marelan G 99 sebagai solusi laundry Anda.";
 
+export const HOME_REVIEW_TITLE = "Apa Kata Pelanggan Kami?";
+export const HOME_REVIEW_DESCRIPTION = "Berikut adalah beberapa testimoni dari pelanggan kami yang telah menggunakan layanan laundry.";
+export const HOME_REVIEW_LOOK = "https://www.google.com/maps/place/Laundry+Karpet+Marelan+G+99/@3.7021584,98.6581062,17z/data=!4m8!3m7!1s0x30312d2304cd63f1:0xe9cae24801292d89!8m2!3d3.7021584!4d98.6581062!9m1!1b1!16s%2Fg%2F11wbt797s9?entry=ttu&g_ep=EgoyMDI1MDQzMC4xIKXMDSoJLDEwMjExNDU1SAFQAw%3D%3D";
+export const HOME_REVIEW_WRITE = "https://g.page/r/CYktKQFI4srpEBM/review";
 // dengan menggunakan google trend antara "laundry karpet" dan "cuci karpet",
 //   didapatkan "laundry karpet" rata - rata 32 sedangkan "cuci karpet" rata - rata 47
 

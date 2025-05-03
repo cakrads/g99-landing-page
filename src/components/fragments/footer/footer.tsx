@@ -45,7 +45,7 @@ export const Footer = () => {
         href={WA_LINK(WA_SERVICE_NAME.GLOBAL)}
         target="_blank"
         className={clsx(
-          "fixed bottom-2 right-2 sm:bottom-4 sm:right-4 flex items-center gap-2",
+          "fixed z-40 bottom-2 right-2 sm:bottom-4 sm:right-4 flex items-center gap-2",
           "rounded-full bg-whatsapp-gradient py-2 px-4 md:px-5",
           "shadow-2xl hover:shadow-xl active:shadow-2xl focus:shadow-2xl"
         )}
@@ -127,13 +127,13 @@ export const Footer = () => {
               <div>
                 <h3 className="mb-4 text-lg font-bold">Follow Us</h3>
                 <div className="flex">
-                  <Link href={SHOP_IG} className="hover:text-primary h-11 w-11" onClick={handleClickFacebook}>
+                  <Link href={SHOP_IG} target="_blank" className="hover:text-primary h-11 w-11" onClick={handleClickFacebook}>
                     <FacebookIcon className="h-6 w-6" />
                   </Link>
-                  <Link href={SHOP_TIKTOK} className="hover:text-primary h-11 w-11" onClick={handleClickInstagram}>
+                  <Link href={SHOP_TIKTOK} target="_blank" className="hover:text-primary h-11 w-11" onClick={handleClickInstagram}>
                     <InstagramIcon className="h-6 w-6" />
                   </Link>
-                  <Link href={SHOP_FB} className="hover:text-primary h-11 w-11" onClick={handleClickTiktok}>
+                  <Link href={SHOP_FB} target="_blank" className="hover:text-primary h-11 w-11" onClick={handleClickTiktok}>
                     <TiktokIcon className="h-6 w-6" />
                   </Link>
                 </div>

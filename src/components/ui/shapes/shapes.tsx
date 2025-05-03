@@ -70,7 +70,7 @@ export const WaveBottomBgShape: React.FC<{
     <div
       className={clsx(
         "relative -mt-1",
-        "h-28 md:h-44 lg:h-48 xl:h-52 2xl:h-72",
+        "h-28 md:h-44 lg:h-48 xl:h-52 2xl:h-60",
         className
       )}
       style={{ backgroundColor: currentSectionColor }}

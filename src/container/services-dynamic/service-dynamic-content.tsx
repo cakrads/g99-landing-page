@@ -1,3 +1,4 @@
+import { FadeIn } from "@/components/ui/animations";
 import { PhoneIcon, WhatsAppIcon } from "@/components/ui/icons/social";
 import { Image } from "@/components/ui/image";
 import { getDynamicContent } from "@/constant/seo/get-dynamic-content";
@@ -18,43 +19,49 @@ export const ServiceDynamicContent = ({ slug }: { slug: string }) => {
           )}
         </div>
 
-        <div className="article mb-10" dangerouslySetInnerHTML={{ __html: data.article }} />
+        <FadeIn>
+          <div className="article mb-10" dangerouslySetInnerHTML={{ __html: data.article }} />
+        </FadeIn>
 
         {data.prices.length > 0 && (
-          <div className="pb-8">
-            <h2 className="font-bold text-2xl mb-3">Biaya {data.serviceName} :</h2>
-            <div>
-              {data.prices.map((price, key) => (
-                <div key={key + price.value}>
-                  {price.type} : <b>{price.value}</b>
-                </div>
-              ))}
+          <FadeIn delay={0.2}>
+            <div className="pb-8">
+              <h2 className="font-bold text-2xl mb-3">Biaya {data.serviceName} :</h2>
+              <div>
+                {data.prices.map((price, key) => (
+                  <div key={key + price.value}>
+                    {price.type} : <b>{price.value}</b>
+                  </div>
+                ))}
+              </div>
             </div>
-          </div>
+          </FadeIn>
         )}
         {data.images.length > 0 && (
-          <div>
-            <h2 className="font-bold text-2xl mb-3">Hasil Pengerjaan {data.serviceName} Kami:</h2>
-            <div className="mx-auto max-w-[600px] flex flex-col gap-5 justify-center">
-              {data.images.map((image, key) => (
-                <Image
-                  className="rounded-3xl shadow-lg"
-                  key={key + image}
-                  src={image}
-                  alt={dataSeo?.imgAlt || ""}
-                  style={{
-                    width: "100%",
-                    height: "auto",
-                  }}
-                  width={600}
-                  height={300}
-                />
-              ))}
+          <FadeIn>
+            <div>
+              <h2 className="font-bold text-2xl mb-3">Hasil Pengerjaan {data.serviceName} Kami:</h2>
+              <div className="mx-auto max-w-[600px] flex flex-col gap-5 justify-center">
+                {data.images.map((image, key) => (
+                  <Image
+                    className="rounded-3xl shadow-lg"
+                    key={key + image}
+                    src={image}
+                    alt={dataSeo?.imgAlt || ""}
+                    style={{
+                      width: "100%",
+                      height: "auto",
+                    }}
+                    width={600}
+                    height={300}
+                  />
+                ))}
+              </div>
             </div>
-          </div>
+          </FadeIn>
         )}
 
-        <div>
+        <FadeIn>
           <h2 className="mt-20 font-bold text-2xl mb-3 text-left md:text-center">{data.serviceName} Anda Sekarang :</h2>
           <div className="mx-3 flex flex-col md:flex-row justify-center gap-5 md:gap-8">
             <a
@@ -73,7 +80,7 @@ export const ServiceDynamicContent = ({ slug }: { slug: string }) => {
               <b className="text-xl drop-shadow-xl">{SHOP_PHONE_SHOW_2}</b>
             </a>
           </div>
-        </div>
+        </FadeIn>
       </div>
     </section>
   );

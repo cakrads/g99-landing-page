@@ -8,6 +8,6 @@ export const SHOP_PHONE_SHOW = "+62 813-6161-0795";
 export const SHOP_PHONE_2 = "+62895330398255";
 export const SHOP_PHONE_SHOW_2 = "+62 895-3303-98255";
 export const SHOP_EMAIL = "cakra.ds@gmail.com"; // [TO DO]
-export const SHOP_IG = "#";
+export const SHOP_IG = "https://www.instagram.com/laundry_g_99/";
 export const SHOP_FB = "#";
 export const SHOP_TIKTOK = "#";

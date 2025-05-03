@@ -30,10 +30,10 @@ export const HomeServices = () => {
 
   return (
     <section ref={ref}>
-      <div className="bg-primary pt-24 pb-24 sm:py-24 md:py-28 relative">
+      <div className="pt-24 pb-24 sm:py-24 md:py-28 relative">
         <div className="container mx-auto px-4">
           <SectionHeader
-            classNames="mb-16"
+            classNames="mb-10 md:mb-16"
             title={HOME_SERVICES_TITLE}
             description={HOME_SERVICES_DESCRIPTION}
           />
@@ -42,7 +42,7 @@ export const HomeServices = () => {
           <HomeServicesWashingClothes />
         </div>
       </div>
-      <WaveBottomBgShape currentSectionColor="hsl(38 100% 55%)" nextSectionColor="#fff" />
+      <WaveBottomBgShape currentSectionColor="#fff" nextSectionColor="hsl(223 9% 15%)" />
     </section>
   );
 };
@@ -264,15 +264,13 @@ const ServicesList: React.FC<{
       <h3 className="mb-2 text-xl pl-3 md:pl-5 font-medium">
         {title}
       </h3>
-      <ScrollableX className="grid gap-2 pb-1" theme="primary">
+      <ScrollableX className="grid gap-2 pb-1 px-1" theme="light">
         {data.map((item, index) => (
-          <FadeIn key={index} delay={index * 0.1} className="h-full">
-            <HomeServicesCard
-              key={`${index} - ${item.title}`}
-              itemId={`${index} - ${item.title}`}
-              {...item}
-            />
-          </FadeIn>
+          <HomeServicesCard
+            key={`${index} - ${item.title}`}
+            itemId={`${index} - ${item.title}`}
+            {...item}
+          />
         ))}
       </ScrollableX>
     </FadeIn>
@@ -288,7 +286,7 @@ const HomeServicesCard: React.FC<
     <Card
       ref={ref}
       id={itemId}
-      className="w-[300px] h-full !p-0 flex flex-col border-none shadow-inner shadow-primary"
+      className="w-[300px] h-full !p-0 flex flex-col border-none shadow"
     >
       <div className="h-[167px] w-full relative">
         <Image

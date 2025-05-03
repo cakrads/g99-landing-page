@@ -17,6 +17,7 @@ const Link: React.FC<LinkProps & {
       className={className}
       target={target}
       aria-label={ariaLabel || GLOBAL_WEB_TITLE}
+      rel="noopener noreferrer"
     >
       {children}
     </NextLink >

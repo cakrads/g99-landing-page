@@ -1,9 +1,10 @@
 import { Icon } from "@iconify-icon/react";
 
+import type { Meta, StoryObj } from "@storybook/react";
+
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 
-import type { Meta, StoryObj } from "@storybook/react";
 
 Icon.displayName = "Icon";
 

@@ -16,7 +16,7 @@ export const HomeHooks = () => {
     <section ref={ref}>
       <WaveTopBgShape className="bg-primary" shapeColor="hsl(223 9% 15%)" />
       <div className="bg-secondary py-28 relative">
-        <div className="container px-4 xs:px-10">
+        <div className="container">
           <FadeIn delay={0.2}>
             <div className="flex flex-col md:flex-row text-center md:text-left justify-center md:justify-between items-center gap-10 lg:gap-2">
               <p className="max-w-[700px] text-secondary-foreground text-2xl md:text-3xl font-semibold !leading-normal">
