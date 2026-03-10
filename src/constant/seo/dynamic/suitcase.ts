@@ -21,7 +21,7 @@ export const webSeo: IWebSeo = {
     "jasa cuci koper murah",
     "layanan laundry koper",
   ],
-  imgAlt: "",
+  imgAlt: WEB_TITLE,
   applicationId: generateAppIdJson({ webTitle: WEB_TITLE }),
   routes: "/" + SLUG,
   socialImage: HOST_URL + "/images/services/suitcase/laundry-koper-medan-marelan.png",

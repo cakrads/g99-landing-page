@@ -12,10 +12,10 @@ Cuci Tas
 Cuci Helm
 Cuci Boneka
 Cuci Koper
-Cuci Seterika Uap
+Cuci Setrika Uap
 Cuci Kering (Dry Cleaning)
 Cuci Lipat
-Seterika Saja
+Setrika Saja
 Cuci Selimut
 Cuci Bed Cover
 

@@ -22,7 +22,7 @@ export const generateAppIdJson = ({ webTitle }: { webTitle: string }) => ({
   },
   "telephone": SHOP_PHONE,
   "hours": "09:00-21:00",
-  "website": `[${HOST_URL}](${HOST_URL})`,
+  "website": HOST_URL,
   "latitude": "3.702272984566515",
   "longitude": "98.6581149005907"
 });

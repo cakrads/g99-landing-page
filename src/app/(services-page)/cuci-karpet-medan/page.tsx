@@ -1,4 +1,3 @@
-import Head from "next/head";
 import { Metadata } from "next";
 
 import { ServiceLaundryCarpetContainer } from "@/container/service-laundry-carpet";
@@ -9,28 +8,31 @@ import { APPLICATION_ID_JSON, CARPET_WEB_DESCRIPTION, CARPET_WEB_KEYWORDS_PRIMAR
 
 
 export function generateMetadata(): Metadata {
-  return createMetadata({
-    title: CARPET_WEB_TITLE,
-    description: CARPET_WEB_DESCRIPTION,
-    primaryKeyword: CARPET_WEB_KEYWORDS_PRIMARY,
-    secondaryKeyword: CARPET_WEB_KEYWORDS_SECONDARY,
-    socialImage: {
-      url: CARPET_SOCIAL_IMAGE,
-      width: 1920,
-      height: 957,
+  return {
+    ...createMetadata({
+      title: CARPET_WEB_TITLE,
+      description: CARPET_WEB_DESCRIPTION,
+      primaryKeyword: CARPET_WEB_KEYWORDS_PRIMARY,
+      secondaryKeyword: CARPET_WEB_KEYWORDS_SECONDARY,
+      socialImage: {
+        url: CARPET_SOCIAL_IMAGE,
+        width: 1920,
+        height: 957,
+      },
+    }),
+    alternates: {
+      canonical: HOST_URL + ROUTES.CARPET_SERVICES,
     },
-  });
+  };
 }
 
 export default function CuciKarpetMedan() {
   return (
     <>
-      <Head>
-        <link rel="canonical" href={HOST_URL + ROUTES.CARPET_SERVICES} />
-        <script type="application/ld+json">
-          {JSON.stringify(APPLICATION_ID_JSON)}
-        </script>
-      </Head>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(APPLICATION_ID_JSON).replace(/<\/script>/gi, "<\\/script>") }}
+      />
       <ServiceLaundryCarpetContainer source="cuci-karpet-medan" />
     </>
   );

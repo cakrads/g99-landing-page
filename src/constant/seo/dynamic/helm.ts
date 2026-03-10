@@ -21,7 +21,7 @@ export const webSeo: IWebSeo = {
     "jasa cuci helm murah",
     "layanan laundry helm",
   ],
-  imgAlt: "",
+  imgAlt: WEB_TITLE,
   applicationId: generateAppIdJson({ webTitle: WEB_TITLE }),
   routes: "/" + SLUG,
   socialImage: HOST_URL + "/images/services/helm/laundry-helm.png",

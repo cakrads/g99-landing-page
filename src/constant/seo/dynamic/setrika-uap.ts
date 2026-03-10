@@ -3,12 +3,12 @@ import { HOST_URL } from "@/constant/env";
 import { generateAppIdJson } from "../app-id-json";
 import { IWebContent, IWebSeo } from "./type";
 
-const WEB_TITLE = "Jasa Cuci Seterika Uap Terdekat: Pakaian Bersih dan Rapi Bebas Kusut";
+const WEB_TITLE = "Jasa Cuci Setrika Uap Terdekat: Pakaian Bersih dan Rapi Bebas Kusut";
 export const SLUG = "laundry-setrika-uap";
 
 export const webSeo: IWebSeo = {
   title: WEB_TITLE,
-  description: "Nikmati layanan cuci seterika uap premium. Rasakan kenyamanan memakai pakaian yang bersih, rapi, dan bebas kusut dengan teknologi setrika uap modern.",
+  description: "Nikmati layanan cuci setrika uap premium. Rasakan kenyamanan memakai pakaian yang bersih, rapi, dan bebas kusut dengan teknologi setrika uap modern.",
   primaryKeyword: [
     "laundry setrika uap",
     "cuci setrika uap",
@@ -29,11 +29,11 @@ export const webSeo: IWebSeo = {
 
 export const webContent: IWebContent = {
   title: "Laundry Setrika Uap Medan Marelan: Pakaian Bersih, Rapi, dan Bebas Kusut",
-  subTitle: "Tampil Percaya Diri dengan Pakaian yang Bersih dan Rapi! Layanan Cuci Seterika Uap Kami Siap Membantu.",
+  subTitle: "Tampil Percaya Diri dengan Pakaian yang Bersih dan Rapi! Layanan Cuci Setrika Uap Kami Siap Membantu.",
   serviceName: "Laundry Setrika Uap",
-  serviceNameAlt: "Cuci Seterika Uap",
+  serviceNameAlt: "Cuci Setrika Uap",
   article: `
-  <p><strong>Ingin tampil rapi dan percaya diri setiap hari? Layanan Cuci Seterika Uap dari Laundry G 99 adalah solusi terbaik untuk pakaian bersih dan bebas kusut!</strong></p>
+  <p><strong>Ingin tampil rapi dan percaya diri setiap hari? Layanan Cuci Setrika Uap dari Laundry G 99 adalah solusi terbaik untuk pakaian bersih dan bebas kusut!</strong></p>
   <h2>Kenapa Harus Laundry Setrika Uap di Laundry G 99 :</h2>
   <ul>
       <li><strong>Teknologi Setrika Uap Modern:</strong> Menggunakan mesin setrika uap canggih untuk hasil yang maksimal.</li>

@@ -21,7 +21,7 @@ export const webSeo: IWebSeo = {
     "jasa cuci bantal dan guling murah",
     "layanan laundry bantal dan guling",
   ],
-  imgAlt: "",
+  imgAlt: WEB_TITLE,
   applicationId: generateAppIdJson({ webTitle: WEB_TITLE }),
   routes: "/" + SLUG,
   socialImage: HOST_URL + "/images/services/pillow/laundry-bantal-dan-guling.png",

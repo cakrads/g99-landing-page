@@ -21,7 +21,7 @@ export const webSeo: IWebSeo = {
     "jasa cuci tas murah",
     "layanan laundry tas",
   ],
-  imgAlt: "",
+  imgAlt: WEB_TITLE,
   applicationId: generateAppIdJson({ webTitle: WEB_TITLE }),
   routes: "/" + SLUG,
   socialImage: HOST_URL + "/images/services/bag/laundry-tas-medan-marelan.png",

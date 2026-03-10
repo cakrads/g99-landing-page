@@ -20,7 +20,7 @@ export const webSeo: IWebSeo = {
     "laundry sepatu marelan",
     "cuci sepatu marelan",
   ],
-  imgAlt: "",
+  imgAlt: WEB_TITLE,
   applicationId: generateAppIdJson({ webTitle: WEB_TITLE }),
   routes: "/" + SLUG,
   socialImage: HOST_URL + "/images/services/shoes/laundry-sepatu-medan-marelan-1.png",

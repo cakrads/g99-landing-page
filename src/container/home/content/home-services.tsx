@@ -173,7 +173,7 @@ const HomeServicesPersonalSuplies = () => {
 const HomeServicesWashingClothes = () => {
   const dataWashClothes = [
     {
-      title: "Cuci Seterika Uap",
+      title: "Cuci Setrika Uap",
       description: "Rasakan kenyamanan memakai pakaian yang Bersih dan Rapi. Tampil percaya diri dengan pakaian yang Bebas Kusut.",
       imgSrc: "/images/services/cuci-setrika-uap.jpg",
       imgAlt: "Laundry Terdekat -" + HOME_IMG_ALT,
@@ -218,7 +218,7 @@ const HomeServicesWashingClothes = () => {
       onClick: () => { }
     },
     {
-      title: "Seterika Saja",
+      title: "Setrika Saja",
       description: "Malas Setrika? Sertahkan pakaian kusut Anda pada layanan Setrika Pakaian Kami.",
       imgSrc: "/images/services/laundry-setrika.jpg",
       imgAlt: "Laundry Setrika Terdekat -" + HOME_IMG_ALT,

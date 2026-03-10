@@ -127,13 +127,13 @@ export const Footer = () => {
               <div>
                 <h3 className="mb-4 text-lg font-bold">Follow Us</h3>
                 <div className="flex">
-                  <Link href={SHOP_IG} target="_blank" className="hover:text-primary h-11 w-11" onClick={handleClickFacebook}>
+                  {/* <Link href={SHOP_FB} target="_blank" className="hover:text-primary h-11 w-11" onClick={handleClickFacebook}>
                     <FacebookIcon className="h-6 w-6" />
-                  </Link>
-                  <Link href={SHOP_TIKTOK} target="_blank" className="hover:text-primary h-11 w-11" onClick={handleClickInstagram}>
+                  </Link> */}
+                  <Link href={SHOP_IG} target="_blank" className="hover:text-primary h-11 w-11" onClick={handleClickInstagram}>
                     <InstagramIcon className="h-6 w-6" />
                   </Link>
-                  <Link href={SHOP_FB} target="_blank" className="hover:text-primary h-11 w-11" onClick={handleClickTiktok}>
+                  <Link href={SHOP_TIKTOK} target="_blank" className="hover:text-primary h-11 w-11" onClick={handleClickTiktok}>
                     <TiktokIcon className="h-6 w-6" />
                   </Link>
                 </div>

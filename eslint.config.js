@@ -44,7 +44,7 @@ module.exports = [
 
   // Testing library for test files
   {
-    files: ["**/__tests__/**/*.[jt]sx?", "**/?(*.)+(spec|test).[jt]sx?"],
     ...testingLibrary.configs["flat/react"],
+    files: ["**/__tests__/**/*.[jt]sx?", "**/?(*.)+(spec|test).[jt]sx?"],
   },
 ];

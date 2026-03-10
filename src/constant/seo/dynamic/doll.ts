@@ -21,7 +21,7 @@ export const webSeo: IWebSeo = {
     "jasa cuci boneka murah",
     "layanan laundry boneka",
   ],
-  imgAlt: "",
+  imgAlt: WEB_TITLE,
   applicationId: generateAppIdJson({ webTitle: WEB_TITLE }),
   routes: "/" + SLUG,
   socialImage: HOST_URL + "/images/services/doll/laundry-boneka-medan-marelan.png",

@@ -5,6 +5,10 @@ import { ServiceDynamicContainer } from "@/container/services-dynamic";
 import { AVAILABLE_SERVICES_ROUTES, getDynamicContent } from "@/constant/seo/get-dynamic-content";
 import { createMetadata } from "@/constant/seo/meta-data";
 
+function safeJsonLd(data: unknown): string {
+  return JSON.stringify(data).replace(/<\/script>/gi, "<\\/script>");
+}
+
 type Props = {
   params: Promise<{ slug: string }>
 }
@@ -18,7 +22,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { dataSeo } = getDynamicContent(slug);
 
   if (dataSeo === null) {
-    return notFound();
+    notFound();
   }
 
   return {
@@ -56,7 +60,7 @@ export default async function ServicesDynamic({ params }: Readonly<Props>) {
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(dataSeo.applicationId) }}
+        dangerouslySetInnerHTML={{ __html: safeJsonLd(dataSeo.applicationId) }}
       />
       <ServiceDynamicContainer slug={slug} />
     </>

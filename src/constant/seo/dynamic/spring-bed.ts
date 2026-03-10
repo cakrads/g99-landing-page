@@ -25,7 +25,7 @@ export const webSeo: IWebSeo = {
     "laundry spring bed terdekat",
     "laundry springbed terdekat",
   ],
-  imgAlt: "",
+  imgAlt: WEB_TITLE,
   applicationId: generateAppIdJson({ webTitle: WEB_TITLE }),
   routes: "/" + SLUG,
   socialImage: HOST_URL + "/images/services/spring-bed/laundry-spring-bed-medan-marelan.png",
