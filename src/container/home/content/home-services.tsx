@@ -99,8 +99,8 @@ const HomeServicesHouseSuplies = () => {
       description: "Bersihkan dan cuci gorden Anda dari Debu dan Kotoran untuk suasana rumah yang Lebih Segar.",
       imgSrc: "/images/services/cuci-gorden.jpg",
       imgAlt: "Cuci Gorden Terdekat -" + HOME_IMG_ALT,
-      linkPage: "#our-location",
-      linkText: "Pesan Sekarang",
+      linkPage: ROUTES.GORDEN_SERVICES,
+      linkText: "Lihat Detail",
       onClick: () => { }
     },
   ];
@@ -177,8 +177,8 @@ const HomeServicesWashingClothes = () => {
       description: "Rasakan kenyamanan memakai pakaian yang Bersih dan Rapi. Tampil percaya diri dengan pakaian yang Bebas Kusut.",
       imgSrc: "/images/services/cuci-setrika-uap.jpg",
       imgAlt: "Laundry Terdekat -" + HOME_IMG_ALT,
-      linkPage: "#our-location",
-      linkText: "Pesan Sekarang",
+      linkPage: ROUTES.SETRIKA_UAP_SERVICES,
+      linkText: "Lihat Detail",
       onClick: () => { }
     },
     {
@@ -186,8 +186,8 @@ const HomeServicesWashingClothes = () => {
       description: "Jaga Kebaya maupun Jas Anda agar tetap bersih dan rapi untuk acara spesial.",
       imgSrc: "/images/services/cuci-kering.jpg",
       imgAlt: "Cuci Jas maupun Cuci Kebaya -" + HOME_IMG_ALT,
-      linkPage: "#our-location",
-      linkText: "Pesan Sekarang",
+      linkPage: ROUTES.DRY_CLEANING_SERVICES,
+      linkText: "Lihat Detail",
       onClick: () => { }
     },
     {
@@ -195,8 +195,8 @@ const HomeServicesWashingClothes = () => {
       description: "Kami menawarkan jasa cuci pakaian Anda dengan tangan manual untuk hasil yang lebih memuaskan",
       imgSrc: "/images/services/cuci-tangan-manual.jpg",
       imgAlt: "Laundry Terdekat -" + HOME_IMG_ALT,
-      linkPage: "#our-location",
-      linkText: "Pesan Sekarang",
+      linkPage: ROUTES.TANGAN_MANUAL_SERVICES,
+      linkText: "Lihat Detail",
       onClick: () => { }
     },
     {
@@ -204,8 +204,8 @@ const HomeServicesWashingClothes = () => {
       description: "Rawat dan bersihkan Ulos Anda agar tetap bersih dan rapi untuk acara spesial.",
       imgSrc: "/images/services/cuci-ulos-marelan.jpg",
       imgAlt: "Laundry Terdekat -" + HOME_IMG_ALT,
-      linkPage: "#our-location",
-      linkText: "Pesan Sekarang",
+      linkPage: ROUTES.ULOS_SERVICES,
+      linkText: "Lihat Detail",
       onClick: () => { }
     },
     {
@@ -213,8 +213,8 @@ const HomeServicesWashingClothes = () => {
       description: "Cucian Menumpuk? Serahkan Pada Kami! Dapatkan pakaian yang Wangi, Rapi, dan Siap Pakai dengan harga bersahabat.",
       imgSrc: "/images/services/cuci-lipat.jpg",
       imgAlt: "Laundry Terdekat -" + HOME_IMG_ALT,
-      linkPage: "#our-location",
-      linkText: "Pesan Sekarang",
+      linkPage: ROUTES.LIPAT_SERVICES,
+      linkText: "Lihat Detail",
       onClick: () => { }
     },
     {
@@ -222,8 +222,8 @@ const HomeServicesWashingClothes = () => {
       description: "Malas Setrika? Sertahkan pakaian kusut Anda pada layanan Setrika Pakaian Kami.",
       imgSrc: "/images/services/laundry-setrika.jpg",
       imgAlt: "Laundry Setrika Terdekat -" + HOME_IMG_ALT,
-      linkPage: "#our-location",
-      linkText: "Pesan Sekarang",
+      linkPage: ROUTES.SETRIKA_SERVICES,
+      linkText: "Lihat Detail",
       onClick: () => { }
     },
     {
@@ -231,8 +231,8 @@ const HomeServicesWashingClothes = () => {
       description: "Pastikan Selimut Anda selalu Bersih dan Higienis untuk Kesehatan dan Kenyamanan tidur Anda.",
       imgSrc: "/images/services/cuci-selimut.jpg",
       imgAlt: "Laundry Selimut Terdekat -" + HOME_IMG_ALT,
-      linkPage: "#our-location",
-      linkText: "Pesan Sekarang",
+      linkPage: ROUTES.SELIMUT_SERVICES,
+      linkText: "Lihat Detail",
       onClick: () => { }
     },
     {
@@ -240,8 +240,8 @@ const HomeServicesWashingClothes = () => {
       description: "Dapatkan Bed Cover Bersih dan Wangi untuk Tidur lebih Nyaman dan Nyenyak setiap malam.",
       imgSrc: "/images/services/cuci-bed-cover.jpg",
       imgAlt: "Laundry Bed Cover Terdekat -" + HOME_IMG_ALT,
-      linkPage: "#our-location",
-      linkText: "Pesan Sekarang",
+      linkPage: ROUTES.BED_COVER_SERVICES,
+      linkText: "Lihat Detail",
       onClick: () => { }
     },
   ];

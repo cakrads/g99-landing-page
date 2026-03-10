@@ -1,42 +1,52 @@
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
-import Head from "next/head";
 
 import { ServiceDynamicContainer } from "@/container/services-dynamic";
-import { getDynamicContent } from "@/constant/seo/get-dynamic-content";
+import { AVAILABLE_SERVICES_ROUTES, getDynamicContent } from "@/constant/seo/get-dynamic-content";
 import { createMetadata } from "@/constant/seo/meta-data";
 
 type Props = {
-  params: { slug: string }
+  params: Promise<{ slug: string }>
 }
 
-export function generateMetadata({ params }: Props): Metadata {
-  const { dataSeo } = getDynamicContent(params.slug);
+export function generateStaticParams() {
+  return Object.keys(AVAILABLE_SERVICES_ROUTES).map((slug) => ({ slug }));
+}
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { slug } = await params;
+  const { dataSeo } = getDynamicContent(slug);
 
   if (dataSeo === null) {
     return notFound();
   }
 
-  return createMetadata({
-    title: dataSeo.title,
-    description: dataSeo.description,
-    primaryKeyword: dataSeo.primaryKeyword,
-    secondaryKeyword: dataSeo.secondaryKeyword,
-    socialImage: {
-      url: dataSeo.socialImage,
-      width: 600,
-      height: 300,
+  return {
+    ...createMetadata({
+      title: dataSeo.title,
+      description: dataSeo.description,
+      primaryKeyword: dataSeo.primaryKeyword,
+      secondaryKeyword: dataSeo.secondaryKeyword,
+      socialImage: {
+        url: dataSeo.socialImage,
+        width: 600,
+        height: 300,
+      },
+    }),
+    alternates: {
+      canonical: dataSeo.routes,
     },
-  });
+  };
 }
 
-export default function ServicesDynamic({ params }: Readonly<Props>) {
+export default async function ServicesDynamic({ params }: Readonly<Props>) {
+  const { slug } = await params;
 
-  if (!params.slug) {
+  if (!slug) {
     return notFound();
   }
 
-  const { dataSeo } = getDynamicContent(params.slug);
+  const { dataSeo } = getDynamicContent(slug);
 
   if (!dataSeo) {
     return notFound();
@@ -44,13 +54,11 @@ export default function ServicesDynamic({ params }: Readonly<Props>) {
 
   return (
     <>
-      <Head>
-        <link rel="canonical" href={dataSeo.routes} />
-        <script type="application/ld+json">
-          {JSON.stringify(dataSeo.applicationId)}
-        </script>
-      </Head>
-      <ServiceDynamicContainer slug={params.slug} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(dataSeo.applicationId) }}
+      />
+      <ServiceDynamicContainer slug={slug} />
     </>
   );
 }

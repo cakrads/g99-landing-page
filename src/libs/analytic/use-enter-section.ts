@@ -15,6 +15,10 @@ export const useTrackEnterSection = (props: IUseEnterSection) => {
   const ref = React.useRef<HTMLDivElement>(null);
   const { envetKey, featureKey, active = true, hasStartTrack = true } = props;
   const analytic = useAnalytic();
+  // Track the previous isInView value so we only fire when it transitions false→true,
+  // not when the effect re-runs due to other dep changes (e.g. envetKey or analytic changing
+  // on navigation while the element is already in the viewport).
+  const prevIsInViewRef = React.useRef(false);
 
   const { isInView } = useInView(ref, { once: true });
 
@@ -25,7 +29,10 @@ export const useTrackEnterSection = (props: IUseEnterSection) => {
       analytic.trackStart(envetKey);
     }
 
-    if (isInView) {
+    const justBecameVisible = isInView && !prevIsInViewRef.current;
+    prevIsInViewRef.current = isInView;
+
+    if (justBecameVisible) {
       analytic.trackEnd(envetKey);
       analytic.trackEvent(envetKey, featureKey, { success: 1, message: "OK", });
     }

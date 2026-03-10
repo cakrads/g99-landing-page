@@ -59,7 +59,7 @@ export const AnalyticProvider: React.FC<{ children: React.ReactNode }> = ({
     event: EventKey,
   ) => {
     if (!execTimeRef.current?.[event]) {
-      throw new Error(event + " - event start not setted");
+      return;
     }
 
     // console.log(`end track: ${event}`);

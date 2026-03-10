@@ -10,4 +10,13 @@ export const ROUTES = {
   BAG_SERVICES: "/laundry-tas",
   PILLOW_SERVICES: "/laundry-bantal-dan-guling",
   SHOES_SERVICES: "/laundry-sepatu",
+  GORDEN_SERVICES: "/laundry-gorden",
+  SETRIKA_UAP_SERVICES: "/laundry-setrika-uap",
+  DRY_CLEANING_SERVICES: "/laundry-kering",
+  TANGAN_MANUAL_SERVICES: "/laundry-tangan-manual",
+  ULOS_SERVICES: "/laundry-ulos",
+  LIPAT_SERVICES: "/laundry-lipat",
+  SETRIKA_SERVICES: "/laundry-setrika",
+  SELIMUT_SERVICES: "/laundry-selimut",
+  BED_COVER_SERVICES: "/laundry-bed-cover",
 };
