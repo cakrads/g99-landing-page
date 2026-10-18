@@ -15,9 +15,9 @@ export function generateMetadata(): Metadata {
       primaryKeyword: HOME_WEB_KEYWORDS,
       secondaryKeyword: [],
       socialImage: {
-        url: HOST_URL + "/images/laundry-karpet-terdekat.png",
-        width: 1920,
-        height: 957,
+        url: HOST_URL + "/images/laundry-karpet-marelan-g99.png",
+        width: 1200,
+        height: 600,
       },
     }),
     alternates: {
@@ -32,7 +32,7 @@ export default function Home() {
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(generateAppIdJson({ webTitle: HOME_WEB_TITLE })).replace(/<\/script>/gi, "<\\/script>") }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(generateAppIdJson()).replace(/<\/script>/gi, "<\\/script>") }}
       />
       <HomeContainer />
     </>

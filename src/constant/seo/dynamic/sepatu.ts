@@ -21,7 +21,7 @@ export const webSeo: IWebSeo = {
     "cuci sepatu marelan",
   ],
   imgAlt: WEB_TITLE,
-  applicationId: generateAppIdJson({ webTitle: WEB_TITLE }),
+  applicationId: generateAppIdJson(),
   routes: "/" + SLUG,
   socialImage: HOST_URL + "/images/services/shoes/laundry-sepatu-medan-marelan-1.png",
 };
@@ -54,8 +54,6 @@ export const webContent: IWebContent = {
     //   value: "Rp 75.000,-"
     // }
   ],
-  hooks: "",
-  article2: "",
   images: [
     "/images/services/shoes/laundry-sepatu-medan-marelan-1.png",
     "/images/services/shoes/laundry-sepatu-medan-marelan-2.png",

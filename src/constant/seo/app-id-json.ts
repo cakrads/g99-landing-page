@@ -1,28 +1,50 @@
 import { HOST_URL } from "../env";
-import { SHOP_ADDRESS, SHOP_PHONE } from "../shop";
+import { SHOP_NAME, SHOP_PHONE, SHOP_STREET_ADDRESS } from "../shop";
 
-export const generateAppIdJson = ({ webTitle }: { webTitle: string }) => ({
+/**
+ * LocalBusiness JSON-LD, shared by every page. The business name is always
+ * SHOP_NAME (never the page title). Referenced from Service / WebSite
+ * schemas via "@id".
+ */
+export const generateAppIdJson = () => ({
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
-  name: webTitle,
-  // url: "https://www.facebook.com/kiwilaundryco/",
-  // logo: "https://www.facebook.com/kiwilaundryco/",
-  "address": {
+  "@id": HOST_URL + "/#localbusiness",
+  name: SHOP_NAME,
+  url: HOST_URL,
+  address: {
     "@type": "PostalAddress",
-    "streetAddress": SHOP_ADDRESS,
-    "addressLocality": "Medan Marelan",
-    "addressRegion": "Sumatra Utara",
-    "postalCode": "20255",
-    "country": "Indonesia"
+    streetAddress: SHOP_STREET_ADDRESS,
+    addressLocality: "Medan",
+    addressRegion: "Sumatera Utara",
+    postalCode: "20255",
+    addressCountry: "ID",
   },
   contactPoint: {
     "@type": "ContactPoint",
     telephone: SHOP_PHONE,
-    contactType: "customer service"
+    contactType: "customer service",
   },
-  "telephone": SHOP_PHONE,
-  "hours": "09:00-21:00",
-  "website": HOST_URL,
-  "latitude": "3.702272984566515",
-  "longitude": "98.6581149005907"
+  telephone: SHOP_PHONE,
+  openingHoursSpecification: {
+    "@type": "OpeningHoursSpecification",
+    dayOfWeek: [
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday",
+      "Sunday",
+    ],
+    opens: "07:00",
+    closes: "21:00",
+  },
+  geo: {
+    "@type": "GeoCoordinates",
+    latitude: "3.702272984566515",
+    longitude: "98.6581149005907",
+  },
+  hasMap:
+    "https://www.google.com/maps/place/Laundry+Karpet+Marelan+G+99/@3.7021584,98.6581062,17z",
 });

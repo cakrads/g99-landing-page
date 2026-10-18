@@ -27,7 +27,7 @@ export const webSeo: IWebSeo = {
     "cara membersihkan stroller bayi",
   ],
   imgAlt: WEB_TITLE,
-  applicationId: generateAppIdJson({ webTitle: WEB_TITLE }),
+  applicationId: generateAppIdJson(),
   routes: "/" + SLUG,
   socialImage: HOST_URL + "/images/services/stroller/laundry-stroller-medan-marelan.png",
 };
@@ -67,8 +67,6 @@ export const webContent: IWebContent = {
     //   value: "Rp 100.000",
     // }
   ],
-  hooks: "",
-  article2: "",
   images: [
     "/images/services/stroller/laundry-stroller-medan-marelan.png",
     "/images/services/stroller/cuci-stroller-medan-marelan.png",

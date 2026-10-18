@@ -3,7 +3,7 @@ import { HOST_URL } from "@/constant/env";
 import { generateAppIdJson } from "../app-id-json";
 import { IWebContent, IWebSeo } from "./type";
 
-const WEB_TITLE = "Jasa Cuci Setrika Uap Terdekat: Pakaian Bersih dan Rapi Bebas Kusut";
+const WEB_TITLE = "Jasa Setrika Uap Terdekat: Pakaian Rapi Bebas Kusut";
 export const SLUG = "laundry-setrika-uap";
 
 export const webSeo: IWebSeo = {
@@ -22,7 +22,7 @@ export const webSeo: IWebSeo = {
     "laundry kiloan setrika uap",
   ],
   imgAlt: WEB_TITLE,
-  applicationId: generateAppIdJson({ webTitle: WEB_TITLE }),
+  applicationId: generateAppIdJson(),
   routes: "/" + SLUG,
   socialImage: HOST_URL + "/images/services/cuci-setrika-uap.jpg",
 };
@@ -55,8 +55,6 @@ export const webContent: IWebContent = {
   <br/>
   `,
   prices: [],
-  hooks: "",
-  article2: "",
   images: [
     "/images/services/cuci-setrika-uap.jpg",
   ],

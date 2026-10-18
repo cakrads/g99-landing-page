@@ -3,7 +3,7 @@ import { HOST_URL } from "@/constant/env";
 import { generateAppIdJson } from "../app-id-json";
 import { IWebContent, IWebSeo } from "./type";
 
-const WEB_TITLE = "Jasa Cuci Selimut Terdekat: Selimut Bersih dan Higienis untuk Tidur Nyaman";
+const WEB_TITLE = "Jasa Cuci Selimut Terdekat: Bersih & Higienis";
 export const SLUG = "laundry-selimut";
 
 export const webSeo: IWebSeo = {
@@ -22,7 +22,7 @@ export const webSeo: IWebSeo = {
     "cuci selimut tebal",
   ],
   imgAlt: WEB_TITLE,
-  applicationId: generateAppIdJson({ webTitle: WEB_TITLE }),
+  applicationId: generateAppIdJson(),
   routes: "/" + SLUG,
   socialImage: HOST_URL + "/images/services/cuci-selimut.jpg",
 };
@@ -55,8 +55,6 @@ export const webContent: IWebContent = {
   <br/>
   `,
   prices: [],
-  hooks: "",
-  article2: "",
   images: [
     "/images/services/cuci-selimut.jpg",
   ],

@@ -13,6 +13,8 @@ const nextConfig = {
     ];
   },
   images: {
+    // Serve AVIF/WebP to browsers that support them (smaller downloads).
+    formats: ["image/avif", "image/webp"],
     remotePatterns: [
       {
         protocol: 'https',

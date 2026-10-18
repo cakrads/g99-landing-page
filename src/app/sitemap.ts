@@ -4,7 +4,12 @@ import { HOST_URL } from "@/constant/env";
 import { AVAILABLE_SERVICES_ROUTES } from "@/constant/seo/get-dynamic-content";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const availableServiceRoutes = Object.keys(AVAILABLE_SERVICES_ROUTES);
+  // Only canonical service URLs belong in the sitemap. Alias routes
+  // (cuci-*) canonicalize to their laundry-* page, so listing them here
+  // would send a conflicting signal to search engines.
+  const availableServiceRoutes = Object.keys(AVAILABLE_SERVICES_ROUTES).filter(
+    (key) => AVAILABLE_SERVICES_ROUTES[key].webSeo.routes === `/${key}`
+  );
   const routes: MetadataRoute.Sitemap = availableServiceRoutes.map((key) => {
     return {
       url: HOST_URL + `/${key}`,
@@ -28,6 +33,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 0.9,
     },
+    // NOTE: /cuci-karpet-medan canonicalizes to /laundry-karpet-marelan,
+    // so it stays listed only until the issue-03 decision (self-canonical
+    // vs full consolidation) is made. See .scratch/seo-aeo-review/issues/03.
     {
       url: HOST_URL + "/cuci-karpet-medan",
       lastModified: new Date(),

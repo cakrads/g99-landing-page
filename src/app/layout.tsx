@@ -8,6 +8,7 @@ import { Footer } from "@/components/fragments/footer";
 import { cn } from "@/components/libs/cn";
 import { HOME_WEB_DESCRIPTION, HOME_WEB_KEYWORDS, HOME_WEB_TITLE, } from "@/constant/seo/home-page";
 import { HOST_URL } from "@/constant/env";
+import { SHOP_NAME } from "@/constant/shop";
 import { AnalyticProvider } from "@/libs/analytic/provider";
 import { createMetadata } from "@/constant/seo/meta-data";
 import "./../styles/globals.css";
@@ -37,9 +38,9 @@ export function generateMetadata(): Metadata {
     primaryKeyword: HOME_WEB_KEYWORDS,
     secondaryKeyword: [],
     socialImage: {
-      url: HOST_URL + "/images/laundry-karpet-terdekat.png",
-      width: 1920,
-      height: 957,
+      url: HOST_URL + "/images/laundry-karpet-marelan-g99.png",
+      width: 1200,
+      height: 600,
     },
   });
 }
@@ -50,7 +51,7 @@ export default function RootLayout({
   readonly children: React.ReactNode
 }) {
   return (
-    <html lang="en">
+    <html lang="id">
       <body
         className={cn(
           "antialiased",
@@ -64,6 +65,20 @@ export default function RootLayout({
           showSpinner={false}
         />
         <AnalyticProvider>
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify({
+                "@context": "https://schema.org",
+                "@type": "WebSite",
+                "@id": HOST_URL + "/#website",
+                url: HOST_URL,
+                name: SHOP_NAME,
+                inLanguage: "id",
+                publisher: { "@id": HOST_URL + "/#localbusiness" },
+              }),
+            }}
+          />
           <Header />
           {children}
           <Footer />

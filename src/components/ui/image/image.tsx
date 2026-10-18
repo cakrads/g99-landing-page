@@ -6,7 +6,7 @@ const IMAGE_LAZY =
 
 export const Image: React.FC<ImageProps> = (props) => {
   return (
-    <NextImage {...props} blurDataURL={IMAGE_LAZY} />
+    <NextImage {...props} placeholder="blur" blurDataURL={IMAGE_LAZY} />
   );
 };
 Image.displayName = "Image";

@@ -22,7 +22,7 @@ export const webSeo: IWebSeo = {
     "layanan laundry koper",
   ],
   imgAlt: WEB_TITLE,
-  applicationId: generateAppIdJson({ webTitle: WEB_TITLE }),
+  applicationId: generateAppIdJson(),
   routes: "/" + SLUG,
   socialImage: HOST_URL + "/images/services/suitcase/laundry-koper-medan-marelan.png",
 };
@@ -61,8 +61,6 @@ export const webContent: IWebContent = {
     //   value: "Rp 75.000,-"
     // }
   ],
-  hooks: "",
-  article2: "",
   images: [
     "/images/services/suitcase/laundry-koper-medan-marelan.png",
   ],

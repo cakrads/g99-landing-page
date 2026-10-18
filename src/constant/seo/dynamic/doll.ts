@@ -22,7 +22,7 @@ export const webSeo: IWebSeo = {
     "layanan laundry boneka",
   ],
   imgAlt: WEB_TITLE,
-  applicationId: generateAppIdJson({ webTitle: WEB_TITLE }),
+  applicationId: generateAppIdJson(),
   routes: "/" + SLUG,
   socialImage: HOST_URL + "/images/services/doll/laundry-boneka-medan-marelan.png",
 };
@@ -38,8 +38,6 @@ export const webContent: IWebContent = {
   <p><strong>Boneka adalah bagian penting dari kehidupan anak-anak kita, tetapi seringkali mereka menjadi kotor dan penuh bakteri. Laundry boneka G 99 menggunakan teknik pembersihan lembut yang menjaga boneka tetap aman sambil menghilangkan kotoran dan alergen.</strong><br>&nbsp;</p>
   `, // will help to edit html: https://onlinehtmleditor.dev/
   prices: [],
-  hooks: "",
-  article2: "",
   images: [
     "/images/services/doll/laundry-boneka-medan-marelan.png",
     "/images/services/doll/laundry-boneka-premium.jpg"

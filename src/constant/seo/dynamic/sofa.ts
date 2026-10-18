@@ -3,7 +3,7 @@ import { HOST_URL } from "@/constant/env";
 import { generateAppIdJson } from "../app-id-json";
 import { IWebContent, IWebSeo } from "./type";
 
-const WEB_TITLE = "Jasa Cuci Sofa Terdekat: Layanan Berkualitas dengan Harga Kompetitif";
+const WEB_TITLE = "Jasa Cuci Sofa Terdekat: Bersih & Harga Kompetitif";
 export const SLUG = "laundry-sofa";
 
 export const webSeo: IWebSeo = {
@@ -25,7 +25,7 @@ export const webSeo: IWebSeo = {
     "cara membersihkan sofa",
   ],
   imgAlt: WEB_TITLE,
-  applicationId: generateAppIdJson({ webTitle: WEB_TITLE }),
+  applicationId: generateAppIdJson(),
   routes: "/" + SLUG,
   socialImage: HOST_URL + "/images/services/sofa/laundry-sofa-medan-marelan.png",
 };
@@ -58,8 +58,6 @@ export const webContent: IWebContent = {
   <br/>
   `, // will help to edit html: https://onlinehtmleditor.dev/
   prices: [],
-  hooks: "",
-  article2: "",
   images: [
     "/images/services/sofa/laundry-sofa-medan-marelan.png",
     "/images/services/sofa/laundry-sofa-antar-jemput.png",

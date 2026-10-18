@@ -2,8 +2,10 @@ import { Metadata } from "next";
 import { notFound } from "next/navigation";
 
 import { ServiceDynamicContainer } from "@/container/services-dynamic";
+import { HOST_URL } from "@/constant/env";
 import { AVAILABLE_SERVICES_ROUTES, getDynamicContent } from "@/constant/seo/get-dynamic-content";
 import { createMetadata } from "@/constant/seo/meta-data";
+import { generateBreadcrumbJsonLd, generateServiceJsonLd } from "@/constant/seo/service-json";
 
 function safeJsonLd(data: unknown): string {
   return JSON.stringify(data).replace(/<\/script>/gi, "<\\/script>");
@@ -31,6 +33,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       description: dataSeo.description,
       primaryKeyword: dataSeo.primaryKeyword,
       secondaryKeyword: dataSeo.secondaryKeyword,
+      url: HOST_URL + dataSeo.routes,
       socialImage: {
         url: dataSeo.socialImage,
         width: 600,
@@ -50,17 +53,43 @@ export default async function ServicesDynamic({ params }: Readonly<Props>) {
     return notFound();
   }
 
-  const { dataSeo } = getDynamicContent(slug);
+  const { dataSeo, data } = getDynamicContent(slug);
 
   if (!dataSeo) {
     return notFound();
   }
+
+  const pageUrl = HOST_URL + dataSeo.routes;
 
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: safeJsonLd(dataSeo.applicationId) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: safeJsonLd(
+            generateServiceJsonLd({
+              name: data.serviceName,
+              alternateName: data.serviceNameAlt,
+              description: dataSeo.description,
+              url: pageUrl,
+            })
+          ),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: safeJsonLd(
+            generateBreadcrumbJsonLd([
+              { name: "Beranda", url: HOST_URL + "/" },
+              { name: data.serviceName, url: pageUrl },
+            ])
+          ),
+        }}
       />
       <ServiceDynamicContainer slug={slug} />
     </>

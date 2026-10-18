@@ -4,7 +4,9 @@ import { generateAppIdJson } from "../app-id-json";
 import { IWebContent, IWebSeo } from "./type";
 
 const WEB_TITLE = "Jasa Cuci Bantal dan Guling Medan Marelan: Bisa Antar-Jemput";
-export const SLUG = "laundry-bantal-guling";
+// Must match the key in AVAILABLE_SERVICES_ROUTES ("laundry-bantal-dan-guling").
+// Previously "laundry-bantal-guling", which made the canonical URL 404.
+export const SLUG = "laundry-bantal-dan-guling";
 
 export const webSeo: IWebSeo = {
   title: WEB_TITLE,
@@ -22,7 +24,7 @@ export const webSeo: IWebSeo = {
     "layanan laundry bantal dan guling",
   ],
   imgAlt: WEB_TITLE,
-  applicationId: generateAppIdJson({ webTitle: WEB_TITLE }),
+  applicationId: generateAppIdJson(),
   routes: "/" + SLUG,
   socialImage: HOST_URL + "/images/services/pillow/laundry-bantal-dan-guling.png",
 };
@@ -38,8 +40,6 @@ export const webContent: IWebContent = {
   <p><strong>Bantal ataupun Guling Andakotor? Kini ada solusinya! Rasakan bagaimana layanan laundry bantal kami mengubah bantal ataupun Guling Anda menjadi bersih dan segar!</strong></p>
   `, // will help to edit html: https://onlinehtmleditor.dev/
   prices: [],
-  hooks: "",
-  article2: "",
   images: [
     "/images/services/pillow/laundry-bantal-dan-guling.png"
   ],

@@ -19,8 +19,6 @@ export interface IWebContent {
     type: string
     value: string
   }>
-  hooks: string
-  article2: string
   images: Array<string>
   faq: Array<{
     question: string

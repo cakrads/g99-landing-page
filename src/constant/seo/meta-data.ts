@@ -8,6 +8,9 @@ interface IGenerateMetaData {
   description: string
   primaryKeyword: Array<string>
   secondaryKeyword: Array<string>
+  /** Canonical page URL for og:url. Defaults to HOST_URL (homepage). */
+  url?: string
+  /** Absolute social image URL (already includes HOST_URL). Used as-is. */
   socialImage: {
     url: string
     width: number
@@ -25,12 +28,12 @@ export const createMetadata = (dataSeo: IGenerateMetaData): Metadata => {
     openGraph: {
       type: "website",
       locale: "id_ID",
-      url: HOST_URL,
+      url: dataSeo.url ?? HOST_URL,
       title: dataSeo.title,
       description: dataSeo.description,
       siteName: SHOP_NAME,
       images: {
-        url: HOST_URL + dataSeo.socialImage.url,
+        url: dataSeo.socialImage.url,
         width: dataSeo.socialImage.width,
         height: dataSeo.socialImage.height,
       }
@@ -39,8 +42,7 @@ export const createMetadata = (dataSeo: IGenerateMetaData): Metadata => {
       card: "summary_large_image",
       title: dataSeo.title,
       description: dataSeo.description,
-      // images: [`${siteConfig.url}/og.jpg`],
-      // creator: "@sadmann17",
+      images: [dataSeo.socialImage.url],
     },
     icons: {
       icon: "/icon.ico",

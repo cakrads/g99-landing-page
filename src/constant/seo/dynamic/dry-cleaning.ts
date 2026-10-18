@@ -3,7 +3,7 @@ import { HOST_URL } from "@/constant/env";
 import { generateAppIdJson } from "../app-id-json";
 import { IWebContent, IWebSeo } from "./type";
 
-const WEB_TITLE = "Jasa Cuci Kering (Dry Cleaning) Terdekat: Kebaya dan Jas Tetap Bersih dan Rapi";
+const WEB_TITLE = "Jasa Dry Cleaning Terdekat: Kebaya & Jas Bersih Rapi";
 export const SLUG = "laundry-kering";
 
 export const webSeo: IWebSeo = {
@@ -23,7 +23,7 @@ export const webSeo: IWebSeo = {
     "laundry dry cleaning",
   ],
   imgAlt: WEB_TITLE,
-  applicationId: generateAppIdJson({ webTitle: WEB_TITLE }),
+  applicationId: generateAppIdJson(),
   routes: "/" + SLUG,
   socialImage: HOST_URL + "/images/services/cuci-kering.jpg",
 };
@@ -57,8 +57,6 @@ export const webContent: IWebContent = {
   <br/>
   `,
   prices: [],
-  hooks: "",
-  article2: "",
   images: [
     "/images/services/cuci-kering.jpg",
   ],

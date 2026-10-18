@@ -22,7 +22,7 @@ export const webSeo: IWebSeo = {
     "layanan laundry helm",
   ],
   imgAlt: WEB_TITLE,
-  applicationId: generateAppIdJson({ webTitle: WEB_TITLE }),
+  applicationId: generateAppIdJson(),
   routes: "/" + SLUG,
   socialImage: HOST_URL + "/images/services/helm/laundry-helm.png",
 };
@@ -41,8 +41,6 @@ export const webContent: IWebContent = {
   <p>Kami menawarkan layanan laundry helm yang membersihkan helm Anda dari kotoran, bau, dan jamur.<br><br>&nbsp;</p>
   `, // will help to edit html: https://onlinehtmleditor.dev/
   prices: [],
-  hooks: "",
-  article2: "",
   images: [
     "/images/services/helm/laundry-helm.png"
   ],

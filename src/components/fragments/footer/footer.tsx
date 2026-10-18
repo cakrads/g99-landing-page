@@ -5,9 +5,9 @@ import React from "react";
 import clsx from "clsx";
 
 import Link from "@/components/ui/link";
-import { SHOP_ADDRESS, SHOP_DESCRIPTION, SHOP_FB, SHOP_IG, SHOP_MOTTO, SHOP_NAME, SHOP_PHONE, SHOP_PHONE_2, SHOP_PHONE_SHOW, SHOP_PHONE_SHOW_2, SHOP_TIKTOK } from "@/constant/shop";
+import { SHOP_ADDRESS, SHOP_DESCRIPTION, SHOP_IG, SHOP_MOTTO, SHOP_NAME, SHOP_PHONE, SHOP_PHONE_2, SHOP_PHONE_SHOW, SHOP_PHONE_SHOW_2, SHOP_TIKTOK } from "@/constant/shop";
 import { WA_LINK, WA_SERVICE_NAME } from "@/constant/whatsapp";
-import { FacebookIcon, InstagramIcon, TiktokIcon, WhatsAppIcon } from "@/components/ui/icons/social";
+import { InstagramIcon, TiktokIcon, WhatsAppIcon } from "@/components/ui/icons/social";
 import { WaveTopBgShape } from "@/components/ui/shapes";
 import { useTrackEnterSection } from "@/libs/analytic/use-enter-section";
 import { ROUTES } from "@/constant/routes";
@@ -34,7 +34,6 @@ export const Footer = () => {
     handleClickPhone2,
     handleClickNavHome,
     handleClickNavCarpetService,
-    handleClickFacebook,
     handleClickInstagram,
     handleClickTiktok,
   } = useFooterTracker({ isInView: true });
@@ -127,9 +126,6 @@ export const Footer = () => {
               <div>
                 <h3 className="mb-4 text-lg font-bold">Follow Us</h3>
                 <div className="flex">
-                  {/* <Link href={SHOP_FB} target="_blank" className="hover:text-primary h-11 w-11" onClick={handleClickFacebook}>
-                    <FacebookIcon className="h-6 w-6" />
-                  </Link> */}
                   <Link href={SHOP_IG} target="_blank" className="hover:text-primary h-11 w-11" onClick={handleClickInstagram}>
                     <InstagramIcon className="h-6 w-6" />
                   </Link>
@@ -191,11 +187,6 @@ const useFooterTracker = ({ isInView }: { isInView: boolean }) => {
     analytic.trackEvent("click_footer_nav_carpet_service", "Home Page", { success: 1, message: "OK" });
   };
 
-  const handleClickFacebook = () => {
-    analytic.trackEnd("click_footer_facebook");
-    analytic.trackEvent("click_footer_facebook", "Home Page", { success: 1, message: "OK" });
-  };
-
   const handleClickInstagram = () => {
     analytic.trackEnd("click_footer_instagram");
     analytic.trackEvent("click_footer_instagram", "Home Page", { success: 1, message: "OK" });
@@ -213,7 +204,6 @@ const useFooterTracker = ({ isInView }: { isInView: boolean }) => {
     handleClickPhone2,
     handleClickNavHome,
     handleClickNavCarpetService,
-    handleClickFacebook,
     handleClickInstagram,
     handleClickTiktok,
   };
