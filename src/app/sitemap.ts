@@ -33,15 +33,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 0.9,
     },
-    // NOTE: /cuci-karpet-medan canonicalizes to /laundry-karpet-marelan,
-    // so it stays listed only until the issue-03 decision (self-canonical
-    // vs full consolidation) is made. See .scratch/seo-aeo-review/issues/03.
-    {
-      url: HOST_URL + "/cuci-karpet-medan",
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
+    // /cuci-karpet-medan intentionally NOT listed: per issue-03 decision
+    // (option B, consolidation) it canonicalizes to /laundry-karpet-marelan,
+    // so all ranking signals concentrate on the single carpet page.
     ...routes,
     // {
     //   url: HOST_URL + "/",

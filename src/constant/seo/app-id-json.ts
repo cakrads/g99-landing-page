@@ -47,4 +47,12 @@ export const generateAppIdJson = () => ({
   },
   hasMap:
     "https://www.google.com/maps/place/Laundry+Karpet+Marelan+G+99/@3.7021584,98.6581062,17z",
+  aggregateRating: {
+    "@type": "AggregateRating",
+    // Verified against the live Google Business Profile 2026-10-18:
+    // 4.9 from 74 reviews. Re-check periodically — stale numbers here
+    // would be inaccurate review markup.
+    ratingValue: "4.9",
+    reviewCount: "74",
+  },
 });
